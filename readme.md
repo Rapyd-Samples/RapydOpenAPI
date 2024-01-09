@@ -1,6 +1,6 @@
 # RapydOpenAPI
 
-This repository contains the OpenAPI specifications for Rapyd.
+This official repository contains the OpenAPI specifications for Rapyd.
 
 ## Structure
 
