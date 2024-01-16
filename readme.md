@@ -31,3 +31,6 @@ To get started with using these specifications, clone this repository to your lo
 ## Contributing
 
 Contributions are welcome. Please make sure to read the contributing guide before making a pull request.
+
+## Articles 
+[Empowering Rapyd Payments with OpenAPI](https://community.rapyd.net/t/empowering-rapyd-payments-with-openapi/58880)
