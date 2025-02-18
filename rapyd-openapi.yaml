@@ -1,17 +1,16 @@
 openapi: 3.0.0
 info:
-  title: Rapyd API
-  description: "This is a Beta release of the OpenAPI specification for Rapyd's API\
-    \ methods. It is recommended to initially run the methods in the sandbox environment.\
-    \ For the most up to date documentation of Rapyd's methods, see the [online API\
-    \ Reference](https://docs.rapyd.net/en/index-en.html). <BR> For required signature,\
-    \ see [Request Signatures](https://docs.rapyd.net/en/request-signatures.html)."
+  title: Rapyd OpenAPI
+  description: "This is a release of the OpenAPI specification for Rapyd's API methods.\
+    \ It is recommended to initially run the methods in the sandbox environment. For\
+    \ the most up to date documentation of Rapyd's methods, see the [online API Reference](https://docs.rapyd.net/en/index-en.html).\
+    \ <BR> For required signature, see [Request Signatures](https://docs.rapyd.net/en/request-signatures.html)."
   contact:
     email: rapyd_support@rapyd.com
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.13
+  version: 1.0.14
 servers:
 - url: https://sandboxapi.rapyd.net/
   description: Sandbox server
@@ -109,6 +108,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payment_methods/{type}/required_fields:
     get:
       tags:
@@ -193,6 +198,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_1'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payments:
     get:
       tags:
@@ -393,6 +404,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_2'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Payment
@@ -472,6 +489,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_3'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payments/{paymentId}:
     get:
       tags:
@@ -550,11 +573,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_200_3'
         "400":
-          description: Bad Request. Payment not found for given ID
+          description: Bad Request. Payment not found for given ID.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_4'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Payment
@@ -745,6 +774,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_5'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payments/{paymentId}/capture:
     post:
       tags:
@@ -849,6 +884,12 @@ paths:
                     operation_id: fbc7054e-4493-4f01-b62e-788f189f9c0f
                     response_code: ERROR_CAPTURE_PAYMENT
                     status: ERROR
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payments/completePayment:
     post:
       tags:
@@ -947,6 +988,12 @@ paths:
                     operation_id: fbc7054e-4493-4f01-b62e-788f189f9c0f
                     response_code: ERROR_SIMULATE_COMPLETE_PAYMENT_CARD_NOT_AUTHENTICATED
                     status: ERROR
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/checkout/{checkout_token}:
     get:
       tags:
@@ -1029,6 +1076,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_6'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/checkout:
     post:
       tags:
@@ -1108,6 +1161,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_7'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payments/subscriptions:
     get:
       tags:
@@ -1254,6 +1313,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_8'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Subscription
@@ -1333,6 +1398,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_9'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payments/subscriptions/{subscriptionId}:
     get:
       tags:
@@ -1411,11 +1482,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_200_6'
         "400":
-          description: Bad Request. Subscription not active
+          description: Bad Request. Subscription not active.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_10'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Subscription
@@ -1499,11 +1576,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_200_6'
         "400":
-          description: Bad Request. Update not allowed
+          description: Bad Request. Update not allowed.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_11'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Subscription
@@ -1586,6 +1669,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_12'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payments/subscriptions/{subscriptionId}/discount:
     delete:
       tags:
@@ -1670,6 +1759,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_13'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/checkout/subscriptions:
     post:
       tags:
@@ -1749,6 +1844,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_14'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/products:
     get:
       tags:
@@ -1846,6 +1947,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_9'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Subscription.Product
@@ -1919,6 +2026,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_10'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/products/{productsId}:
     get:
       tags:
@@ -2002,6 +2115,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_15'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Subscription.Product
@@ -2089,6 +2208,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_16'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Subscription.Product
@@ -2172,6 +2297,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_17'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/plans:
     get:
       tags:
@@ -2270,6 +2401,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_12'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Subscription.Plan
@@ -2349,6 +2486,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_18'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/plans/{planId}:
     get:
       tags:
@@ -2432,6 +2575,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_19'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Subscription.Plan
@@ -2521,6 +2670,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_400_20'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Subscription.Plan
@@ -2592,11 +2747,23 @@ paths:
         example: plan_494eae8b99f697107d738
       responses:
         "200":
-          description: "Rapyd response with operation result, and plan id"
+          description: Rapyd response with status and ID of plan that was deleted.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_11'
+        "400":
+          description: Bad Request. Multiple requests to delete the same plan.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400_21'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/subscription_items:
     get:
       tags:
@@ -2703,6 +2870,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_14'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Subscription.Subscription Item
@@ -2777,6 +2950,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_15'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/subscription_items/{subscriptionItemId}:
     get:
       tags:
@@ -2853,6 +3032,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_15'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Subscription.Subscription Item
@@ -2934,6 +3119,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_15'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Subscription.Subscription Item
@@ -3009,6 +3200,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_16'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/subscription_items/{subscriptionItemId}/usage_record_summaries:
     get:
       tags:
@@ -3114,6 +3311,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_17'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/subscription_items/{subscriptionItemId}/usage_records:
     post:
       tags:
@@ -3193,11 +3396,17 @@ paths:
         required: true
       responses:
         "200":
-          description: The subscription after updated
+          description: The subscription after updated.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_18'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/subscriptions/discount/{discountId}:
     get:
       tags:
@@ -3279,7 +3488,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_21'
+                $ref: '#/components/schemas/inline_response_400_22'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/invoices:
     get:
       tags:
@@ -3416,7 +3631,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_22'
+                $ref: '#/components/schemas/inline_response_400_23'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Subscription.Invoice
@@ -3501,7 +3722,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_23'
+                $ref: '#/components/schemas/inline_response_400_24'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/invoices/{invoiceId}:
     get:
       tags:
@@ -3585,7 +3812,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_22'
+                $ref: '#/components/schemas/inline_response_400_23'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Subscription.Invoice
@@ -3673,7 +3906,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_22'
+                $ref: '#/components/schemas/inline_response_400_23'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Subscription.Invoice
@@ -3755,7 +3994,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_22'
+                $ref: '#/components/schemas/inline_response_400_23'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/invoices/{invoiceId}/void:
     post:
       tags:
@@ -3840,7 +4085,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_24'
+                $ref: '#/components/schemas/inline_response_400_25'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/invoices/{invoiceId}/finalize:
     post:
       tags:
@@ -3929,7 +4180,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_22'
+                $ref: '#/components/schemas/inline_response_400_23'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/invoices/{invoiceId}/pay:
     post:
       tags:
@@ -4012,6 +4269,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_21'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/invoices/{invoiceId}/mark_uncollectible:
     post:
       tags:
@@ -4096,7 +4359,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_25'
+                $ref: '#/components/schemas/inline_response_400_26'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/invoices/{invoiceId}/lines:
     get:
       tags:
@@ -4180,7 +4449,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_24'
+                $ref: '#/components/schemas/inline_response_400_25'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/invoices/upcoming:
     get:
       tags:
@@ -4276,7 +4551,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_26'
+                $ref: '#/components/schemas/inline_response_400_27'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/invoices/upcoming/lines:
     get:
       tags:
@@ -4372,7 +4653,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_26'
+                $ref: '#/components/schemas/inline_response_400_27'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/invoice_items:
     get:
       tags:
@@ -4504,7 +4791,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_27'
+                $ref: '#/components/schemas/inline_response_400_28'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Subscription.Invoice Item
@@ -4587,7 +4880,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_28'
+                $ref: '#/components/schemas/inline_response_400_29'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/invoice_items/{invoiceItem}:
     get:
       tags:
@@ -4669,7 +4968,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_27'
+                $ref: '#/components/schemas/inline_response_400_28'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Subscription.Invoice Item
@@ -4758,7 +5063,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_29'
+                $ref: '#/components/schemas/inline_response_400_30'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Subscription.Invoice Item
@@ -4843,7 +5154,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_30'
+                $ref: '#/components/schemas/inline_response_400_31'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/hosted/collect/payments/{paymentLink}:
     get:
       tags:
@@ -4925,7 +5242,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_31'
+                $ref: '#/components/schemas/inline_response_400_32'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payments/group_payments:
     post:
       tags:
@@ -5000,11 +5323,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_200_27'
         "400":
-          description: Bad Request. Group payment not found for given ID
+          description: Bad Request. Group payment not found for given ID.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_32'
+                $ref: '#/components/schemas/inline_response_400_33'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payments/group_payments/{groupPaymentId}:
     get:
       tags:
@@ -5081,11 +5410,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_200_27'
         "400":
-          description: Bad Request. Group payment not found for given ID
+          description: Bad Request. Group payment not found for given ID.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_33'
+                $ref: '#/components/schemas/inline_response_400_34'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Group Payment
@@ -5165,7 +5500,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_34'
+                $ref: '#/components/schemas/inline_response_400_35'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payments/{payment}/escrows/{escrow}/escrow_releases:
     get:
       tags:
@@ -5255,7 +5596,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_35'
+                $ref: '#/components/schemas/inline_response_400_36'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Escrow
@@ -5349,7 +5696,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_36'
+                $ref: '#/components/schemas/inline_response_400_37'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payments/{payment}/escrows/{escrow}:
     get:
       tags:
@@ -5439,7 +5792,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_35'
+                $ref: '#/components/schemas/inline_response_400_36'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/refunds:
     get:
       tags:
@@ -5538,6 +5897,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_30'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Refund
@@ -5610,11 +5975,17 @@ paths:
         required: true
       responses:
         "200":
-          description: List Contacts for a Rapyd Wallet
+          description: List Contacts for a Rapyd Wallet.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_31'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/refunds/complete:
     post:
       tags:
@@ -5692,6 +6063,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_31'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/refunds/group_payments:
     post:
       tags:
@@ -5719,6 +6096,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_32'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/refunds/{refundId}:
     get:
       tags:
@@ -5797,6 +6180,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_31'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Refund
@@ -5880,6 +6269,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_31'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/digital_wallets/session/apple_pay:
     post:
       tags:
@@ -5956,6 +6351,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_33'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/disputes:
     get:
       tags:
@@ -6080,6 +6481,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_34'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/disputes/{disputeId}:
     get:
       tags:
@@ -6158,6 +6565,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_35'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/customers:
     get:
       tags:
@@ -6254,6 +6667,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_36'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Customer
@@ -6332,7 +6751,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_37'
+                $ref: '#/components/schemas/inline_response_400_38'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/customers/{customerId}:
     get:
       tags:
@@ -6415,7 +6840,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_38'
+                $ref: '#/components/schemas/inline_response_400_39'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Customer
@@ -6501,7 +6932,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_39'
+                $ref: '#/components/schemas/inline_response_400_40'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Customer
@@ -6585,7 +7022,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_40'
+                $ref: '#/components/schemas/inline_response_400_41'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/customers/discount/{discountId}:
     get:
       tags:
@@ -6663,6 +7106,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_38'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/customers/{customerId}/discount:
     delete:
       tags:
@@ -6738,6 +7187,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_39'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/addresses:
     post:
       tags:
@@ -6816,7 +7271,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_41'
+                $ref: '#/components/schemas/inline_response_400_42'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/addresses{addressId}:
     get:
       tags:
@@ -6899,7 +7360,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_42'
+                $ref: '#/components/schemas/inline_response_400_43'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Payment.Address
@@ -6988,7 +7455,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_41'
+                $ref: '#/components/schemas/inline_response_400_42'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Payment.Address
@@ -7071,7 +7544,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_43'
+                $ref: '#/components/schemas/inline_response_400_44'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/customers/{customerId}/payment_methods:
     get:
       tags:
@@ -7190,6 +7669,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_41'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Customer Payment Method
@@ -7277,7 +7762,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_44'
+                $ref: '#/components/schemas/inline_response_400_45'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/customers/{customerId}/payment_methods/{pmtId}:
     get:
       tags:
@@ -7376,6 +7867,12 @@ paths:
                       \ not have a default payment method. The request was rejected."
                     response_code: ERROR_CUSTOMER_PAYMENT_METHOD_NOT_FOUND
                     status: ERROR
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Customer Payment Method
@@ -7472,7 +7969,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_45'
+                $ref: '#/components/schemas/inline_response_400_46'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Customer Payment Method
@@ -7562,7 +8065,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_46'
+                $ref: '#/components/schemas/inline_response_400_47'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/skus/{skuId}:
     get:
       tags:
@@ -7640,6 +8149,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_44'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - SKU
@@ -7721,6 +8236,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_44'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - SKU
@@ -7797,6 +8318,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_22'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/skus:
     get:
       tags:
@@ -7901,6 +8428,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_45'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - SKU
@@ -7973,6 +8506,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_44'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/orders:
     get:
       tags:
@@ -8071,6 +8610,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_46'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Order
@@ -8143,6 +8688,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_47'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/orders/{orderId}:
     get:
       tags:
@@ -8219,6 +8770,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_47'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Order
@@ -8300,6 +8857,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_47'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/orders/{orderId}/returns:
     post:
       tags:
@@ -8383,6 +8946,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_48'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/orders/{orderId}/pay:
     post:
       tags:
@@ -8465,6 +9034,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_47'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/order_returns:
     get:
       tags:
@@ -8573,6 +9148,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_49'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/order_returns/{orderReturnsId}:
     get:
       tags:
@@ -8649,6 +9230,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_48'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/coupons:
     get:
       tags:
@@ -8744,6 +9331,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_50'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Coupon
@@ -8818,6 +9411,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_51'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/coupons/{couponId}:
     get:
       tags:
@@ -8894,6 +9493,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_51'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Coupon
@@ -8973,6 +9578,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_51'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Coupon
@@ -9047,6 +9658,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_52'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payout_methods/{pomt}/required_fields:
     get:
       tags:
@@ -9196,8 +9813,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_53'
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payouts:
     get:
       tags:
@@ -9386,8 +10007,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_54'
-        "500":
-          description: Internal server error
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Disburse
@@ -9469,7 +10094,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_47'
+                $ref: '#/components/schemas/inline_response_400_48'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/batch_process/files/mass_payout_pci:
     post:
       tags:
@@ -9540,6 +10171,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_56'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payouts/beneficiary:
     post:
       tags:
@@ -9628,7 +10265,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_48'
+                $ref: '#/components/schemas/inline_response_400_49'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payouts/extended_beneficiary:
     post:
       tags:
@@ -9710,7 +10353,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_49'
+                $ref: '#/components/schemas/inline_response_400_50'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payouts/beneficiary/validate:
     post:
       tags:
@@ -9791,8 +10440,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_59'
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payouts/beneficiary/{beneficiaryId}:
     get:
       tags:
@@ -9873,8 +10526,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_58'
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Disburse
@@ -9964,9 +10621,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_50'
-        "500":
-          description: Internal server error.
+                $ref: '#/components/schemas/inline_response_400_51'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Disburse
@@ -10048,9 +10709,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_50'
-        "500":
-          description: Internal server error.
+                $ref: '#/components/schemas/inline_response_400_51'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payouts/complete/{payoutToken}/{amount}:
     post:
       tags:
@@ -10140,8 +10805,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_55'
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/hosted/disburse/beneficiary:
     post:
       tags:
@@ -10224,9 +10893,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_51'
-        "500":
-          description: Internal server error.
+                $ref: '#/components/schemas/inline_response_400_52'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payouts/confirm/{payoutToken}:
     post:
       tags:
@@ -10311,9 +10984,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_52'
-        "500":
-          description: Internal server error.
+                $ref: '#/components/schemas/inline_response_400_53'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payouts/sender:
     post:
       tags:
@@ -10393,8 +11070,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_62'
-        "500":
-          description: Internal server error
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payouts/sender/{senderId}:
     get:
       tags:
@@ -10483,9 +11164,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_53'
-        "500":
-          description: Internal server error.
+                $ref: '#/components/schemas/inline_response_400_54'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Disburse
@@ -10562,8 +11247,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_63'
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payout_methods:
     get:
       tags:
@@ -10760,8 +11449,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_64'
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payouts/{payoutId}:
     get:
       tags:
@@ -10844,9 +11537,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_54'
-        "500":
-          description: Internal server error.
+                $ref: '#/components/schemas/inline_response_400_55'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Disburse
@@ -10930,8 +11627,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_55'
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Disburse
@@ -11010,8 +11711,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_55'
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payouts/return/{payout}:
     post:
       tags:
@@ -11095,8 +11800,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_65'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/files/documents/payout/{payout}:
     post:
       tags:
@@ -11195,8 +11904,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_66'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payouts/{payout}/documents/:
     get:
       tags:
@@ -11277,8 +11990,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_66'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Disburse.Upload Documents
@@ -11357,8 +12074,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_67'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payouts/{payout}/documents/{file_id}:
     get:
       tags:
@@ -11447,8 +12168,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_66'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Disburse.Upload Documents
@@ -11535,8 +12260,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_67'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/cards/eligibility:
     post:
       tags:
@@ -11617,8 +12346,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_68'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/account/transfer:
     post:
       tags:
@@ -11693,6 +12426,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_69'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/account/transfer/response:
     post:
       tags:
@@ -11768,6 +12507,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_69'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/account/deposit:
     post:
       tags:
@@ -11845,6 +12590,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_70'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/account/deposit/{id}:
     get:
       tags:
@@ -11923,6 +12674,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_70'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/account/withdraw:
     post:
       tags:
@@ -12000,6 +12757,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_70'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/account/withdraw{id}:
     get:
       tags:
@@ -12079,6 +12842,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_70'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/ewallets/accounts/balance/hold:
     post:
       tags:
@@ -12165,9 +12934,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_55'
-        "500":
-          description: Internal server error.
+                $ref: '#/components/schemas/inline_response_400_56'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/ewallets/{ewalletId}/contacts:
     get:
       tags:
@@ -12251,7 +13024,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_56'
+                $ref: '#/components/schemas/inline_response_400_57'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - eWallets
@@ -12340,7 +13119,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_57'
+                $ref: '#/components/schemas/inline_response_400_58'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/ewallets/{ewalletId}/contacts/{contactId}:
     get:
       tags:
@@ -12433,7 +13218,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_58'
+                $ref: '#/components/schemas/inline_response_400_59'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - eWallets
@@ -12530,7 +13321,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_59'
+                $ref: '#/components/schemas/inline_response_400_60'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - eWallets
@@ -12621,7 +13418,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_60'
+                $ref: '#/components/schemas/inline_response_400_61'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/ewallets/{ewalletId}/contacts/{contactId}/compliance_levels:
     get:
       tags:
@@ -12713,7 +13516,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_61'
+                $ref: '#/components/schemas/inline_response_400_62'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/hosted/issuing/card_details/{cardToken}:
     post:
       tags:
@@ -12798,6 +13607,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_76'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards:
     get:
       tags:
@@ -12947,6 +13762,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_77'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Issuing
@@ -13022,8 +13843,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_78'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards/{cardId}:
     get:
       tags:
@@ -13106,7 +13931,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_22'
+                $ref: '#/components/schemas/inline_response_400_23'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards/activate:
     post:
       tags:
@@ -13183,8 +14014,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_80'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/hosted/issuing/activate_card:
     post:
       tags:
@@ -13266,8 +14101,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_81'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/hosted/issuing/pin:
     post:
       tags:
@@ -13350,8 +14189,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_82'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards/personalize:
     post:
       tags:
@@ -13430,8 +14273,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_80'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards/status:
     post:
       tags:
@@ -13508,8 +14355,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_80'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards/{cardId}/transactions:
     get:
       tags:
@@ -13655,8 +14506,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_83'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards/{cardId}/transactions/{transactionId}:
     get:
       tags:
@@ -13744,6 +14599,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_84'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards/pin:
     post:
       tags:
@@ -13824,8 +14685,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_85'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards/{card_id}/card_tokens/google_pay:
     post:
       tags:
@@ -13915,8 +14780,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_86'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/hosted/collect/card/:
     post:
       tags:
@@ -13996,7 +14865,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_62'
+                $ref: '#/components/schemas/inline_response_400_63'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards/simulate_block:
     post:
       tags:
@@ -14077,13 +14952,17 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_88'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards/authorization:
     post:
       tags:
       - Issuing.Simulations
-      summary: imulate a Card Transaction Authorization Request-EEA
+      summary: Simulate a Card Transaction Authorization Request-EEA
       description: "Simulate Rapyd’s request to your authorization server.<BR> If\
         \ you have implemented Remote Authorization, Rapyd sends authorization requests\
         \ to your remote authorization server when the card network requests approval\
@@ -14171,8 +15050,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_89'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards/reversal:
     post:
       tags:
@@ -14262,8 +15145,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_90'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards/clearing:
     post:
       tags:
@@ -14346,8 +15233,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_91'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards/refund:
     post:
       tags:
@@ -14433,8 +15324,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_91'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/cards/adjustment:
     post:
       tags:
@@ -14519,8 +15414,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_91'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/virtual_accounts:
     post:
       tags:
@@ -14595,6 +15494,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_92'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/virtual_accounts/transactions:
     post:
       tags:
@@ -14672,6 +15577,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_93'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/virtual_accounts/{virtualAccountId}:
     get:
       tags:
@@ -14700,6 +15611,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_94'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Virtual Accounts
@@ -14783,6 +15700,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_95'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - Virtual Accounts
@@ -14860,6 +15783,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_96'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/virtual_accounts/capabilities/{country}:
     get:
       tags:
@@ -14939,8 +15868,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_97'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/fx_rate:
     get:
       tags:
@@ -15017,6 +15950,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_98'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/ewallets:
     get:
       tags:
@@ -15151,8 +16090,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_99'
-        "400":
-          description: bad input parameter
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - eWallets
@@ -15228,8 +16171,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_100'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/ewallets/{ewalletToken}:
     get:
       tags:
@@ -15309,8 +16256,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_100'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - eWallets
@@ -15394,8 +16345,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_100'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - eWallets
@@ -15475,6 +16430,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_67'
         "400":
           description: bad input parameter
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/ewallets/{ewalletToken}/statuses/{status}:
     post:
       tags:
@@ -15567,8 +16528,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_67'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/ewallets/{walletId}/account/limits:
     post:
       tags:
@@ -15655,8 +16620,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_101'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
       - eWallets
@@ -15733,8 +16702,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_102'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/ewallets/{walletId}/accounts:
     get:
       tags:
@@ -15815,8 +16788,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_101'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/ewallets/{walletId}/transactions:
     get:
       tags:
@@ -15981,8 +16958,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_103'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/ewallets/{walletId}/transactions/{transactionId}:
     get:
       tags:
@@ -16072,8 +17053,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_104'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/ewallets/{ewallet}/virtual_accounts:
     get:
       tags:
@@ -16153,8 +17138,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_105'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/fx_rates/:
     get:
       tags:
@@ -16281,6 +17270,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_106'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/webhooks/{webhook}:
     get:
       tags:
@@ -16358,6 +17353,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_107'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Webhook Methods
@@ -16435,6 +17436,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_107'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/webhooks:
     get:
       tags:
@@ -16512,6 +17519,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_108'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/bankaccounts:
     post:
       tags:
@@ -16588,8 +17601,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_109'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/bankaccounts/bankaccounttransfertobankaccount:
     post:
       tags:
@@ -16669,6 +17686,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_110'
         "400":
           description: bad input parameter
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/bankaccounts/remitters/{virtualAccountId}/transactions/{transaction_id}:
     get:
       tags:
@@ -16760,8 +17783,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_111'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/bankaccounts/{virtualAccountId}:
     get:
       tags:
@@ -16842,8 +17869,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_110'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
       - Issuing
@@ -16930,6 +17961,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_95'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/issuing/bankaccounts/{virtualAccountId}/transactions/{transactionId}:
     get:
       tags:
@@ -17020,8 +18057,12 @@ paths:
                 $ref: '#/components/schemas/inline_response_200_112'
         "400":
           description: bad input parameter
-        "500":
-          description: Internal server error.
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/hosted/collect/payments/:
     post:
       tags:
@@ -17105,7 +18146,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_63'
+                $ref: '#/components/schemas/inline_response_400_64'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/identities:
     post:
       tags:
@@ -17186,7 +18233,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_64'
+                $ref: '#/components/schemas/inline_response_400_65'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/identities/types:
     get:
       tags:
@@ -17267,6 +18320,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_114'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/verify/applications/types/country/{country}:
     get:
       tags:
@@ -17344,6 +18403,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_115'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/verify/applications/status/{application}:
     get:
       tags:
@@ -17421,6 +18486,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_116'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/verify/applications/hosted:
     post:
       tags:
@@ -17495,6 +18566,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_117'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/verify/applications/hosted/{verifyAppId}:
     get:
       tags:
@@ -17571,6 +18648,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200_118'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/hosted/idv:
     post:
       tags:
@@ -17657,7 +18740,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_65'
+                $ref: '#/components/schemas/inline_response_400_66'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/cnl/termination_query:
     post:
       tags:
@@ -17741,7 +18830,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_66'
+                $ref: '#/components/schemas/inline_response_400_67'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/cnl/termination_query/{partner_query_reference}:
     get:
       tags:
@@ -17827,7 +18922,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_67'
+                $ref: '#/components/schemas/inline_response_400_68'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/hosted/config/supported_languages:
     get:
       tags:
@@ -24473,6 +25574,20 @@ components:
           operation_id: 9b4f03cc-8a95-4d7f-b0c6-b725d7d7ae91
           response_code: MISSING_INVALID_PARAMETERS
           status: ERROR
+    inline_response_401:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status_1'
+      example:
+        status:
+          error_code: UNAUTHENTICATED_API_CALL
+          message: "The request was rejected due to an authentication issue. Corrective\
+            \ action: Check the status of your account in the 'Account Details' page\
+            \ of the Client Portal."
+          operation_id: 3f595230-0258-473c-94e5-075741ab84e2
+          response_code: UNAUTHENTICATED_API_CALL
+          status: ERROR
     inline_response_200_1:
       type: object
       properties:
@@ -25889,6 +27004,20 @@ components:
           operation_id: 889e9472-922c-40a2-861d-19977c396db5
           response_code: ERROR_UPDATE_PLAN_INVALID_PRODUCT_TYPE
           status: ERROR
+    inline_response_400_21:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status_1'
+      example:
+        status:
+          error_code: ERROR_DELETE_PLAN
+          message: "The request tried to delete a plan, but the operation failed.\
+            \ Corrective action: Determine whether the plan was already deleted, and\
+            \ why there were multiple requests to delete it."
+          operation_id: 889e9472-922c-40a2-861d-19977c396db5
+          response_code: ERROR_DELETE_PLAN
+          status: ERROR
     inline_response_200_14:
       type: object
       properties:
@@ -25998,7 +27127,7 @@ components:
           $ref: '#/components/schemas/Status_1'
         data:
           $ref: '#/components/schemas/Discount'
-    inline_response_400_21:
+    inline_response_400_22:
       type: object
       properties:
         status:
@@ -26021,7 +27150,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InvoiceResponse'
-    inline_response_400_22:
+    inline_response_400_23:
       properties:
         status:
           $ref: '#/components/schemas/Status_1'
@@ -26083,7 +27212,7 @@ components:
         tax_percent:
           type: number
           description: "The tax rate, defined as a percentage."
-    inline_response_400_23:
+    inline_response_400_24:
       type: object
       properties:
         status:
@@ -26139,7 +27268,7 @@ components:
           $ref: '#/components/schemas/Status_1'
         data:
           $ref: '#/components/schemas/inline_response_200_22_data'
-    inline_response_400_24:
+    inline_response_400_25:
       type: object
       properties:
         status:
@@ -26158,7 +27287,7 @@ components:
           type: string
           description: "ID of the payment method for paying the invoice. If not included\
             \ in the body, then the customer's default_payment_method is used."
-    inline_response_400_25:
+    inline_response_400_26:
       type: object
       properties:
         status:
@@ -26178,7 +27307,7 @@ components:
           $ref: '#/components/schemas/Status_1'
         data:
           $ref: '#/components/schemas/InvoiceLineResponse'
-    inline_response_400_26:
+    inline_response_400_27:
       type: object
       properties:
         status:
@@ -26202,7 +27331,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InvoiceItemResponse'
-    inline_response_400_27:
+    inline_response_400_28:
       type: object
       properties:
         status:
@@ -26264,7 +27393,7 @@ components:
           type: number
           description: "Per-unit price of the product or service, adjusted as defined\
             \ in the plan. Decimal."
-    inline_response_400_28:
+    inline_response_400_29:
       type: object
       properties:
         status:
@@ -26308,7 +27437,7 @@ components:
           description: "The percentage tax rate that is applied to the subtotal of\
             \ the invoice, after subtracting all discounts. Decimal, up to four decimal\
             \ places. Range: 0-100"
-    inline_response_400_29:
+    inline_response_400_30:
       type: object
       properties:
         status:
@@ -26327,7 +27456,7 @@ components:
           $ref: '#/components/schemas/Status_1'
         data:
           $ref: '#/components/schemas/inline_response_200_25_data'
-    inline_response_400_30:
+    inline_response_400_31:
       type: object
       properties:
         status:
@@ -26350,7 +27479,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/PaymentLink'
-    inline_response_400_31:
+    inline_response_400_32:
       type: object
       properties:
         status:
@@ -26387,7 +27516,7 @@ components:
           $ref: '#/components/schemas/Status_1'
         data:
           $ref: '#/components/schemas/GroupPayment'
-    inline_response_400_32:
+    inline_response_400_33:
       type: object
       properties:
         status:
@@ -26400,7 +27529,7 @@ components:
             \ Use 2 to 10 payments."
           response_code: ERROR_CREATE_GROUP_PAYMENT_EXCEEDED_MAX_PARTICIPANTS
           status: ERROR
-    inline_response_400_33:
+    inline_response_400_34:
       type: object
       properties:
         status:
@@ -26414,7 +27543,7 @@ components:
             \ 'gp_'."
           response_code: ERROR_GET_GROUP_PAYMENT
           status: ERROR
-    inline_response_400_34:
+    inline_response_400_35:
       type: object
       properties:
         status:
@@ -26435,7 +27564,7 @@ components:
           $ref: '#/components/schemas/Status_1'
         data:
           $ref: '#/components/schemas/EscrowResponse'
-    inline_response_400_35:
+    inline_response_400_36:
       type: object
       properties:
         status:
@@ -26459,7 +27588,7 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/EscrowResponse'
-    inline_response_400_36:
+    inline_response_400_37:
       type: object
       properties:
         status:
@@ -26600,7 +27729,7 @@ components:
           $ref: '#/components/schemas/Status_1'
         data:
           $ref: '#/components/schemas/Customer'
-    inline_response_400_37:
+    inline_response_400_38:
       type: object
       properties:
         status:
@@ -26613,7 +27742,7 @@ components:
             \ Corrective action: Create a new wallet."
           response_code: ERROR_CREATE_CUSTOMER
           status: ERROR
-    inline_response_400_38:
+    inline_response_400_39:
       type: object
       properties:
         status:
@@ -26627,7 +27756,7 @@ components:
             cus_\""
           response_code: ERROR_GET_CUSTOMER
           status: ERROR
-    inline_response_400_39:
+    inline_response_400_40:
       type: object
       properties:
         status:
@@ -26640,7 +27769,7 @@ components:
             \ action: Use the correct customer, or create a new customer."
           response_code: INVALID_CUSTOMER_ID
           status: ERROR
-    inline_response_400_40:
+    inline_response_400_41:
       type: object
       properties:
         status:
@@ -26677,7 +27806,7 @@ components:
           $ref: '#/components/schemas/Status_1'
         data:
           $ref: '#/components/schemas/AddressResponse'
-    inline_response_400_41:
+    inline_response_400_42:
       type: object
       properties:
         status:
@@ -26692,7 +27821,7 @@ components:
           operation_id: fbc7054e-4493-4f01-b62e-788f189f9c0f
           response_code: INVALID_ADDRESS_PHONE_NUMBER
           status: ERROR
-    inline_response_400_42:
+    inline_response_400_43:
       type: object
       properties:
         status:
@@ -26706,7 +27835,7 @@ components:
           operation_id: fbc7054e-4493-4f01-b62e-788f189f9c0f
           response_code: ERROR_ADDRESS_GET
           status: ERROR
-    inline_response_400_43:
+    inline_response_400_44:
       type: object
       properties:
         status:
@@ -26741,7 +27870,7 @@ components:
           $ref: '#/components/schemas/Status_1'
         data:
           $ref: '#/components/schemas/CustomerPaymentMethod'
-    inline_response_400_44:
+    inline_response_400_45:
       type: object
       properties:
         status:
@@ -26755,7 +27884,7 @@ components:
             \ Fields\" and check all input fields."
           response_code: ERROR_CREATE_PAYMENT_METHOD
           status: ERROR
-    inline_response_400_45:
+    inline_response_400_46:
       type: object
       properties:
         status:
@@ -26775,7 +27904,7 @@ components:
           $ref: '#/components/schemas/Status_1'
         data:
           $ref: '#/components/schemas/inline_response_200_43_data'
-    inline_response_400_46:
+    inline_response_400_47:
       type: object
       properties:
         status:
@@ -27284,7 +28413,7 @@ components:
           $ref: '#/components/schemas/Payout'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_47:
+    inline_response_400_48:
       type: object
       properties:
         status:
@@ -27373,7 +28502,7 @@ components:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Beneficiary'
-    inline_response_400_48:
+    inline_response_400_49:
       type: object
       properties:
         status:
@@ -27488,7 +28617,7 @@ components:
           $ref: '#/components/schemas/Beneficiary'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_49:
+    inline_response_400_50:
       type: object
       properties:
         status:
@@ -27633,7 +28762,7 @@ components:
             \ ALPHA-2 code for the country. To determine the code for a country, see\
             \ 'List Countries'. Relevant when `entity_type` is **individual**."
           example: SG
-    inline_response_400_50:
+    inline_response_400_51:
       type: object
       properties:
         status:
@@ -27792,7 +28921,7 @@ components:
           $ref: '#/components/schemas/HostedBeneficiaryTokenResponse'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_51:
+    inline_response_400_52:
       type: object
       properties:
         status:
@@ -27805,7 +28934,7 @@ components:
             \ action: Set 'category' to 'bank' or 'card'."
           response_code: ERROR_HOSTED_PAGE_BENEFICIARY_INVALID_CATEGORY
           status: ERROR
-    inline_response_400_52:
+    inline_response_400_53:
       type: object
       properties:
         status:
@@ -27860,7 +28989,7 @@ components:
           $ref: '#/components/schemas/Sender'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_53:
+    inline_response_400_54:
       type: object
       properties:
         status:
@@ -27890,7 +29019,7 @@ components:
             $ref: '#/components/schemas/PayoutMethodType'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_54:
+    inline_response_400_55:
       type: object
       properties:
         status:
@@ -28084,7 +29213,7 @@ components:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/PutFundsOnHoldResponse'
-    inline_response_400_55:
+    inline_response_400_56:
       type: object
       properties:
         status:
@@ -28107,7 +29236,7 @@ components:
             $ref: '#/components/schemas/Contact'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_56:
+    inline_response_400_57:
       type: object
       properties:
         status:
@@ -28199,7 +29328,7 @@ components:
           $ref: '#/components/schemas/Contact'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_57:
+    inline_response_400_58:
       type: object
       properties:
         status:
@@ -28213,7 +29342,7 @@ components:
             \ personal wallet two contacts. Consider creating a company wallet."
           response_code: ERROR_ADD_CONTACT_TOO_MANY_CONTACTS
           status: ERROR
-    inline_response_400_58:
+    inline_response_400_59:
       type: object
       properties:
         status:
@@ -28228,7 +29357,7 @@ components:
             \ a string starting with \"cont\"."
           response_code: ERROR_GET_EWALLET_CONTACT
           status: ERROR
-    inline_response_400_59:
+    inline_response_400_60:
       type: object
       properties:
         status:
@@ -28249,7 +29378,7 @@ components:
           $ref: '#/components/schemas/inline_response_200_74_data'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_60:
+    inline_response_400_61:
       type: object
       properties:
         status:
@@ -28270,7 +29399,7 @@ components:
           $ref: '#/components/schemas/inline_response_200_75_data'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_61:
+    inline_response_400_62:
       type: object
       properties:
         status:
@@ -28646,7 +29775,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CardTokenResponse'
-    inline_response_400_62:
+    inline_response_400_63:
       type: object
       properties:
         status:
@@ -29268,7 +30397,7 @@ components:
             \ 4217 code. <BR><BR>* When `fixed_side` is **sell**, it is the currency\
             \ received in the Rapyd Wallet. <BR><BR>* When `fixed_side` is **buy**,\
             \ it is the currency charged to the buyer (customer)."
-    inline_response_400_63:
+    inline_response_400_64:
       type: object
       properties:
         status:
@@ -29343,7 +30472,7 @@ components:
           $ref: '#/components/schemas/Status_1'
         data:
           $ref: '#/components/schemas/inline_response_200_113_data'
-    inline_response_400_64:
+    inline_response_400_65:
       type: object
       properties:
         status:
@@ -29505,7 +30634,7 @@ components:
           $ref: '#/components/schemas/Status_1'
         data:
           $ref: '#/components/schemas/inline_response_200_119_data'
-    inline_response_400_65:
+    inline_response_400_66:
       type: object
       properties:
         status:
@@ -29730,7 +30859,7 @@ components:
           $ref: '#/components/schemas/Status_1'
         data:
           $ref: '#/components/schemas/inline_response_200_120_data'
-    inline_response_400_66:
+    inline_response_400_67:
       type: object
       properties:
         status:
@@ -29751,7 +30880,7 @@ components:
           $ref: '#/components/schemas/Status_1'
         data:
           $ref: '#/components/schemas/inline_response_200_121_data'
-    inline_response_400_67:
+    inline_response_400_68:
       type: object
       properties:
         status:
