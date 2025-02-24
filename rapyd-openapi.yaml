@@ -10,7 +10,7 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.14
+  version: 1.0.15
 servers:
 - url: https://sandboxapi.rapyd.net/
   description: Sandbox server
