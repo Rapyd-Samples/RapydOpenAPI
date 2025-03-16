@@ -2,18 +2,19 @@ openapi: 3.0.0
 info:
   title: Rapyd OpenAPI
   description: "This is a release of the OpenAPI specification for Rapyd's API methods.\
-    \ It is recommended to initially run the methods in the sandbox environment. For\
-    \ the most up to date documentation of Rapyd's methods, see the [online API Reference](https://docs.rapyd.net/en/index-en.html).\
-    \ <BR> For required signature, see [Request Signatures](https://docs.rapyd.net/en/request-signatures.html)."
+    \ It is recommended to initially run the methods in the saplandbox environment.\
+    \ For the most up-to-date documentation of Rapyd's methods, see the [online API\
+    \ Reference](https://docs.rapyd.net/en/api-reference.html). <BR> For required\
+    \ signature, see [Request Signatures](https://docs.rapyd.net/en/request-signatures.html)."
   contact:
-    email: rapyd_support@rapyd.com
+    email: rapyd_support@rapyd.net
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.15
+  version: 1.0.16
 servers:
 - url: https://sandboxapi.rapyd.net/
-  description: Sandbox server
+  description: Sandbox serverhttps://app.swaggerhub.com/apis/Rapyd_Financials/rapyd/1.0.16#/
 - url: https://api.rapyd.net/
   description: Production server
 paths:
@@ -998,7 +999,7 @@ paths:
     get:
       tags:
       - Checkout Page
-      summary: Retrieve checkout page
+      summary: Retrieve Checkout Page
       description: Retrieve a checkout page.
       externalDocs:
         description: Learn more about customer operations provided by this API.
@@ -2410,7 +2411,7 @@ paths:
     post:
       tags:
       - Subscription.Plan
-      summary: Create Plan Item
+      summary: Create Plan
       description: Create a pricing plan for services.
       externalDocs:
         description: Learn more about details provided by this API
@@ -2496,7 +2497,7 @@ paths:
     get:
       tags:
       - Subscription.Plan
-      summary: Retrieve plan
+      summary: Retrieve Plan
       description: Retrieve the details of a pricing plan for services.
       externalDocs:
         description: Learn more about details provided by this API
@@ -3411,7 +3412,7 @@ paths:
     get:
       tags:
       - Subscription
-      summary: Retrieve a discount of subscription.
+      summary: Retrieve Discount of Subscription
       description: Retrieve a discount for a subscription.
       externalDocs:
         description: Learn more about discount operations provided by this API
@@ -3733,7 +3734,7 @@ paths:
     get:
       tags:
       - Subscription.Invoice
-      summary: Retrieve invoice
+      summary: Retrieve Invoice
       description: "Retrieve the basic data of an invoice, with individual invoice\
         \ lines."
       externalDocs:
@@ -3822,7 +3823,7 @@ paths:
     post:
       tags:
       - Subscription.Invoice
-      summary: Update invoice
+      summary: Update Invoice
       description: Change or modify an invoice. You can modify the invoice when its
         status is draft.
       externalDocs:
@@ -3916,7 +3917,7 @@ paths:
     delete:
       tags:
       - Subscription.Invoice
-      summary: Delete invoice
+      summary: Delete Invoice
       description: Delete an invoice. You can delete an invoice when status is draft.
       externalDocs:
         description: Learn more about details provided by this API
@@ -4005,7 +4006,7 @@ paths:
     post:
       tags:
       - Subscription.Invoice
-      summary: Void invoice
+      summary: Void Invoice
       description: "Set an invoice to **void** status. <BR> Void invoices are similar\
         \ to deleted invoices, but their records are kept for accounting purposes.Retrieve\
         \ the basic data of an invoice, with individual invoice lines."
@@ -4191,7 +4192,7 @@ paths:
     post:
       tags:
       - Subscription.Invoice
-      summary: Pay invoice
+      summary: Pay Invoice
       description: Make a payment against an invoice.
       externalDocs:
         description: Learn more about details provided by this API
@@ -5253,8 +5254,8 @@ paths:
     post:
       tags:
       - Group Payment
-      summary: Create group payment
-      description: Create a group payment.
+      summary: Create Group Payment
+      description: Create Group Payment
       externalDocs:
         url: https://docs.rapyd.net/en/create-group-payment.html
       operationId: createGroupPayment
@@ -5338,7 +5339,7 @@ paths:
     get:
       tags:
       - Group Payment
-      summary: Retrieve group payment details
+      summary: Retrieve Group Payment Details
       description: Retrieve details of a group payment.
       externalDocs:
         url: https://docs.rapyd.net/en/retrieve-group-payment.html
@@ -5424,7 +5425,7 @@ paths:
     delete:
       tags:
       - Group Payment
-      summary: Cancel group payment
+      summary: Cancel Group Payment
       description: Cancel a group payment.
       externalDocs:
         url: https://docs.rapyd.net/en/cancel-group-payment.html
@@ -5511,7 +5512,7 @@ paths:
     get:
       tags:
       - Escrow
-      summary: List releases of funds from escrow
+      summary: List Escrow Releases
       description: Retrieve a list of all releases of funds from a specified escrow.
       externalDocs:
         url: https://docs.rapyd.net/en/list-escrow-releases.html
@@ -5606,7 +5607,7 @@ paths:
     post:
       tags:
       - Escrow
-      summary: Release funds from escrow
+      summary: Release Funds from Escrow
       description: Retrieve a list of all releases of funds from a specified escrow.
       externalDocs:
         url: https://docs.rapyd.net/en/release-funds-from-escrow.html
@@ -5707,7 +5708,7 @@ paths:
     get:
       tags:
       - Escrow
-      summary: Retrieve details of escrow
+      summary: Retrieve Escrow
       description: Retrieve details of the escrow for a payment.
       externalDocs:
         url: https://docs.rapyd.net/en/retrieve-escrow.html
@@ -6279,7 +6280,7 @@ paths:
     post:
       tags:
       - Digital Wallet
-      summary: Retrieve  details of Apple Pay payment session
+      summary: Retrieve Apple Pay Session
       description: "Retrieve the details of an Apple Pay payment session. Each payment\
         \ that uses Apple Pay has a unique session.  [Activating Apple Pay](https://docs.rapyd.net/en/activating-apple-pay.html)\
         \ is a prerequisite."
@@ -6361,7 +6362,7 @@ paths:
     get:
       tags:
       - Dispute
-      summary: Retrieve list of disputes
+      summary: List Disputes
       description: Retrieve a detailed list of 'dispute' objects.
       externalDocs:
         description: Learn more about details provided by this API
@@ -6491,7 +6492,7 @@ paths:
     get:
       tags:
       - Dispute
-      summary: Retrieve a dispute
+      summary: Retrieve Dispute
       description: Retrieve the details of a dispute.
       externalDocs:
         description: Learn more about details provided by this API
@@ -6575,7 +6576,7 @@ paths:
     get:
       tags:
       - Customer
-      summary: Retrieves list of customers.
+      summary: List Customers
       description: Retrieve a list of all customers
       externalDocs:
         description: GET list of customers.
@@ -6662,7 +6663,7 @@ paths:
           type: string
       responses:
         "200":
-          description: get customers details.
+          description: Lists customers.
           content:
             application/json:
               schema:
@@ -6676,7 +6677,7 @@ paths:
     post:
       tags:
       - Customer
-      summary: Create customer
+      summary: Create Customer
       description: Adds a customer to the client.
       externalDocs:
         description: Learn more about customer operations provided by this API.
@@ -6762,7 +6763,7 @@ paths:
     get:
       tags:
       - Customer
-      summary: Retrieve customer details
+      summary: Retrieve Customer Details
       description: Retrieve a customer.
       externalDocs:
         description: Learn more about Retrieve a customer details provided by this
@@ -6850,7 +6851,7 @@ paths:
     post:
       tags:
       - Customer
-      summary: Update customer
+      summary: Update Customer
       description: Update a customer with customer Id in Path
       externalDocs:
         description: Learn more about customer operations provided by this API
@@ -6942,7 +6943,7 @@ paths:
     delete:
       tags:
       - Customer
-      summary: Delete customer
+      summary: Delete Customer
       description: This method triggers the Customer Deleted webhook. This webhook
         contains the same information as the response
       externalDocs:
@@ -7033,7 +7034,7 @@ paths:
     get:
       tags:
       - Customer
-      summary: Retrieve discount of customer
+      summary: Retrieve Discount of Customer
       description: Retrieve a discount for a customer.
       externalDocs:
         description: Learn more about discount operations provided by this API
@@ -7116,7 +7117,7 @@ paths:
     delete:
       tags:
       - Customer
-      summary: Remove discount
+      summary: Delete Discount from Customer
       description: Delete the discount that has been assigned to a customer through
         a coupon. This action does not affect the coupon that the discount was derived
         from. This method triggers the **Customer Discount Deleted** webhook.
@@ -7197,7 +7198,7 @@ paths:
     post:
       tags:
       - Payment.Address
-      summary: Create address.
+      summary: Create Address
       description: Create an address.
       externalDocs:
         description: Learn more about address operations provided by this API.
@@ -7282,7 +7283,7 @@ paths:
     get:
       tags:
       - Payment.Address
-      summary: Get an address by its ID.
+      summary: Retrieve Address
       description: Retrieve an address.
       externalDocs:
         description: Learn more about address operations provided by this API.
@@ -7370,7 +7371,7 @@ paths:
     post:
       tags:
       - Payment.Address
-      summary: Updates address.
+      summary: Update Address
       description: "Change or modify an address. To clear a field, set it to an empty\
         \ string."
       externalDocs:
@@ -7465,7 +7466,7 @@ paths:
     delete:
       tags:
       - Payment.Address
-      summary: Remove an address by its ID.
+      summary: Delete Address
       description: Remove an address that is linked to a customer or is not linked
         to any object.
       externalDocs:
@@ -7555,7 +7556,7 @@ paths:
     get:
       tags:
       - Customer Payment Method
-      summary: List payment methods of customer
+      summary: List Payment Methods of Customer
       description: Retrieve payment methods for a customer
       externalDocs:
         description: Learn more about Retrieve payment methods for a customer
@@ -7678,7 +7679,7 @@ paths:
     post:
       tags:
       - Customer Payment Method
-      summary: Add payment method to customer
+      summary: Add payment Method to Customer
       description: Add a payment method to a customer profile
       externalDocs:
         description: Learn more about customer operations provided by this API
@@ -7773,7 +7774,7 @@ paths:
     get:
       tags:
       - Customer Payment Method
-      summary: Retrieve payment method of customer
+      summary: Retrieve Payment Method
       description: Retrieve a payment method for a specific customer
       externalDocs:
         description: Learn more about Retrieve payment methods for a customer
@@ -7876,7 +7877,7 @@ paths:
     post:
       tags:
       - Customer Payment Method
-      summary: Update payment method of customer
+      summary: Update Payment Method
       description: Change or modify a payment method that was stored in a customer
         profile
       externalDocs:
@@ -7979,7 +7980,7 @@ paths:
     delete:
       tags:
       - Customer Payment Method
-      summary: Delete payment method type from customer
+      summary: Delete Payment Method
       description: This method triggers the Webhook - Payment Method Canceled webhook.
         This webhook contains more information than the response.
       externalDocs:
@@ -8076,7 +8077,7 @@ paths:
     get:
       tags:
       - SKU
-      summary: Retrieve SKU.
+      summary: Retrieve SKU
       description: Retrieve the details of an SKU.
       externalDocs:
         description: Learn more about details provided by this API
@@ -8158,7 +8159,7 @@ paths:
     post:
       tags:
       - SKU
-      summary: Update SKU.
+      summary: Update SKU
       description: Change or modify an SKU.
       externalDocs:
         description: Learn more about details provided by this API
@@ -8245,7 +8246,7 @@ paths:
     delete:
       tags:
       - SKU
-      summary: Delete SKU.
+      summary: Delete SKU
       description: Delete an SKU from the Rapyd platform.
       externalDocs:
         description: Learn more about details provided by this API
@@ -8328,7 +8329,7 @@ paths:
     get:
       tags:
       - SKU
-      summary: List SKUs.
+      summary: List SKUs
       description: Retrieve a list of all SKUs.
       externalDocs:
         description: Learn more about details provided by this API
@@ -8619,7 +8620,7 @@ paths:
     post:
       tags:
       - Order
-      summary: Create an Order
+      summary: Create Order
       description: "Create an order for goods. For services, see Create Subscription."
       externalDocs:
         description: Learn more about details provided by this API
@@ -8698,7 +8699,7 @@ paths:
     get:
       tags:
       - Order
-      summary: Retrieve an Order
+      summary: Retrieve Order
       description: Retrieve the details of an order.
       externalDocs:
         description: Learn more about operations provided by this API
@@ -8779,7 +8780,7 @@ paths:
     post:
       tags:
       - Order
-      summary: Update an Order
+      summary: Update Order
       description: Change or modify an order.
       externalDocs:
         description: Learn more about operations provided by this API
@@ -8956,7 +8957,7 @@ paths:
     post:
       tags:
       - Order
-      summary: Pay an order.
+      summary: Pay Order
       description: Pay an order.
       externalDocs:
         description: Learn more about operations provided by this API.
@@ -9240,7 +9241,7 @@ paths:
     get:
       tags:
       - Coupon
-      summary: Retrieve list of coupons
+      summary: List Coupons
       description: Retrieve a list of all coupons.
       externalDocs:
         description: Retrieve a list of all coupons.
@@ -9340,7 +9341,7 @@ paths:
     post:
       tags:
       - Coupon
-      summary: Create new coupon
+      summary: Create Coupon
       description: create a coupon
       externalDocs:
         description: Create a coupon.
@@ -9421,7 +9422,7 @@ paths:
     get:
       tags:
       - Coupon
-      summary: Retrieve coupon
+      summary: Retrieve Coupon
       description: Retrieve a coupon
       externalDocs:
         description: Learn more about coupon operations provided by this API.
@@ -9502,7 +9503,7 @@ paths:
     post:
       tags:
       - Coupon
-      summary: Update coupon
+      summary: Update Coupon
       description: Modify the metadata of a coupon with a coupon ID in Path
       operationId: updateCoupon
       parameters:
@@ -9587,7 +9588,7 @@ paths:
     delete:
       tags:
       - Coupon
-      summary: Delete coupon
+      summary: Delete Coupon
       description: "Delete a coupon from the Rapyd platform. Deleting a coupon removes\
         \ it from all customers and subscriptions, but does not affect invoices and\
         \ payment authorizations that have already been calculated."
@@ -9664,17 +9665,219 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_401'
+  /v1/payout_methods:
+    get:
+      tags:
+      - Disburse.Payout Method Type
+      summary: List Payout Method Types
+      description: Retrieve a list of payout method types that you can use when creating
+        a payout. The response contains a list of objects. Each object includes a
+        payout method type and its attributes.
+      externalDocs:
+        description: Learn more about details provided by this API
+        url: https://docs.rapyd.net/en/list-payout-method-types.html
+      operationId: getPayoutMethodTypes
+      parameters:
+      - name: access_key
+        in: header
+        description: Unique access key provided by Rapyd for each authorized user.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: Content-Type
+        in: header
+        description: Indicates that the data appears in JSON format. Set to **application/json**.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: idempotency
+        in: header
+        description: A unique key that prevents the platform from creating the same
+          object twice.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: salt
+        in: header
+        description: "Random string. Recommended length: 8-16 characters."
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: signature
+        in: header
+        description: "Signature calculated for each request individually. See [Request\
+          \ Signatures](https://docs.rapyd.net/en/request-signatures.html)."
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: timestamp
+        in: header
+        description: "Timestamp for the request, in Unix time (seconds)."
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: beneficiary_country
+        in: query
+        description: Country of the beneficiary. Two-letter ISO 3166-1 ALPHA-2 code.
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: US
+      - name: beneficiary_entity_type
+        in: query
+        description: "Filters the type of entity for the beneficiary. One of the following:\
+          \ **individual** | **company**"
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: individual
+      - name: category
+        in: query
+        description: "The category of payout method. One of the following: **bank**\
+          \ | **card** | **cash** | **rapyd_ewallet** | **ewallet**"
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: bank
+      - name: is_cancelable
+        in: query
+        description: Indicates whether the payout can be canceled. Relevant when `category`
+          is **cash**.
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      - name: is_expirable
+        in: query
+        description: Indicates whether the payout expires if not completed. Relevant
+          when `category` is **cash**.
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      - name: is_location_specific
+        in: query
+        description: Indicates whether the payout must be made at a specific physical
+          location. Relevant when `category` is **cash**.
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+      - name: payout_currency
+        in: query
+        description: Currency received by the beneficiary. Three-letter ISO 4217 code.
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: USD
+      - name: sender_country
+        in: query
+        description: "Country of the sender. Two-letter ISO 3166-1 ALPHA-2 code. Note:\
+          \ This field does not appear in the response."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: US
+      - name: sender_currency
+        in: query
+        description: Currency that the sender is paying with. Three-letter ISO 4217
+          code.
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: USD
+      - name: sender_entity_type
+        in: query
+        description: "Filters the type of entity for the payer. One of the following:\
+          \ **individual** | **company**"
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: company
+      - name: starting_after
+        in: query
+        description: The name of a payout method in the list. The list begins with
+          the record that was created next after the record with this payout method.
+          Use this filter to get the next page of results. Relevant when ending_before
+          is not used.
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: ending_before
+        in: query
+        description: The name of a payout method in the list. The list ends with the
+          last record that was created before the record with this payout method.
+          Use this filter to get the previous page of results.
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: "The maximum number of payout methods to return. Range: 1-100.\
+          \ Default is 10."
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: 5
+      responses:
+        "200":
+          description: payout method types fetched successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_53'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payout_methods/{pomt}/required_fields:
     get:
       tags:
-      - Disburse
+      - Disburse.Payout Method Type
       summary: Get Payout Required Fields
       description: |-
         Retrieve the fields required to use a payout method type. The fields are returned as an array of objects. The name of each field appears in the name field of each object. Use this information for Create Payout, Create Beneficiary and Create Sender.
-         Note: The fields returned by this method are required when you create a payout. If you create a payout with a sender or beneficiary that was created previously, you are responsible for choosing a sender and beneficiary that have all the fields required by the payout method.
+         <BR> **Note:** The fields returned by this method are required when you create a payout. If you create a payout with a sender or beneficiary that was created previously, you are responsible for choosing a sender and beneficiary that have all the fields required by the payout method.
       externalDocs:
         description: Learn more about details provided by this API
-        url: https://docs.rapyd.net/en/payout-method-type.html
+        url: https://docs.rapyd.net/en/get-payout-required-fields.html
       operationId: getPayoutMethodTypesDetails
       parameters:
       - name: access_key
@@ -9812,7 +10015,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_53'
+                $ref: '#/components/schemas/inline_response_200_54'
+        "400":
+          description: Invalid payout method type.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400_48'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10006,7 +10215,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_54'
+                $ref: '#/components/schemas/inline_response_200_55'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10088,13 +10297,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_55'
+                $ref: '#/components/schemas/inline_response_200_56'
         "400":
           description: Bad Request. Missing required field.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_48'
+                $ref: '#/components/schemas/inline_response_400_49'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10170,7 +10379,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_56'
+                $ref: '#/components/schemas/inline_response_200_57'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10180,7 +10389,7 @@ paths:
   /v1/payouts/beneficiary:
     post:
       tags:
-      - Disburse
+      - Disburse.Payout Beneficiary
       summary: Create Beneficiary
       description: "Create a beneficiary for use in payouts.<BR>The response provides\
         \ a unique beneficiary ID, which you can use in place of the Beneficiary object\
@@ -10259,13 +10468,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_57'
+                $ref: '#/components/schemas/inline_response_200_58'
         "400":
           description: Bad Request. Invalid value to a required field.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_49'
+                $ref: '#/components/schemas/inline_response_400_50'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10275,7 +10484,7 @@ paths:
   /v1/payouts/extended_beneficiary:
     post:
       tags:
-      - Disburse
+      - Disburse.Payout Beneficiary
       summary: Create Extended Beneficiary
       description: "Create a beneficiary that includes all compliance related data\
         \ for payouts. The response provides a unique beneficiary ID, which you can\
@@ -10347,13 +10556,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_58'
+                $ref: '#/components/schemas/inline_response_200_59'
         "400":
           description: Bad Request. Invalid value to a required field.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_50'
+                $ref: '#/components/schemas/inline_response_400_51'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10363,7 +10572,7 @@ paths:
   /v1/payouts/beneficiary/validate:
     post:
       tags:
-      - Disburse
+      - Disburse.Payout Beneficiary
       summary: Validate Beneficiary
       description: "Validate the format of the details for a payout beneficiary. You\
         \ can validate a beneficiary multiple times for different payout methods.\
@@ -10439,7 +10648,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_59'
+                $ref: '#/components/schemas/inline_response_200_60'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10449,7 +10658,7 @@ paths:
   /v1/payouts/beneficiary/{beneficiaryId}:
     get:
       tags:
-      - Disburse
+      - Disburse.Payout Beneficiary
       summary: Retrieve Beneficiary
       description: "Retrieve details of a payout beneficiary. \n Note: The 'Retrieve\
         \ Beneficiary - individual' response includes additional fields for the 'ca_general_bank'\
@@ -10525,7 +10734,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_58'
+                $ref: '#/components/schemas/inline_response_200_59'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10534,7 +10743,7 @@ paths:
                 $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
-      - Disburse
+      - Disburse.Payout Beneficiary
       summary: Update Beneficiary
       description: "Update a beneficiary with additional fields. <BR>Note: You cannot\
         \ update the values of the beneficiary fields which were defined when it was\
@@ -10615,13 +10824,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_58'
+                $ref: '#/components/schemas/inline_response_200_59'
         "400":
           description: Bad Request. Beneficary ID not found.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_51'
+                $ref: '#/components/schemas/inline_response_400_52'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10630,7 +10839,7 @@ paths:
                 $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
-      - Disburse
+      - Disburse.Payout Beneficiary
       summary: Delete Beneficiary
       description: Delete a payout beneficiary from the Rapyd platform.
       externalDocs:
@@ -10703,13 +10912,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_60'
+                $ref: '#/components/schemas/inline_response_200_61'
         "400":
           description: Bad Request. Beneficary ID not found.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_51'
+                $ref: '#/components/schemas/inline_response_400_52'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10804,7 +11013,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_55'
+                $ref: '#/components/schemas/inline_response_200_56'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10814,7 +11023,7 @@ paths:
   /v1/hosted/disburse/beneficiary:
     post:
       tags:
-      - Disburse
+      - Disburse.Payout Beneficiary
       summary: Create Beneficiary Tokenization Page
       description: Create a customer-facing page for creating a beneficiary token.<BR>
         This method creates a URL for a page where the customer enters details required
@@ -10887,13 +11096,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_61'
+                $ref: '#/components/schemas/inline_response_200_62'
         "400":
           description: Bad Request. Payout category was not valid.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_52'
+                $ref: '#/components/schemas/inline_response_400_53'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10978,13 +11187,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_55'
+                $ref: '#/components/schemas/inline_response_200_56'
         "400":
           description: Bad Request. Payout not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_53'
+                $ref: '#/components/schemas/inline_response_400_54'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10994,7 +11203,7 @@ paths:
   /v1/payouts/sender:
     post:
       tags:
-      - Disburse
+      - Disburse.Payout Sender
       summary: Create Sender
       description: |-
         Create a sender for use in payouts.
@@ -11069,7 +11278,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_62'
+                $ref: '#/components/schemas/inline_response_200_63'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -11158,13 +11367,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_62'
+                $ref: '#/components/schemas/inline_response_200_63'
         "400":
           description: Bad Request. Sender not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_54'
+                $ref: '#/components/schemas/inline_response_400_55'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -11173,7 +11382,7 @@ paths:
                 $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
-      - Disburse
+      - Disburse.Payout Sender
       summary: Delete Sender
       description: Delete a payout sender from the Rapyd platform.
       externalDocs:
@@ -11243,208 +11452,6 @@ paths:
       responses:
         "200":
           description: Sender deleted successfully
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_200_63'
-        "401":
-          description: Authentication issue. Check status of account.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-  /v1/payout_methods:
-    get:
-      tags:
-      - Disburse
-      summary: List Payout Method Types
-      description: Retrieve a list of payout method types that you can use when creating
-        a payout. The response contains a list of objects. Each object includes a
-        payout method type and its attributes.
-      externalDocs:
-        description: Learn more about details provided by this API
-        url: https://docs.rapyd.net/en/list-payout-method-types.html
-      operationId: getPayoutMethodTypes
-      parameters:
-      - name: access_key
-        in: header
-        description: Unique access key provided by Rapyd for each authorized user.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: Content-Type
-        in: header
-        description: Indicates that the data appears in JSON format. Set to **application/json**.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: idempotency
-        in: header
-        description: A unique key that prevents the platform from creating the same
-          object twice.
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: salt
-        in: header
-        description: "Random string. Recommended length: 8-16 characters."
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: signature
-        in: header
-        description: "Signature calculated for each request individually. See [Request\
-          \ Signatures](https://docs.rapyd.net/en/request-signatures.html)."
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: timestamp
-        in: header
-        description: "Timestamp for the request, in Unix time (seconds)."
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: sender_entity_type
-        in: query
-        description: "Filters the type of entity for the payer. One of the following:\
-          \ **individual** | **company**"
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-        example: company
-      - name: beneficiary_country
-        in: query
-        description: Country of the beneficiary. Two-letter ISO 3166-1 ALPHA-2 code.
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-        example: US
-      - name: payout_currency
-        in: query
-        description: Currency received by the beneficiary. Three-letter ISO 4217 code.
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-        example: USD
-      - name: sender_currency
-        in: query
-        description: Currency that the sender is paying with. Three-letter ISO 4217
-          code.
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-        example: USD
-      - name: sender_country
-        in: query
-        description: "Country of the sender. Two-letter ISO 3166-1 ALPHA-2 code. Note:\
-          \ This field does not appear in the response."
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-        example: US
-      - name: beneficiary_entity_type
-        in: query
-        description: "Filters the type of entity for the beneficiary. One of the following:\
-          \ **individual** | **company**"
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-        example: individual
-      - name: category
-        in: query
-        description: "The category of payout method. One of the following: bank, card,\
-          \ cash, rapyd_ewallet, ewallet"
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-        example: bank
-      - name: is_cancelable
-        in: query
-        description: Indicates whether the payout can be canceled. Relevant when category
-          is cash.
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: boolean
-      - name: is_location_specific
-        in: query
-        description: Indicates whether the payout must be made at a specific physical
-          location. Relevant when category is cash.
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: boolean
-      - name: is_expirable
-        in: query
-        description: Indicates whether the payout expires if not completed. Relevant
-          when category is cash.
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: boolean
-      - name: starting_after
-        in: query
-        description: The name of a payout method in the list. The list begins with
-          the record that was created next after the record with this payout method.
-          Use this filter to get the next page of results. Relevant when ending_before
-          is not used.
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-      - name: ending_before
-        in: query
-        description: The name of a payout method in the list. The list ends with the
-          last record that was created before the record with this payout method.
-          Use this filter to get the previous page of results.
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-      - name: limit
-        in: query
-        description: "The maximum number of payout methods to return. Range: 1-100.\
-          \ Default is 10."
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-        example: 5
-      responses:
-        "200":
-          description: payout method types fetched successfully
           content:
             application/json:
               schema:
@@ -11531,13 +11538,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_55'
+                $ref: '#/components/schemas/inline_response_200_56'
         "400":
           description: Bad Request. Payout not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_55'
+                $ref: '#/components/schemas/inline_response_400_56'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -11626,7 +11633,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_55'
+                $ref: '#/components/schemas/inline_response_200_56'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -11710,7 +11717,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_55'
+                $ref: '#/components/schemas/inline_response_200_56'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -12355,7 +12362,7 @@ paths:
   /v1/account/transfer:
     post:
       tags:
-      - eWallets
+      - eWallets.Transaction
       summary: Transfer Funds Between Wallets
       description: Transfer funds between Rapyd Wallets.
       externalDocs:
@@ -12435,7 +12442,7 @@ paths:
   /v1/account/transfer/response:
     post:
       tags:
-      - eWallets
+      - eWallets.Transaction
       summary: Set Transfer Response
       description: Respond to a funds transfer between wallets. The transferee uses
         this method to accept or decline the transfer.
@@ -12851,7 +12858,7 @@ paths:
   /v1/ewallets/accounts/balance/hold:
     post:
       tags:
-      - eWallets
+      - eWallets.Transaction
       summary: Put Funds on Hold
       description: "Put a hold on funds in the wallet. Sandbox only.<BR> This action\
         \ transfers funds from the available balance to the on-hold balance. If the\
@@ -12934,17 +12941,108 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_56'
+                $ref: '#/components/schemas/inline_response_400_57'
         "401":
           description: Authentication issue. Check status of account.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_401'
+  /v1/ewallets/accounts/balance/release:
+    post:
+      tags:
+      - eWallets.Transaction
+      summary: Release Funds on Hold
+      description: "Release a hold on funds in the wallet. Sandbox only.<BR>This action\
+        \ transfers funds from the on-hold balance to the available balance. If the\
+        \ wallet does not have enough funds in the on-hold balance in the specified\
+        \ currency, the transfer fails.<BR>This method triggers the **Transfer Funds\
+        \ Between Balances** webhook. This webhook contains the same information as\
+        \ the response.<BR>This method is relevant for person and company wallets."
+      externalDocs:
+        description: Learn more about details provided by this API
+        url: https://docs.rapyd.net/en/release-on-hold-funds.html
+      operationId: releaseFundsOnHold
+      parameters:
+      - name: access_key
+        in: header
+        description: Unique access key provided by Rapyd for each authorized user.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: Content-Type
+        in: header
+        description: Indicates that the data appears in JSON format. Set to **application/json**.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: idempotency
+        in: header
+        description: A unique key that prevents the platform from creating the same
+          object twice.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: salt
+        in: header
+        description: "Random string. Recommended length: 8-16 characters."
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: signature
+        in: header
+        description: "Signature calculated for each request individually. See [Request\
+          \ Signatures](https://docs.rapyd.net/en/request-signatures.html)."
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: timestamp
+        in: header
+        description: "Timestamp for the request, in Unix time (seconds)."
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/balance_release_body'
+        required: true
+      responses:
+        "200":
+          description: Released Funds on hold
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_71'
+        "400":
+          description: bad input parameter
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400_58'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401_1'
   /v1/ewallets/{ewalletId}/contacts:
     get:
       tags:
-      - eWallets
+      - eWallets.Contact
       summary: List Contacts of Wallet
       description: Retrieve all contacts for a wallet.
       externalDocs:
@@ -13024,7 +13122,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_57'
+                $ref: '#/components/schemas/inline_response_400_59'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13033,7 +13131,7 @@ paths:
                 $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
-      - eWallets
+      - eWallets.Contact
       summary: Add Contact to Wallet
       description: Add a personal contact to a company wallet or client wallet.
       externalDocs:
@@ -13119,7 +13217,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_58'
+                $ref: '#/components/schemas/inline_response_400_60'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13129,8 +13227,8 @@ paths:
   /v1/ewallets/{ewalletId}/contacts/{contactId}:
     get:
       tags:
-      - eWallets
-      summary: Retrieve Wallet Contact.
+      - eWallets.Contact
+      summary: Retrieve Wallet Contact
       description: Retrieve a contact for an existing Rapyd Wallet.
       externalDocs:
         description: Learn more about details provided by this API
@@ -13218,7 +13316,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_59'
+                $ref: '#/components/schemas/inline_response_400_61'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13227,7 +13325,7 @@ paths:
                 $ref: '#/components/schemas/inline_response_401'
     post:
       tags:
-      - eWallets
+      - eWallets.Contact
       summary: Update Wallet Contact
       description: Update a contact for a Rapyd Wallet.
       externalDocs:
@@ -13321,7 +13419,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_60'
+                $ref: '#/components/schemas/inline_response_400_62'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13330,7 +13428,7 @@ paths:
                 $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
-      - eWallets
+      - eWallets.Contact
       summary: Delete Wallet Contact
       description: Delete a personal contact from a company wallet or client wallet.
       externalDocs:
@@ -13418,7 +13516,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_61'
+                $ref: '#/components/schemas/inline_response_400_63'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13428,7 +13526,7 @@ paths:
   /v1/ewallets/{ewalletId}/contacts/{contactId}/compliance_levels:
     get:
       tags:
-      - eWallets
+      - eWallets.Contact
       summary: Get Compliance Status of Personal Contact
       description: Verify the compliance status of a personal contact.
       externalDocs:
@@ -13516,7 +13614,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_62'
+                $ref: '#/components/schemas/inline_response_400_64'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13527,7 +13625,7 @@ paths:
     post:
       tags:
       - Issuing
-      summary: Generate hosted page with virtual issued card details
+      summary: Display Issued Card Details to Customer
       description: "Generate a hosted page that displays details of a virtual issued\
         \ card directly to the customer. The URL is available for 24 hours after the\
         \ response is sent, and then it expires."
@@ -13617,7 +13715,7 @@ paths:
     get:
       tags:
       - Issuing
-      summary: List issuing cards.
+      summary: List issuing Cards
       description: Retrieve a list of all issuing cards.
       externalDocs:
         description: Learn more about details provided by this API
@@ -13853,7 +13951,7 @@ paths:
     get:
       tags:
       - Issuing
-      summary: Card details.
+      summary: Retrieve Card Details
       description: Retrieve the details of a card.
       externalDocs:
         description: Learn more about details provided by this API
@@ -14865,7 +14963,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_63'
+                $ref: '#/components/schemas/inline_response_400_65'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -15334,7 +15432,7 @@ paths:
     post:
       tags:
       - Issuing.Simulations
-      summary: Simulate a Card adjustment-EEA
+      summary: Simulate a Card Transaction Adjustment - EEA
       description: Use this method in the sandbox to simulate an adjustment to a card
         transaction. A retail location can adjust the amount of a transaction made
         by an issued card. The adjustment is either a credit or a debit. This method
@@ -15714,7 +15812,7 @@ paths:
         to close a virtual account its status must be ACT.
       externalDocs:
         description: Learn more about details provided by this API
-        url: https://docs.rapyd.net/en/retrieve-virtual-account-history.html
+        url: https://docs.rapyd.net/en/update-requested-currency.html
       operationId: closeIssuing
       parameters:
       - name: access_key
@@ -15874,88 +15972,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_401'
-  /v1/fx_rate:
-    get:
-      tags:
-      - FX
-      summary: Get FX Rate
-      description: Retrieve a daily rate for conversion of currencies in payments
-        and payouts. Rapyd uses a snapshot of daily foreign exchange rates fetched
-        at 9 PM UTC. The rate returned includes the FX markup fees.
-      externalDocs:
-        description: Learn more about details provided by this API
-        url: https://docs.rapyd.net/en/get-fx-rate.html
-      operationId: getDailyRate
-      parameters:
-      - name: action_type
-        in: query
-        description: "Determines the type of transaction that the currency exchange\
-          \ applies to. One of the following - payment, payout"
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-      - name: amount
-        in: query
-        description: "Amount of the currency exchange transaction, in units of the\
-          \ fixed-side currency in Decimal."
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: number
-          format: decimal
-      - name: buy_currency
-        in: query
-        description: Defines the currency purchased in the currency exchange transaction.
-          Three-letter ISO 4217 code in Uppercase.
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-      - name: date
-        in: query
-        description: The date when the rate is applicable. Today or earlier. Format
-          YYYY-MM-DD
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-          format: date
-      - name: fixed_side
-        in: query
-        description: "Indicates whether the rate is fixed for the currency defined\
-          \ by buy_currency or sell_currency. One of the following - buy, sell."
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-      - name: sell_currency
-        in: query
-        description: Defines the currency sold in the currency exchange transaction.
-          Three-letter ISO 4217 code in Uppercase.
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-      responses:
-        "200":
-          description: Retrieve fixed daily rate
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_200_98'
-        "401":
-          description: Authentication issue. Check status of account.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
   /v1/ewallets:
     get:
       tags:
@@ -16089,7 +16105,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_99'
+                $ref: '#/components/schemas/inline_response_200_98'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -16168,7 +16184,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_100'
+                $ref: '#/components/schemas/inline_response_200_99'
         "400":
           description: bad input parameter
         "401":
@@ -16253,7 +16269,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_100'
+                $ref: '#/components/schemas/inline_response_200_99'
         "400":
           description: bad input parameter
         "401":
@@ -16342,7 +16358,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_100'
+                $ref: '#/components/schemas/inline_response_200_99'
         "400":
           description: bad input parameter
         "401":
@@ -16537,7 +16553,7 @@ paths:
   /v1/ewallets/{walletId}/account/limits:
     post:
       tags:
-      - eWallets
+      - eWallets.Transaction
       summary: Set Wallet Account Limit
       description: Set the maximum balance limit or the minimum balance threshold
         for an existing wallet account.
@@ -16617,7 +16633,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_101'
+                $ref: '#/components/schemas/inline_response_200_100'
         "400":
           description: bad input parameter
         "401":
@@ -16628,7 +16644,7 @@ paths:
                 $ref: '#/components/schemas/inline_response_401'
     delete:
       tags:
-      - eWallets
+      - eWallets.Transaction
       summary: Delete Wallet Account Limit
       description: Delete a limit on a wallet account.
       operationId: removeAccountLimit
@@ -16699,7 +16715,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_102'
+                $ref: '#/components/schemas/inline_response_200_101'
         "400":
           description: bad input parameter
         "401":
@@ -16711,7 +16727,7 @@ paths:
   /v1/ewallets/{walletId}/accounts:
     get:
       tags:
-      - eWallets
+      - eWallets.Transaction
       summary: Retrieve Wallet Balances
       description: Retrieve details of the balances in a Rapyd Wallet.
       externalDocs:
@@ -16785,7 +16801,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_101'
+                $ref: '#/components/schemas/inline_response_200_100'
         "400":
           description: bad input parameter
         "401":
@@ -16797,7 +16813,7 @@ paths:
   /v1/ewallets/{walletId}/transactions:
     get:
       tags:
-      - eWallets
+      - eWallets.Transaction
       summary: List Wallet Transactions
       description: Retrieve a list of all transactions related to a wallet.
       externalDocs:
@@ -16955,7 +16971,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_103'
+                $ref: '#/components/schemas/inline_response_200_102'
         "400":
           description: bad input parameter
         "401":
@@ -17050,7 +17066,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_104'
+                $ref: '#/components/schemas/inline_response_200_103'
         "400":
           description: bad input parameter
         "401":
@@ -17135,7 +17151,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_105'
+                $ref: '#/components/schemas/inline_response_200_104'
         "400":
           description: bad input parameter
         "401":
@@ -17144,7 +17160,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_401'
-  /v1/fx_rates/:
+  /v1/fx_rates:
     get:
       tags:
       - Localization Methods
@@ -17157,56 +17173,6 @@ paths:
         url: https://docs.rapyd.net/en/get-fx-rate.html
       operationId: getFXRate
       parameters:
-      - name: access_key
-        in: header
-        description: Unique access key provided by Rapyd for each authorized user.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: Content-Type
-        in: header
-        description: Indicates that the data appears in JSON format. Set to **application/json**.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: idempotency
-        in: header
-        description: A unique key that prevents the platform from creating the same
-          object twice.
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: salt
-        in: header
-        description: "Random string. Recommended length: 8-16 characters."
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: signature
-        in: header
-        description: "Signature calculated for each request individually. See [Request\
-          \ Signatures](https://docs.rapyd.net/en/request-signatures.html)."
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: timestamp
-        in: header
-        description: "Timestamp for the request, in Unix time (seconds)."
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
       - name: action_type
         in: query
         description: "Determines the type of transaction that the currency exchange\
@@ -17248,7 +17214,8 @@ paths:
       - name: fixed_side
         in: query
         description: "Indicates whether the rate is fixed for the currency defined\
-          \ by buy_currency or sell_currency. One of the following - **buy**, **sell**."
+          \ by `buy_currency` or `sell_currency`. One of the following - **buy**,\
+          \ **sell**."
         required: false
         style: form
         explode: true
@@ -17269,7 +17236,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_106'
+                $ref: '#/components/schemas/inline_response_200_105'
+        "400":
+          description: Bad Request. Invalid fields.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400_66'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -17352,7 +17325,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_107'
+                $ref: '#/components/schemas/inline_response_200_106'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -17435,7 +17408,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_107'
+                $ref: '#/components/schemas/inline_response_200_106'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -17518,7 +17491,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_108'
+                $ref: '#/components/schemas/inline_response_200_107'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -17598,7 +17571,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_109'
+                $ref: '#/components/schemas/inline_response_200_108'
         "400":
           description: bad input parameter
         "401":
@@ -17683,7 +17656,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_110'
+                $ref: '#/components/schemas/inline_response_200_109'
         "400":
           description: bad input parameter
         "401":
@@ -17780,7 +17753,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_111'
+                $ref: '#/components/schemas/inline_response_200_110'
         "400":
           description: bad input parameter
         "401":
@@ -17866,101 +17839,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_110'
+                $ref: '#/components/schemas/inline_response_200_109'
         "400":
           description: bad input parameter
-        "401":
-          description: Authentication issue. Check status of account.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-    post:
-      tags:
-      - Issuing
-      summary: Update Requested Currency
-      description: "Define, change, or cancel the currency to which funds received\
-        \ by a virtual account are converted.<BR>The status of the virtual account\
-        \ must be **ACT** (active) or **PEN** (pending).<BR>To cancel a previously\
-        \ defined currency conversion, set `requested_currency` to **null**.<BR> Prerequisites:<BR>*\
-        \ Create Wallet<BR>* Verify Identity<BR> * Issue Virtual Account to Wallet"
-      externalDocs:
-        description: Learn more about details provided by this API
-        url: https://docs.rapyd.net/en/list-virtual-accounts-by-rapyd-wallet.html
-      operationId: updateReceivingCurrency
-      parameters:
-      - name: access_key
-        in: header
-        description: Unique access key provided by Rapyd for each authorized user.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: Content-Type
-        in: header
-        description: Indicates that the data appears in JSON format. Set to **application/json**.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: idempotency
-        in: header
-        description: A unique key that prevents the platform from creating the same
-          object twice.
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: salt
-        in: header
-        description: "Random string. Recommended length: 8-16 characters."
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: signature
-        in: header
-        description: "Signature calculated for each request individually. See [Request\
-          \ Signatures](https://docs.rapyd.net/en/request-signatures.html)."
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: timestamp
-        in: header
-        description: "Timestamp for the request, in Unix time (seconds)."
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: virtualAccountId
-        in: path
-        description: ID of the Virtual Account Number object. String starting with
-          **issuing_**.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: issuing_16feaaa27c852f30214dd7b3b359e88c
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/bankaccounts_virtualAccountId_body'
-      responses:
-        "200":
-          description: Returns the requested currency and bank account data.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_200_95'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -18054,7 +17935,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_112'
+                $ref: '#/components/schemas/inline_response_200_111'
         "400":
           description: bad input parameter
         "401":
@@ -18146,7 +18027,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_64'
+                $ref: '#/components/schemas/inline_response_400_67'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -18227,13 +18108,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_113'
+                $ref: '#/components/schemas/inline_response_200_112'
         "400":
           description: Bad Request. Customer was not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_65'
+                $ref: '#/components/schemas/inline_response_400_68'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -18247,7 +18128,7 @@ paths:
       summary: List ID Documents
       description: "Use this method to determine the types of documents to use for\
         \ identification purposes, and also whether you need the reverse side of the\
-        \ document. You can filter your search results by country with the country\
+        \ document. You can filter your search results by country with the `country`\
         \ query parameter."
       externalDocs:
         description: Learn more about details provided by this API
@@ -18315,11 +18196,12 @@ paths:
         example: US
       responses:
         "200":
-          description: List Contacts for a Rapyd Wallet
+          description: Lists the types of official identification documents for a
+            country.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_114'
+                $ref: '#/components/schemas/inline_response_200_113'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -18402,7 +18284,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_115'
+                $ref: '#/components/schemas/inline_response_200_114'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -18485,7 +18367,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_116'
+                $ref: '#/components/schemas/inline_response_200_115'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -18565,7 +18447,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_117'
+                $ref: '#/components/schemas/inline_response_200_116'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -18647,7 +18529,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_118'
+                $ref: '#/components/schemas/inline_response_200_117'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -18734,13 +18616,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_119'
+                $ref: '#/components/schemas/inline_response_200_118'
         "400":
           description: Bad Request. Invalid contact type.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_66'
+                $ref: '#/components/schemas/inline_response_400_69'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -18824,13 +18706,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_120'
+                $ref: '#/components/schemas/inline_response_200_119'
         "400":
           description: Bad Request. Invalid fields.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_67'
+                $ref: '#/components/schemas/inline_response_400_70'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -18916,13 +18798,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_121'
+                $ref: '#/components/schemas/inline_response_200_120'
         "400":
           description: Bad Request. Invalid fields.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_68'
+                $ref: '#/components/schemas/inline_response_400_71'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -19006,7 +18888,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_122'
+                $ref: '#/components/schemas/inline_response_200_121'
   /v1/data/countries:
     get:
       tags:
@@ -19074,7 +18956,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_123'
+                $ref: '#/components/schemas/inline_response_200_122'
   /v1/data/currencies:
     get:
       tags:
@@ -19142,7 +19024,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_124'
+                $ref: '#/components/schemas/inline_response_200_123'
 components:
   schemas:
     ApplePayObject:
@@ -20191,7 +20073,7 @@ components:
         action_type:
           type: string
           description: "The type of transaction that the currency exchange applies\
-            \ to. One of the following - payment, payout"
+            \ to. One of the following - **payment**, **payout**."
           example: payment
         buy_amount:
           type: number
@@ -20213,8 +20095,8 @@ components:
         fixed_side:
           type: string
           description: "Indicates which currency the rate is fixed for. One of the\
-            \ following : * buy - The currency defined by buy_currency. * sell : The\
-            \ currency defined by sell_currency."
+            \ following : * buy - The currency defined by `buy_currency`. * sell :\
+            \ The currency defined by `sell_currency`."
           example: buy
         rate:
           type: number
@@ -21131,20 +21013,13 @@ components:
       type: object
       properties:
         amount_range_per_currency:
-          type: array
-          description: |-
-            An array of objects that describe limits on the amount, per currency. Contains the following fields:
-            maximum_amount - Maximum amount supported by this payout method for the indicated currency. Decimal number.
-            minimum_amount - Minimum amount supported by this payout method for the indicated currency. Decimal number.
-            * payout_currency - Currency of the payout. Three-letter ISO 4217 code. Uppercase.
-          items:
-            $ref: '#/components/schemas/PayoutAmountRangePerCurrency'
+          $ref: '#/components/schemas/PayoutMethodType_amount_range_per_currency'
         beneficiary_country:
           $ref: '#/components/schemas/Country'
         beneficiary_entity_types:
           type: array
-          description: "A list of the beneficiary entity types supported by this payout\
-            \ method. One or more of the following: company individual Response only."
+          description: A list of the beneficiary entity types supported by this payout
+            method.
           example:
           - company
           - individual
@@ -21152,33 +21027,37 @@ components:
             $ref: '#/components/schemas/EntityType'
         category:
           $ref: '#/components/schemas/Category'
+        estimated_time_of_arrival:
+          type: string
+          description: The estimated time period in which the beneficiary will receive
+            the funds.
         image:
           type: string
           description: URL of an image that the merchant can use to represent the
             payout method.
         is_cancelable:
-          type: integer
+          type: boolean
           description: Indicates whether the payout can be canceled. Relevant when
-            category is cash. One of the following values 0 - Not cancelable. 1 -
-            cancelable.'
+            `category` is **cash**. One of the following values:<BR>* **0** - Not
+            cancelable<BR>* **1** - cancelable
         is_expirable:
-          type: integer
+          type: boolean
           description: Indicates whether the payout expires if not completed. Relevant
-            when category is cash. One of the following values 0 - Not expirable.
-            1 - expirable.'
+            when `category` is **cash**. One of the following values<BR>* **0** -
+            Not expirable<BR>* **1** - expirable
         is_location_specific:
-          type: integer
+          type: boolean
           description: Indicates whether the payout must be made at a specific physical
-            location. Relevant when category is cash. One of the following values
-            0 - Not locationspecific. 1 - location specific.'
+            location. Relevant when `category` is **cash**.<BR>One of the following
+            values:<BR>* **0** - Not location specific<BR>* **1** - location specific
         maximum_expiration_seconds:
           type: number
           description: The maximum time (in seconds) that the merchant can set for
-            completing the payout. Relevant when is_expirable is true.
+            completing the payout. Relevant when `is_expirable` is **true**.
         minimum_expiration_seconds:
           type: number
           description: The minimum time (in seconds) that the merchant can set for
-            completing the payout. Relevant when is_expirable is true.
+            completing the payout. Relevant when `is_expirable` is **true**.
         name:
           type: string
           description: Payout method name.
@@ -21193,45 +21072,39 @@ components:
         payout_method_type:
           type: string
           description: The type of payout method. The two-letter prefix must match
-            the beneficiary country code. Required when default_payout_method_type
-            is not used.
+            the beneficiary country code.
           example: us_general_bank
         sender_country:
           $ref: '#/components/schemas/Country'
         sender_currencies:
           type: array
           description: List of currencies that the sender is paying with. Currency
-            consists of a three-letter ISO 4217 code. Response only.
+            consists of a three-letter ISO 4217 code.
           example:
           - USD
           items:
             $ref: '#/components/schemas/Currency'
         sender_entity_types:
           type: array
-          description: |
-            A list of the sender entity types supported by this payout method. One or more of the following:
-            company
-            individual
-            Response only.
+          description: A list of the sender entity types supported by this payout
+            method. One or more of the following:<BR>* **company**<BR>* **individual**
           example:
           - company
           - individual
           items:
             $ref: '#/components/schemas/EntityType'
-        estimated_time_of_arrival:
-          type: string
-          description: The estimated time period in which the beneficiary will receive
-            the funds.
         status:
-          type: integer
-          description: "Indicates whether the payout method is currently available.\
-            \ One of the following values: 0 - Not available. 1 - Available."
+          type: boolean
+          description: Indicates whether the payout method is currently available.
+            One of the following values:<BR>* **0** - Not available<BR>* **1** - Available
     PayoutMethodTypeDetails:
       type: object
       properties:
         batch_file_header:
           type: string
-          description: concatenation of all fields.
+          description: Contains a comma-separated list of the headers required for
+            creating a batch file. Relevant for creating a mass payout through the
+            Client Portal.
         beneficiary_country:
           $ref: '#/components/schemas/Country'
         beneficiary_entity_type:
@@ -21246,20 +21119,20 @@ components:
           description: URL of an image that the merchant can use to represent the
             payout method.
         is_cancelable:
-          type: integer
-          description: Indicates whether the payout can be canceled. Relevant when
-            category is cash. One of the following values 0 - Not cancelable. 1 -
-            cancelable.'
+          type: boolean
+          description: "Indicates whether the payout can be canceled. Relevant when\
+            \ category is cash. One of the following values: <BR>* **0** - Not cancelable.<BR>*\
+            \ **1** - cancelable."
         is_expirable:
-          type: integer
-          description: Indicates whether the payout expires if not completed. Relevant
-            when category is cash. One of the following values 0 - Not expirable.
-            1 - expirable.'
+          type: boolean
+          description: "Indicates whether the payout expires if not completed. Relevant\
+            \ when category is cash. One of the following values: <BR>* **0** - Not\
+            \ expirable.<BR>* **1** - expirable."
         is_location_specific:
-          type: integer
+          type: boolean
           description: Indicates whether the payout must be made at a specific physical
-            location. Relevant when category is cash. One of the following values
-            0 - Not location specific. 1 - location specific.'
+            location. Relevant when category is cash. One of the following values:<BR>*
+            **0** - Not location specific.<BR>* **1** - location specific.
         is_online:
           type: boolean
           description: "Indicates whether the payout is made automatically, without\
@@ -21267,25 +21140,26 @@ components:
         maximum_amount:
           type: number
           description: Maximum amount supported by this payout method for the indicated
-            currency. Decimal number.
+            `currency`. Decimal number.
         maximum_expiration_seconds:
           type: number
           description: The maximum time (in seconds) that the merchant can set for
-            completing the payout. Relevant when is_expirable is true.
+            completing the payout. Relevant when `is_expirable` is **true**.
         minimum_amount:
           type: number
           description: Minimum amount supported by this payout method for the indicated
-            currency. Decimal number.
+            `currency`. Decimal number.
         minimum_expiration_seconds:
           type: number
           description: The minimum time (in seconds) that the merchant can set for
-            completing the payout. Relevant when is_expirable is true.
+            completing the payout. Relevant when `is_expirable` is **true**.
         payout_currency:
-          $ref: '#/components/schemas/Currency'
+          type: string
+          description: Currency received by the beneficiary. Three-letter ISO 4217
+            code.
         payout_method_type:
           type: string
-          description: The type of payout method. The two-letter prefix must match
-            the beneficiary country code. Required when default_payout_method_type
+          description: The type of payout method. Required when `default_payout_method_type`
             is not used.
           example: us_general_bank
         payout_options:
@@ -21294,9 +21168,13 @@ components:
           items:
             $ref: '#/components/schemas/PayoutRequiredFields'
         sender_country:
-          $ref: '#/components/schemas/Country'
+          type: string
+          description: Country of the sender. Two-letter ISO 3166-1 ALPHA-2 code.
+            * means 'all countries'.
         sender_currency:
-          $ref: '#/components/schemas/Currency'
+          type: string
+          description: Currency that the sender is paying with. Three-letter ISO 4217
+            code. * means 'all currencies'.
         sender_entity_type:
           $ref: '#/components/schemas/EntityType'
         sender_required_fields:
@@ -21306,8 +21184,9 @@ components:
             $ref: '#/components/schemas/PayoutRequiredFields'
         status:
           type: integer
-          description: "Indicates whether the payout method is currently available.\
-            \ One of the following values: 0 - Not available. 1 - Available."
+          description: Indicates whether the payout method is currently available.
+            One of the following values:<BR>* **0** - Not available.<BR>* **1** -
+            Available.
     PayoutReturned:
       type: object
       properties:
@@ -21453,9 +21332,6 @@ components:
     PayoutRequiredFields:
       type: object
       properties:
-        allowed_values:
-          type: string
-          description: List out the allowed values
         description:
           type: string
           description: Description of the field
@@ -21468,11 +21344,9 @@ components:
           description: Name of the field
         regex:
           type: string
-          description: |
-            A regular expression that defines the format when type is string. Note: Rapyd uses a unique variant of the regex standard. See note in           "https://docs.rapyd.net/en/get-payment-method-required-fields.html"
-        transfer_type:
-          type: string
-          description: Indicates transfer type of the payout
+          description: "A regular expression that defines the format when type is\
+            \ string. Note: Rapyd uses a unique variant of the regex standard. See\
+            \ [note](https://docs.rapyd.net/en/get-payment-method-required-fields.html)."
         type:
           type: string
           description: Indicates datatype of the field
@@ -22105,31 +21979,6 @@ components:
           description: "Determines the day the transfer expires, in Unix time. Acceptance\
             \ of the transfer must occur before the start of this day. Default is\
             \ 14 days after creation of the transfer."
-    Status:
-      type: object
-      properties:
-        error_code:
-          type: string
-          description: Error code of the API request. Empty when response is successful.
-          example: ""
-        message:
-          type: string
-          description: Description of the API error message. Empty when response is
-            successful.
-          example: ""
-        operation_id:
-          type: string
-          description: Unique identifier (UUID)) to track the request.
-          example: 0fd8809c-ed02-4862-9a79-507b9528ac23
-        response_code:
-          type: string
-          description: Response code of the API error message. Empty when response
-            is successful.
-          example: ""
-        status:
-          type: boolean
-          description: Status of the API indicating success or failure.
-          example: false
     PaymentAmountRangePerCurrency:
       type: array
       description: Indicates the amount range for the payment method's currencies.
@@ -25346,7 +25195,7 @@ components:
         \ is **buy**, it is the currency received in the Rapyd wallet.<BR> * When\
         \ `fixed_side` is **sell**, it is the currency charged to the buyer."
       example: GBP
-    Status_1:
+    Status:
       type: object
       properties:
         error_code:
@@ -25368,12 +25217,12 @@ components:
             successful.
           example: ""
         status:
-          type: boolean
+          type: string
           description: Status of the API response.
-          example: false
+          example: SUCCESS
           enum:
-          - false
-          - false
+          - SUCCESS
+          - ERROR
     Address_1:
       type: object
       properties:
@@ -25556,7 +25405,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -25565,7 +25414,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: MISSING_INVALID_PARAMETERS
@@ -25578,7 +25427,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: UNAUTHENTICATED_API_CALL
@@ -25592,14 +25441,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/PaymentMethodTypeRequiredFields'
     inline_response_400_1:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_GET_PAYMENT_METHOD_TYPE
@@ -25615,7 +25464,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -25624,7 +25473,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: INVALID_LIMIT
@@ -25819,14 +25668,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Payment'
     inline_response_400_3:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_CREATE_PAYMENT
@@ -25842,7 +25691,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_GET_PAYMENT
@@ -25901,7 +25750,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_CANCEL_PAYMENT
@@ -25952,14 +25801,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/CheckoutPageResponse'
     inline_response_400_6:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_GET_HOSTED_PAGE_PAYMENT
@@ -26307,7 +26156,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_HOSTED_PAGE_UNRECOGNIZED_PAYMENT_METHOD_TYPE
@@ -26322,7 +26171,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -26331,7 +26180,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_GET_SUBSCRIPTION_LIST
@@ -26423,14 +26272,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Subscription'
     inline_response_400_9:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_DAYS_UNTIL_DUE_BILLING_INCORRECT
@@ -26445,7 +26294,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_GET_SUBSCRIPTION
@@ -26522,7 +26371,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_UPDATE_SUBSCRIPTION_STATUS_NOT_UPDATABLE
@@ -26537,7 +26386,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_CANCEL_SUBSCRIPTION
@@ -26552,14 +26401,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/inline_response_200_7_data'
     inline_response_400_13:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_DELETE_SUBSCRIPTION_DISCOUNT
@@ -26685,14 +26534,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/SubscriptionHostedPageReponse'
     inline_response_400_14:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_HOSTED_PAGE_GET_CUSTOMER
@@ -26706,7 +26555,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -26787,14 +26636,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Product'
     inline_response_400_15:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: INVALID_PRODUCT
@@ -26842,7 +26691,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: INVALID_PRODUCT_ATTRIBUTES
@@ -26856,14 +26705,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/inline_response_200_11_data'
     inline_response_400_17:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_DELETE_PRODUCT
@@ -26878,7 +26727,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -26951,14 +26800,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Plan'
     inline_response_400_18:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_CREATE_PLAN
@@ -26972,7 +26821,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_GET_PLAN
@@ -26994,7 +26843,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_UPDATE_PLAN_INVALID_PRODUCT_TYPE
@@ -27008,7 +26857,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_DELETE_PLAN
@@ -27022,7 +26871,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -27059,7 +26908,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/SubscriptionItem'
     subscription_items_subscriptionItemId_body:
@@ -27083,14 +26932,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/inline_response_200_16_data'
     inline_response_200_17:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -27117,21 +26966,21 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/inline_response_200_17_data'
     inline_response_200_19:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Discount'
     inline_response_400_22:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_GET_DISCOUNT
@@ -27145,7 +26994,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -27153,7 +27002,7 @@ components:
     inline_response_400_23:
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
     v1_invoices_body:
       required:
       - billing
@@ -27216,7 +27065,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: INVALID_SUBSCRIPTION_TRIAL_END
@@ -27231,7 +27080,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/InvoiceResponse'
     invoices_invoiceId_body:
@@ -27265,14 +27114,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/inline_response_200_22_data'
     inline_response_400_25:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: INVALID_INVOICE_ID
@@ -27291,7 +27140,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_MARK_UNCOLLECTIBLE_NOT_OPEN_INVOICE
@@ -27304,14 +27153,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/InvoiceLineResponse'
     inline_response_400_27:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: INVALID_INVOICE_CUSTOMER
@@ -27326,7 +27175,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -27335,7 +27184,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_GET_INVOICE_ITEMS
@@ -27397,7 +27246,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_INVOICE_ITEM_AMOUNT_PARAM
@@ -27441,7 +27290,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: INVALID_INVOICE_ITEM_ID
@@ -27453,14 +27302,14 @@ components:
     inline_response_200_25:
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/inline_response_200_25_data'
     inline_response_400_31:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_DELETE_INVOICE_ITEMS
@@ -27474,7 +27323,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -27483,7 +27332,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_HOSTED_PAGE_PAGE_EXPIRED
@@ -27513,14 +27362,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/GroupPayment'
     inline_response_400_33:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_CREATE_GROUP_PAYMENT_EXCEEDED_MAX_PARTICIPANTS
@@ -27533,7 +27382,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_GET_GROUP_PAYMENT
@@ -27547,7 +27396,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_MISSING_GROUP_PAYMENT
@@ -27561,14 +27410,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/EscrowResponse'
     inline_response_400_36:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_GET_ESCROW
@@ -27592,7 +27441,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_CARD_VALIDATION_IN_PAYMENT_WITH_ESCROW
@@ -27607,7 +27456,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -27647,7 +27496,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Refund'
     refunds_complete_body:
@@ -27675,7 +27524,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/inline_response_200_32_data'
     refunds_refundId_body:
@@ -27687,7 +27536,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -27696,7 +27545,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -27705,14 +27554,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Dispute'
     inline_response_200_36:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -27726,14 +27575,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Customer'
     inline_response_400_38:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_CREATE_CUSTOMER
@@ -27746,7 +27595,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_GET_CUSTOMER
@@ -27760,7 +27609,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: INVALID_CUSTOMER_ID
@@ -27773,7 +27622,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_DELETE_CUSTOMER
@@ -27786,7 +27635,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/DiscountCustomerResponse'
     inline_response_200_39:
@@ -27795,7 +27644,7 @@ components:
         data:
           $ref: '#/components/schemas/inline_response_200_22_data'
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
     v1_addresses_body:
       allOf:
       - $ref: '#/components/schemas/Address'
@@ -27803,14 +27652,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/AddressResponse'
     inline_response_400_42:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: INVALID_ADDRESS_PHONE_NUMBER
@@ -27825,7 +27674,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_ADDRESS_GET
@@ -27839,7 +27688,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_DELETE_ADDRESS
@@ -27853,7 +27702,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -27867,14 +27716,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/CustomerPaymentMethod'
     inline_response_400_45:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_CREATE_PAYMENT_METHOD
@@ -27888,7 +27737,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_CUSTOMER_PAYMENT_METHOD_NOT_FOUND
@@ -27901,14 +27750,14 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/inline_response_200_43_data'
     inline_response_400_47:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_DELETE_PAYMENT_METHOD_IN_USE
@@ -27923,7 +27772,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Sku'
     v1skusskuId_inventory:
@@ -27993,7 +27842,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -28039,7 +27888,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -28117,7 +27966,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/OrderResponse'
     orders_orderId_body:
@@ -28181,7 +28030,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/OrderReturnedResponse'
     orderId_pay_body:
@@ -28202,7 +28051,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -28211,7 +28060,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -28220,24 +28069,48 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Coupon'
     inline_response_200_52:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/inline_response_200_52_data'
     inline_response_200_53:
       type: object
       properties:
-        data:
-          $ref: '#/components/schemas/PayoutMethodTypeDetails'
         status:
           $ref: '#/components/schemas/Status'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/PayoutMethodType'
     inline_response_200_54:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status'
+        data:
+          $ref: '#/components/schemas/PayoutMethodTypeDetails'
+    inline_response_400_48:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status'
+      example:
+        status:
+          error_code: INVALID_PAYOUT_METHOD_TYPE
+          message: "The request tried to perform an operation that requires a payout\
+            \ method type, but the type was not recognized. The request was rejected.\
+            \ Corrective action: To find payout method types, use 'List Payout Method\
+            \ Types."
+          operation_id: 3f595230-0258-473c-94e5-075741ab84e2
+          response_code: INVALID_PAYOUT_METHOD_TYPE
+          status: ERROR
+    inline_response_200_55:
       type: object
       properties:
         data:
@@ -28406,18 +28279,18 @@ components:
           type: string
           description: A `statement` that includes the reason for the payout. Limited
             to 35 characters.
-    inline_response_200_55:
+    inline_response_200_56:
       type: object
       properties:
         data:
           $ref: '#/components/schemas/Payout'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_48:
+    inline_response_400_49:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_CREATE_PAYOUT
@@ -28427,7 +28300,7 @@ components:
           operation_id: 889e9472-922c-40a2-861d-19977c396di8
           response_code: ERROR_CREATE_PAYOUT
           status: ERROR
-    inline_response_200_56:
+    inline_response_200_57:
       type: object
       properties:
         status:
@@ -28495,18 +28368,18 @@ components:
           description: "Identifier defined by the client for reference purposes. Limit:\
             \ 45 characters."
           example: GHY-0YU-HUJ-POI
-    inline_response_200_57:
+    inline_response_200_58:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Beneficiary'
-    inline_response_400_49:
+    inline_response_400_50:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_CREATE_BENEFICIARY_COUNTRY_NOT_VALID
@@ -28610,18 +28483,18 @@ components:
             \ ALPHA-2 code for the country. To determine the code for a country, see\
             \ 'List Countries'. Required when `entity_type` is **individual**."
           example: SG
-    inline_response_200_58:
+    inline_response_200_59:
       type: object
       properties:
         data:
           $ref: '#/components/schemas/Beneficiary'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_50:
+    inline_response_400_51:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_CREATE_BENEFICIARY
@@ -28671,11 +28544,11 @@ components:
           $ref: '#/components/schemas/Currency'
         sender_entity_type:
           $ref: '#/components/schemas/EntityType'
-    inline_response_200_59:
+    inline_response_200_60:
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/inline_response_200_59_data'
+          $ref: '#/components/schemas/inline_response_200_60_data'
         status:
           $ref: '#/components/schemas/Status'
     beneficiary_beneficiaryId_body:
@@ -28762,7 +28635,7 @@ components:
             \ ALPHA-2 code for the country. To determine the code for a country, see\
             \ 'List Countries'. Relevant when `entity_type` is **individual**."
           example: SG
-    inline_response_400_51:
+    inline_response_400_52:
       type: object
       properties:
         status:
@@ -28775,11 +28648,11 @@ components:
             \ action: Use the ID of a valid beneficiary."
           response_code: ERROR_GET_BENEFICIARY
           status: ERROR
-    inline_response_200_60:
+    inline_response_200_61:
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/inline_response_200_60_data'
+          $ref: '#/components/schemas/inline_response_200_61_data'
         status:
           $ref: '#/components/schemas/Status'
     v1hosteddisbursebeneficiary_beneficiary_optional_fields:
@@ -28914,14 +28787,14 @@ components:
           enum:
           - company
           - individual
-    inline_response_200_61:
+    inline_response_200_62:
       type: object
       properties:
         data:
           $ref: '#/components/schemas/HostedBeneficiaryTokenResponse'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_52:
+    inline_response_400_53:
       type: object
       properties:
         status:
@@ -28934,7 +28807,7 @@ components:
             \ action: Set 'category' to 'bank' or 'card'."
           response_code: ERROR_HOSTED_PAGE_BENEFICIARY_INVALID_CATEGORY
           status: ERROR
-    inline_response_400_53:
+    inline_response_400_54:
       type: object
       properties:
         status:
@@ -28982,14 +28855,14 @@ components:
           type: string
           description: Last name of the sender. Relevant when `entity_type` is **individual**.
           example: Williams
-    inline_response_200_62:
+    inline_response_200_63:
       type: object
       properties:
         data:
           $ref: '#/components/schemas/Sender'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_54:
+    inline_response_400_55:
       type: object
       properties:
         status:
@@ -29003,23 +28876,14 @@ components:
           operation_id: fbc7054e-4493-4f01-b62e-788f189f9c0f
           response_code: ERROR_GET_SENDER
           status: ERROR
-    inline_response_200_63:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/inline_response_200_63_data'
-        status:
-          $ref: '#/components/schemas/Status'
     inline_response_200_64:
       type: object
       properties:
         data:
-          type: array
-          items:
-            $ref: '#/components/schemas/PayoutMethodType'
+          $ref: '#/components/schemas/inline_response_200_64_data'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_55:
+    inline_response_400_56:
       type: object
       properties:
         status:
@@ -29213,7 +29077,7 @@ components:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/PutFundsOnHoldResponse'
-    inline_response_400_56:
+    inline_response_400_57:
       type: object
       properties:
         status:
@@ -29227,6 +29091,54 @@ components:
             \ wallets."
           response_code: ERROR_TRANSFER_FUNDS_DESTINATION_AND_SOURCE_CANNOT_BE_THE_SAME
           status: ERROR
+    balance_release_body:
+      required:
+      - amount
+      - currency
+      - ewallet
+      type: object
+      properties:
+        amount:
+          type: number
+          description: Amount of the transfer. Decimal.
+          example: 100.0
+        currency:
+          type: string
+          description: Three-letter ISO 4217 code for the currency used in the `amount`
+            field.
+        ewallet:
+          type: string
+          description: ID of the wallet associated with the contact. String starting
+            with **ewallet_**.
+    inline_response_400_58:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status'
+      example:
+        status:
+          error_code: ERROR_GET_USER
+          message: "The request tried to transfer funds, but the source was the same\
+            \ as the destination. The request was rejected. Corrective action: Set\
+            \ 'source_ewallet' and 'destination_ewallet' to the IDs of two different\
+            \ wallets."
+          response_code: ERROR_GET_USER
+          status: ERROR
+    inline_response_401_1:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status'
+      example:
+        status:
+          error_code: UNAUTHENTICATED_API_CALL
+          message: "The request attempted an operation that requires a wallet, but\
+            \ the wallet was not found. The request was rejected. Corrective action:\
+            \ Use the ID of a valid wallet that has not been deleted. The ID is a\
+            \ string starting with 'ewallet_'."
+          operation_id: 3f595230-0258-473c-94e5-075741ab84e2
+          response_code: UNAUTHENTICATED_API_CALL
+          status: ERROR
     inline_response_200_72:
       type: object
       properties:
@@ -29236,7 +29148,7 @@ components:
             $ref: '#/components/schemas/Contact'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_57:
+    inline_response_400_59:
       type: object
       properties:
         status:
@@ -29328,7 +29240,7 @@ components:
           $ref: '#/components/schemas/Contact'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_58:
+    inline_response_400_60:
       type: object
       properties:
         status:
@@ -29342,7 +29254,7 @@ components:
             \ personal wallet two contacts. Consider creating a company wallet."
           response_code: ERROR_ADD_CONTACT_TOO_MANY_CONTACTS
           status: ERROR
-    inline_response_400_59:
+    inline_response_400_61:
       type: object
       properties:
         status:
@@ -29357,7 +29269,7 @@ components:
             \ a string starting with \"cont\"."
           response_code: ERROR_GET_EWALLET_CONTACT
           status: ERROR
-    inline_response_400_60:
+    inline_response_400_62:
       type: object
       properties:
         status:
@@ -29378,7 +29290,7 @@ components:
           $ref: '#/components/schemas/inline_response_200_74_data'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_61:
+    inline_response_400_63:
       type: object
       properties:
         status:
@@ -29399,7 +29311,7 @@ components:
           $ref: '#/components/schemas/inline_response_200_75_data'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_62:
+    inline_response_400_64:
       type: object
       properties:
         status:
@@ -29438,12 +29350,12 @@ components:
           - $ref: '#/components/schemas/HostedPageStatusBaseResponse'
           - $ref: '#/components/schemas/CardDetailsResponse'
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
     inline_response_200_77:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -29484,12 +29396,12 @@ components:
           - $ref: '#/components/schemas/CardIssuing'
           - $ref: '#/components/schemas/CardIssuingMasked'
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
     inline_response_200_79:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           oneOf:
           - $ref: '#/components/schemas/CardIssuing'
@@ -29509,7 +29421,7 @@ components:
         data:
           $ref: '#/components/schemas/CardIssuing'
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
     issuing_activate_card_body:
       required:
       - ewallet_contact
@@ -29554,7 +29466,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/HostedPageActivateCardResponse'
     issuing_pin_body:
@@ -29592,7 +29504,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/HostedPageCardPINResponse'
     cards_personalize_body:
@@ -29634,14 +29546,14 @@ components:
           items:
             $ref: '#/components/schemas/CardTransaction'
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
     inline_response_200_84:
       type: object
       properties:
         data:
           $ref: '#/components/schemas/CardTransaction'
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
     cards_pin_body:
       required:
       - card
@@ -29658,7 +29570,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/setPINResponse'
     card_tokens_google_pay_body:
@@ -29683,7 +29595,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/AddCardtoGooglePayResponse'
     v1hostedcollectcard_card_fields:
@@ -29770,16 +29682,16 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
             $ref: '#/components/schemas/CardTokenResponse'
-    inline_response_400_63:
+    inline_response_400_65:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_TOKENIZE_CARD_NO_PAYMENT_METHODS
@@ -29805,7 +29717,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/simulateBlockCardResponse'
     cards_authorization_body:
@@ -29836,7 +29748,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/SimulateCardTransactionAuthorizationRequestEEA'
     cards_reversal_body:
@@ -29866,7 +29778,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/SimulateCardTransactionAuthorizationReversalEEA'
     cards_clearing_body:
@@ -29905,7 +29817,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/SimulateClearingCardTransactionEEA'
     cards_refund_body:
@@ -29995,7 +29907,7 @@ components:
         data:
           $ref: '#/components/schemas/inline_response_200_92_data'
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
     virtual_accounts_transactions_body:
       required:
       - amount
@@ -30023,14 +29935,14 @@ components:
         data:
           $ref: '#/components/schemas/inline_response_200_93_data'
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
     inline_response_200_94:
       type: object
       properties:
         data:
           $ref: '#/components/schemas/VirtualAccountIssuing'
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
     virtual_accounts_virtualAccountId_body:
       properties:
         requesting_currency:
@@ -30048,7 +29960,7 @@ components:
         data:
           $ref: '#/components/schemas/inline_response_200_96_data'
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
     inline_response_200_97:
       type: object
       properties:
@@ -30057,13 +29969,6 @@ components:
         data:
           $ref: '#/components/schemas/inline_response_200_97_data'
     inline_response_200_98:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/DailyRate'
-        status:
-          $ref: '#/components/schemas/Status_1'
-    inline_response_200_99:
       type: object
       properties:
         status:
@@ -30127,7 +30032,7 @@ components:
         type:
           type: string
           description: "Type of wallet, company or person. Default is person."
-    inline_response_200_100:
+    inline_response_200_99:
       type: object
       properties:
         data:
@@ -30172,7 +30077,7 @@ components:
         type:
           type: string
           description: The limit type.
-    inline_response_200_101:
+    inline_response_200_100:
       type: object
       properties:
         data:
@@ -30181,14 +30086,14 @@ components:
             $ref: '#/components/schemas/Account'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_200_102:
+    inline_response_200_101:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Account'
-    inline_response_200_103:
+    inline_response_200_102:
       type: object
       properties:
         data:
@@ -30197,35 +30102,50 @@ components:
             $ref: '#/components/schemas/EwalletTransaction'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_200_104:
+    inline_response_200_103:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/EwalletTransactionDetails'
+    inline_response_200_104:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status'
+        data:
+          $ref: '#/components/schemas/inline_response_200_104_data'
     inline_response_200_105:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
-          $ref: '#/components/schemas/inline_response_200_105_data'
+          $ref: '#/components/schemas/DailyRate'
+    inline_response_400_66:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status'
+      example:
+        status:
+          error_code: "INVALID_FIELDS - [BUY_CURRENCY]"
+          message: "The request attempted an operation, but one or more of the fields\
+            \ did not have a valid value. The request was rejected. Corrective action:\
+            \ Use valid values. The names of the affected fields appear at the end\
+            \ of the error code. See the API Reference for details."
+          operation_id: 889e9472-922c-40a2-861d-19977c396db5
+          response_code: "INVALID_FIELDS - [BUY_CURRENCY]"
+          status: ERROR
     inline_response_200_106:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
-          $ref: '#/components/schemas/DailyRate'
-    inline_response_200_107:
-      type: object
-      properties:
-        status:
-          $ref: '#/components/schemas/Status'
-        data:
           $ref: '#/components/schemas/ResendWebhookResponse'
-    inline_response_200_108:
+    inline_response_200_107:
       type: object
       properties:
         status:
@@ -30268,11 +30188,11 @@ components:
             \ * SGD - Singapore Dollar<BR> * USD - US Dollar<BR> When not specified,\
             \ the funds appear in the wallet’s currency account for the currency of\
             \ the transaction."
-    inline_response_200_109:
+    inline_response_200_108:
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/inline_response_200_109_data'
+          $ref: '#/components/schemas/inline_response_200_108_data'
         status:
           $ref: '#/components/schemas/Status'
     bankaccounts_bankaccounttransfertobankaccount_body:
@@ -30296,6 +30216,13 @@ components:
           type: string
           description: ID of the Virtual Account Number object. String starting with
             **issuing_**
+    inline_response_200_109:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/inline_response_200_109_data'
+        status:
+          $ref: '#/components/schemas/Status'
     inline_response_200_110:
       type: object
       properties:
@@ -30308,17 +30235,6 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/inline_response_200_111_data'
-        status:
-          $ref: '#/components/schemas/Status'
-    bankaccounts_virtualAccountId_body:
-      properties:
-        requesting_currency:
-          $ref: '#/components/schemas/Currency'
-    inline_response_200_112:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/inline_response_200_112_data'
         status:
           $ref: '#/components/schemas/Status'
     collect_payments_body:
@@ -30397,11 +30313,11 @@ components:
             \ 4217 code. <BR><BR>* When `fixed_side` is **sell**, it is the currency\
             \ received in the Rapyd Wallet. <BR><BR>* When `fixed_side` is **buy**,\
             \ it is the currency charged to the buyer (customer)."
-    inline_response_400_64:
+    inline_response_400_67:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_HOSTED_PAGE_CURRENCY_MISSING_WHEN_AMOUNT_IS_NOT_EDITABLE
@@ -30427,10 +30343,13 @@ components:
         back_side_image_mime_type:
           type: string
           description: MIME type of the back side image of the identity document.
-            Default is
+          default: image/jpeg
+          enum:
+          - image/jpeg
+          - image/png
         contact:
           type: string
-          description: ID of a personal contact for a 'person' wallet.
+          description: ID of a personal contact for a **person** wallet.
         country:
           $ref: '#/components/schemas/Country_1'
         document_type:
@@ -30438,10 +30357,11 @@ components:
           description: Type of the identification document. Two-letter code.
         ewallet:
           type: string
-          description: ID of the Rapyd Wallet. String starting with ewallet_.
+          description: ID of the Rapyd Wallet. String starting with **ewallet_**.
         face_image:
           type: string
-          description: Base-64-encoded image of the face.
+          description: "Base-64-encoded image of the face. Maximum size: 8,000 pixels\
+            \ height or width, 5 MB."
         face_image_mime_type:
           type: string
           description: MIME type of the face image. Default is image/jpeg.
@@ -30451,32 +30371,39 @@ components:
         front_side_image_mime_type:
           type: string
           description: MIME type of the front side image of the identity document.
-            Default is image/jpeg.
+          default: image/jpeg
+          enum:
+          - image/jpeg
+          - image/png
         reference_id:
           type: string
           description: "ID of the identity verification request. Must be unique for\
             \ each request. Defined by the client. Maximum length: 36 characters.\
             \ In sandbox, to simulate success or failure, the string must contain\
-            \ one of the following values: success, failure For example: 12345678success"
+            \ one of the following values: **success**, **failure**. For example:\
+            \ **12345678success**"
         request_type:
           type: string
           description: Determines the action that is taken on the request.
+          enum:
+          - strore
+          - verify
         send_callback:
-          type: string
+          type: boolean
           description: Determines whether a webhook is sent with the results of the
             verification request.
-    inline_response_200_113:
+    inline_response_200_112:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
-          $ref: '#/components/schemas/inline_response_200_113_data'
-    inline_response_400_65:
+          $ref: '#/components/schemas/inline_response_200_112_data'
+    inline_response_400_68:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_ID_VERIFICATION
@@ -30486,11 +30413,20 @@ components:
             \ whether successful or unsuccessful."
           response_code: ERROR_ID_VERIFICATION
           status: ERROR
+    inline_response_200_113:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/inline_response_200_113_data'
     inline_response_200_114:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
           type: array
           items:
@@ -30499,18 +30435,9 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
-          type: array
-          items:
-            $ref: '#/components/schemas/inline_response_200_115_data'
-    inline_response_200_116:
-      type: object
-      properties:
-        status:
-          $ref: '#/components/schemas/Status_1'
-        data:
-          $ref: '#/components/schemas/inline_response_200_116_data'
+          $ref: '#/components/schemas/inline_response_200_115_data'
     applications_hosted_body:
       required:
       - country
@@ -30553,20 +30480,20 @@ components:
           description: URL where the customer is redirected after pressing Close to
             exit the hosted page. This URL overrides the merchant_website URL. Does
             not support localhost URLs.
+    inline_response_200_116:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status'
+        data:
+          $ref: '#/components/schemas/VerifyHostedAppResponse'
     inline_response_200_117:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
-          $ref: '#/components/schemas/VerifyHostedAppResponse'
-    inline_response_200_118:
-      type: object
-      properties:
-        status:
-          $ref: '#/components/schemas/Status_1'
-        data:
-          $ref: '#/components/schemas/inline_response_200_118_data'
+          $ref: '#/components/schemas/inline_response_200_117_data'
     hosted_idv_body:
       required:
       - contact
@@ -30627,18 +30554,18 @@ components:
           enum:
           - store
           - verify
-    inline_response_200_119:
+    inline_response_200_118:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
-          $ref: '#/components/schemas/inline_response_200_119_data'
-    inline_response_400_66:
+          $ref: '#/components/schemas/inline_response_200_118_data'
+    inline_response_400_69:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: ERROR_HOSTED_PAGE_INVALID_CONTACT
@@ -30852,18 +30779,18 @@ components:
           $ref: '#/components/schemas/v1cnltermination_query_search_criteria'
         queried_merchant:
           $ref: '#/components/schemas/v1cnltermination_query_queried_merchant'
-    inline_response_200_120:
+    inline_response_200_119:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
-          $ref: '#/components/schemas/inline_response_200_120_data'
-    inline_response_400_67:
+          $ref: '#/components/schemas/inline_response_200_119_data'
+    inline_response_400_70:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: INVALID_FIELDS
@@ -30873,39 +30800,39 @@ components:
             \ valid value."
           response_code: "INVALID_FIELDS - [SEARCH_CRITERIA]"
           status: ERROR
-    inline_response_200_121:
+    inline_response_200_120:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
         data:
-          $ref: '#/components/schemas/inline_response_200_121_data'
-    inline_response_400_68:
+          $ref: '#/components/schemas/inline_response_200_120_data'
+    inline_response_400_71:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/Status_1'
+          $ref: '#/components/schemas/Status'
       example:
         status:
           error_code: BAD REQUEST
           message: ""
           response_code: BAD REQUEST
           status: ERROR
-    inline_response_200_122:
+    inline_response_200_121:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/ListSupportedLanguagesResponse'
-    inline_response_200_123:
+    inline_response_200_122:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/ListCountriesResponse'
-    inline_response_200_124:
+    inline_response_200_123:
       type: object
       properties:
         status:
@@ -31239,6 +31166,20 @@ components:
           items:
             type: object
             x-isDynamicObject: true
+    PayoutMethodType_amount_range_per_currency:
+      type: object
+      properties:
+        currency:
+          type: string
+          description: Three-letter ISO 4217 code for the currency.
+        maximum_amount:
+          type: number
+          description: The maximum amount allowed for a payment.
+        minimum_amount:
+          type: number
+          description: The minimum amount allowed for a payment.
+      description: 'Indicates the amount range for the payment method''s currencies.
+        Array of objects. Each object contains the following fields:'
     SimulateCardTransactionAuthorizationRequestEEA_auth_response:
       type: object
       properties:
@@ -32145,7 +32086,7 @@ components:
           type: boolean
         id:
           type: string
-    inline_response_200_59_data:
+    inline_response_200_60_data:
       type: object
       properties:
         beneficiary:
@@ -32154,7 +32095,7 @@ components:
           type: boolean
           description: validation status
           example: true
-    inline_response_200_60_data:
+    inline_response_200_61_data:
       type: object
       properties:
         deleted:
@@ -32165,7 +32106,7 @@ components:
           type: string
           description: Beneficiary token
           example: beneficiary_008d839a9d5726ba014c3ccb21c59920
-    inline_response_200_63_data:
+    inline_response_200_64_data:
       type: object
       properties:
         deleted:
@@ -32502,7 +32443,7 @@ components:
             of strings.
           items:
             type: string
-    inline_response_200_105_data_bank_accounts:
+    inline_response_200_104_data_bank_accounts:
       type: object
       properties:
         account_id:
@@ -32549,11 +32490,11 @@ components:
           - REJ
       description: Array of objects with details of the virtual accounts. Each object
         contains the following fields
-    inline_response_200_105_data:
+    inline_response_200_104_data:
       properties:
         bank_accounts:
-          $ref: '#/components/schemas/inline_response_200_105_data_bank_accounts'
-    inline_response_200_109_data:
+          $ref: '#/components/schemas/inline_response_200_104_data_bank_accounts'
+    inline_response_200_108_data:
       type: object
       properties:
         bank_account:
@@ -32602,7 +32543,7 @@ components:
             \ GBP - Pound Sterling HKD - Hong Kong Dollar SGD - Singapore Dollar USD\
             \ - US Dollar When not specified, the funds appear in the wallet’s currency\
             \ account for the currency of the transaction.*"
-    inline_response_200_110_data:
+    inline_response_200_109_data:
       type: object
       properties:
         id:
@@ -32660,7 +32601,7 @@ components:
           type: string
           description: This field will indicate the exchange rate applied for the
             currency conversion
-    inline_response_200_111_data:
+    inline_response_200_110_data:
       type: object
       properties:
         account_name:
@@ -32733,7 +32674,7 @@ components:
           type: string
           description: This field will indicate the exchange rate applied for the
             currency conversion
-    inline_response_200_112_data:
+    inline_response_200_111_data:
       type: object
       properties:
         account_id:
@@ -32758,7 +32699,7 @@ components:
         id:
           type: string
           description: ID of the transaction. String starting with **isutran_**.
-    inline_response_200_113_data:
+    inline_response_200_112_data:
       type: object
       properties:
         id:
@@ -32767,7 +32708,7 @@ components:
         reference_id:
           type: string
           description: Organization Reference Token.
-    inline_response_200_114_data:
+    inline_response_200_113_data:
       properties:
         country:
           type: string
@@ -32781,11 +32722,13 @@ components:
           description: Name of the identification document. Two-letter code
         is_back_required:
           type: boolean
-          description: Boolean if back image required
+          description: Indicates whether the back of the document is required to establish
+            identity.
         is_address_extractable:
           type: boolean
-          description: Boolean if address extractable
-    inline_response_200_115_data:
+          description: Indicates whether the person's address can be extracted from
+            the document.
+    inline_response_200_114_data:
       properties:
         application_type:
           type: string
@@ -32794,7 +32737,7 @@ components:
           $ref: '#/components/schemas/Country_1'
         entity_type:
           $ref: '#/components/schemas/EntityTypeVerify'
-    inline_response_200_116_data:
+    inline_response_200_115_data:
       type: object
       properties:
         status:
@@ -32803,7 +32746,7 @@ components:
           - NEW
           - DON
           - EXP
-    inline_response_200_118_data_application_type:
+    inline_response_200_117_data_application_type:
       type: object
       properties:
         application_type:
@@ -32816,7 +32759,7 @@ components:
           type: string
           description: ""
       description: ""
-    inline_response_200_118_data_organization_details_merchant_customer_support:
+    inline_response_200_117_data_organization_details_merchant_customer_support:
       type: object
       properties:
         url:
@@ -32829,7 +32772,7 @@ components:
           type: string
           description: ""
       description: ""
-    inline_response_200_118_data_organization_details:
+    inline_response_200_117_data_organization_details:
       type: object
       properties:
         merchant_color:
@@ -32855,9 +32798,9 @@ components:
           type: string
           description: ""
         merchant_customer_support:
-          $ref: '#/components/schemas/inline_response_200_118_data_organization_details_merchant_customer_support'
+          $ref: '#/components/schemas/inline_response_200_117_data_organization_details_merchant_customer_support'
       description: ""
-    inline_response_200_118_data_renew_result:
+    inline_response_200_117_data_renew_result:
       type: object
       properties:
         redirect_to_app_type_page:
@@ -32867,7 +32810,7 @@ components:
           type: boolean
           description: ""
       description: ""
-    inline_response_200_118_data:
+    inline_response_200_117_data:
       type: object
       properties:
         token:
@@ -32908,12 +32851,12 @@ components:
           type: string
           description: ""
         application_type:
-          $ref: '#/components/schemas/inline_response_200_118_data_application_type'
+          $ref: '#/components/schemas/inline_response_200_117_data_application_type'
         organization_details:
-          $ref: '#/components/schemas/inline_response_200_118_data_organization_details'
+          $ref: '#/components/schemas/inline_response_200_117_data_organization_details'
         renew_result:
-          $ref: '#/components/schemas/inline_response_200_118_data_renew_result'
-    inline_response_200_119_data_merchant_customer_support:
+          $ref: '#/components/schemas/inline_response_200_117_data_renew_result'
+    inline_response_200_118_data_merchant_customer_support:
       type: object
       properties:
         email:
@@ -32927,7 +32870,7 @@ components:
           description: Phone number for contacting the client's customer support service.
       description: "Contains details of the client’s customer support. To configure\
         \ these fields, use the Client Portal."
-    inline_response_200_119_data:
+    inline_response_200_118_data:
       type: object
       properties:
         cancel_url:
@@ -32967,7 +32910,7 @@ components:
           description: "Color of the call-to-action (CTA) button on the hosted page.<BR>\
             \ To configure this field, use the Client Portal."
         merchant_customer_support:
-          $ref: '#/components/schemas/inline_response_200_119_data_merchant_customer_support'
+          $ref: '#/components/schemas/inline_response_200_118_data_merchant_customer_support'
         merchant_logo:
           type: string
           description: "URL for the image of the client's logo.<BR> To configure this\
@@ -33022,7 +32965,7 @@ components:
           - INP
           - DEC
       description: Retrieve the Rapyd ID and merchant reference ID.
-    inline_response_200_120_data:
+    inline_response_200_119_data:
       type: object
       properties:
         operation_id:
@@ -33049,7 +32992,7 @@ components:
           - IN_PROGRESS
           - PARTIAL
           - PROCESSED
-    inline_response_200_121_data_match_stats:
+    inline_response_200_120_data_match_stats:
       type: object
       properties:
         query_match_count:
@@ -33062,7 +33005,7 @@ components:
           description: Total number of registered matches in the card network termination
             databases with elements shared with this merchant query.
       description: Statistics about the query.
-    inline_response_200_121_data_matches:
+    inline_response_200_120_data_matches:
       type: object
       properties:
         card_network:
@@ -33096,7 +33039,7 @@ components:
           - string1
           - string2
       description: Describes the results of the query.
-    inline_response_200_121_data_query_info_queried_merchant:
+    inline_response_200_120_data_query_info_queried_merchant:
       type: object
       properties:
         business_category:
@@ -33135,7 +33078,7 @@ components:
           type: boolean
           description: Indicates whether the merchant trades through the internet.
       description: Details of the merchant who is the subject of the query.
-    inline_response_200_121_data_query_info:
+    inline_response_200_120_data_query_info:
       type: object
       properties:
         partner_merchant_reference:
@@ -33145,9 +33088,9 @@ components:
           type: string
           description: "Unique ID of the query request, defined by the partner."
         queried_merchant:
-          $ref: '#/components/schemas/inline_response_200_121_data_query_info_queried_merchant'
+          $ref: '#/components/schemas/inline_response_200_120_data_query_info_queried_merchant'
       description: asd
-    inline_response_200_121_data_principals:
+    inline_response_200_120_data_principals:
       type: object
       properties:
         first_name:
@@ -33190,7 +33133,7 @@ components:
           $ref: '#/components/schemas/v1cnltermination_query_queried_merchant_principals_address'
       description: Details of the registered principal owners of the merchant.<BR>
         Maximum - 3.
-    inline_response_200_121_data_matched_merchant:
+    inline_response_200_120_data_matched_merchant:
       type: object
       properties:
         business_category:
@@ -33239,7 +33182,7 @@ components:
             \ Numbers or US letters. Maximum - 3 items. For example: [\"https://fourstarmarket.com\"\
             , \"https://fourstarmarket.net\"]<BR>Length: Maximum - 40"
       description: Data about the merchant on file in the database.
-    inline_response_200_121_data_registration_info:
+    inline_response_200_120_data_registration_info:
       type: object
       properties:
         contract_end_date:
@@ -33262,19 +33205,19 @@ components:
           description: Region of the acquirer that listed the merchant.
       description: Registration information in the card network's termination database
         about the merchant and the acquirer that listed the merchant.
-    inline_response_200_121_data:
+    inline_response_200_120_data:
       type: object
       properties:
         match_stats:
-          $ref: '#/components/schemas/inline_response_200_121_data_match_stats'
+          $ref: '#/components/schemas/inline_response_200_120_data_match_stats'
         matches:
-          $ref: '#/components/schemas/inline_response_200_121_data_matches'
+          $ref: '#/components/schemas/inline_response_200_120_data_matches'
         query_info:
-          $ref: '#/components/schemas/inline_response_200_121_data_query_info'
+          $ref: '#/components/schemas/inline_response_200_120_data_query_info'
         search_criteria:
           $ref: '#/components/schemas/v1cnltermination_query_search_criteria'
         principals:
-          $ref: '#/components/schemas/inline_response_200_121_data_principals'
+          $ref: '#/components/schemas/inline_response_200_120_data_principals'
         status:
           type: string
           description: Status of the Card Network Lookup Service query. One of the
@@ -33291,6 +33234,6 @@ components:
           - PARTIAL
           - PROCESSED
         matched_merchant:
-          $ref: '#/components/schemas/inline_response_200_121_data_matched_merchant'
+          $ref: '#/components/schemas/inline_response_200_120_data_matched_merchant'
         registration_info:
-          $ref: '#/components/schemas/inline_response_200_121_data_registration_info'
+          $ref: '#/components/schemas/inline_response_200_120_data_registration_info'
