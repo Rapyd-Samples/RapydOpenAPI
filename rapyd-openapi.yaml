@@ -11,12 +11,135 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.16
+  version: 1.0.17
 servers:
 - url: https://sandboxapi.rapyd.net/
-  description: Sandbox serverhttps://app.swaggerhub.com/apis/Rapyd_Financials/rapyd/1.0.16#/
+  description: Sandbox server
 - url: https://api.rapyd.net/
   description: Production server
+tags:
+- name: Payment Method Type
+  description: A type of payment method that a customer can use for making payments.
+- name: Payment
+  description: Collects money from a payment method and deposits it into one or more
+    Rapyd Wallets.
+- name: Checkout Page
+  description: Defines a customer-facing page that collects personal identifying information
+    (PII) from the customer and creates a payment.
+- name: Subscription
+  description: "Rapyd provides the ability to create payments automatically every\
+    \ month or other defined interval. This is called a subscription, and it has the\
+    \ following prerequisites:<BR>* A customer profile with a payment method.<BR>*\
+    \ One or more products of type service.<BR>* One or more plans that describe the\
+    \ charges for services covered by the subscription."
+- name: Subscription.Product
+  description: A product or service for use with Rapyd Collect.
+- name: Subscription.Plan
+  description: Pricing structure for a single product of type service.
+- name: Subscription.Subscription Item
+  description: A product of type **service** that is charged to the customer periodically.
+- name: Subscription.Invoice
+  description: Contains a list of charges from a subscription and defines when the
+    payment is due.
+- name: Subscription.Invoice Item
+  description: Represents one product of type **services** that is assigned to an
+    invoice or a subscription.
+- name: Payment Link
+  description: Reuse a hosted payment page.<BR> A customer uses the payment link to
+    open a hosted payment page. The customer provides required information and submits
+    the payment on a Rapyd Checkout page.
+- name: Payment.Card Token
+  description: "Represents a card payment method that is stored in a customer profile.<BR>Sensitive\
+    \ personal identifying information (PII) is stored in Rapyd's vault.<BR> The client\
+    \ can use the token wherever a payment method is required, such as creating a\
+    \ payment, subscription or invoice."
+- name: Group Payment
+  description: Collects money from multiple payment methods.<BR>A group payment consolidates
+    2 to 10 individual payments into a single transaction.
+- name: Escrow
+  description: "Hold collected funds temporarily in an escrow.<BR>When you collect\
+    \ funds from a customer, you can place the funds temporarily in an escrow instead\
+    \ of paying them immediately to the payees."
+- name: Refund
+  description: "Full or partial refund of a payment.<BR>When the payment status is\
+    \ CLO (closed), you can refund all or part of the money collected."
+- name: Digital Wallet
+  description: Information on supported digital wallet providers such as Apple Pay
+    and Google Pay.
+- name: Dispute
+  description: A dispute is made against a specific payment.<BR>The disputed amount
+    cannot exceed the amount of the payment.
+- name: Customer
+  description: "Customer profile, where payment methods are stored for future use."
+- name: Payment.Address
+  description: "Describes the address of a customer.<BR>The `address` object can be\
+    \ added to the `Customer`, `Payment Method`, and Wallet `Contact` objects."
+- name: Customer Payment Method
+  description: Describes a payment method that has been saved to a customer profile.
+- name: SKU
+  description: A single item of physical inventory.<BR>The SKU is attached to a product
+    where type is **goods**. <BR>An SKU is a prerequisite for an order.
+- name: Order
+  description: A single order of goods.
+- name: Order.Return
+  description: Represents a return of an order of goods.
+- name: Coupon
+  description: "Defines a discount on charges to the customer.The coupon can be applied\
+    \ to the `Subscription`, `Customer`, and `Order` objects."
+- name: Disburse.Payout Method Type
+  description: Information about payout method types you can assign to beneficiaries
+    (payees).<BR>A payout method type is a type of payout method that the client can
+    use to pay money out of the Rapyd wallet.
+- name: Disburse
+  description: "Disbursement transactions.<BR> The source of a payout is a Rapyd Wallet.\
+    \ To create a payout, you must first:<BR>* Find payout methods available in the\
+    \ country of the beneficiary (payee).<BR>* Find the fields required for the payout\
+    \ method you want."
+- name: Disburse.Payout Beneficiary
+  description: "Defines the beneficiary (payee) of a payout.<BR> When you create a\
+    \ payout, you can include a fully populated `beneficiary` object or the ID of\
+    \ a beneficiary."
+- name: Disburse.Payout Sender
+  description: "Defines the sender (payer) of a payout. <BR>When you create a payout,\
+    \ you can include a fully populated `sender` object or the ID of a sender."
+- name: Disburse.Upload Documents
+  description: <BR>* Upload one supporting document file or multiple document files
+    to a specific payout.<BR>* Retrieve and delete documents that have been uploaded.
+- name: Disburse.Card Eligibility
+  description: Provides additional information on the eligibility of cards for specific
+    types of payout transactions.
+- name: eWallets.Transaction
+  description: Transfers between wallets and balances and limits of the accounts within
+    the wallet.<BR>Transactions are generated by calls to the Rapyd API or by internal
+    operations in the Rapyd system.
+- name: eWallets
+  description: "An eWallet represents a single Rapyd Wallet for a client, business,\
+    \ or consumer.<BR>The Rapyd Wallet is the focus of all financial operations. Payments\
+    \ are made into the wallet, payouts are made from the wallet and settlements to\
+    \ the client's own bank account are made from the wallet."
+- name: eWallets.Contact
+  description: A personal or business contact for a Rapyd Wallet.<BR>The wallet contact
+    describes a person who has rights to use the wallet.
+- name: Issuing
+  description: The Rapyd Issuing platform provides bank cards funded by the Rapyd
+    Wallet.
+- name: Issuing.Simulations
+  description: Simulate third-party issuing related responses in the sandbox.
+- name: Virtual Accounts
+  description: Bank account number(s) issued to a Rapyd Wallet.<BR>The virtual account
+    can receive funds from any bank using the bank’s own tools. A wallet can have
+    multiple virtual accounts.
+- name: Localization Methods
+  description: "Resource methods for countries, currencies, languages and FX rates."
+- name: Webhook Methods
+  description: Methods related to resending webhooks.
+- name: Verify
+  description: Methods related to verifying an identity as part of the Know Your Business
+    (KYB) or Know Your Customer (KYC) verification process.
+- name: Card Network Lookup Service
+  description: Investigate a potential new merchant for experience with acquirers.<BR>The
+    Card Network Lookup Service (CNLS) provides information about the prior credit
+    card experience of a potential new merchant.
 paths:
   /v1/payment_methods/countries/{countryId}:
     get:
@@ -1087,7 +1210,7 @@ paths:
     post:
       tags:
       - Checkout Page
-      summary: Create checkout page
+      summary: Create Checkout Page
       description: Create a checkout page that makes a payment.
       externalDocs:
         description: API Reference
@@ -2394,7 +2517,7 @@ paths:
         explode: false
         schema:
           type: string
-        example: 10
+        example: plan_5a99897cdcd7175cb8119254d02befdb
       responses:
         "200":
           description: List of plans
@@ -5250,6 +5373,92 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_401'
+  /v1/hosted/collect/card/:
+    post:
+      tags:
+      - Payment.Card Token
+      summary: Create Card Token
+      description: "Create a hosted page for a customer to save card details and manage\
+        \ cards. Prerequisite: [Create Customer](https://docs.rapyd.net/en/create-customer.html)."
+      externalDocs:
+        description: Learn more about details provided by this API
+        url: https://docs.rapyd.net/en/create-card-token.html
+      operationId: createCardToken
+      parameters:
+      - name: access_key
+        in: header
+        description: Unique access key provided by Rapyd for each authorized user.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: Content-Type
+        in: header
+        description: Indicates that the data appears in JSON format. Set to **application/json**.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: idempotency
+        in: header
+        description: A unique key that prevents the platform from creating the same
+          object twice.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: salt
+        in: header
+        description: "Random string. Recommended length: 8-16 characters."
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: signature
+        in: header
+        description: "Signature calculated for each request individually. See [Request\
+          \ Signatures](https://docs.rapyd.net/en/request-signatures.html)."
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: timestamp
+        in: header
+        description: "Timestamp for the request, in Unix time (seconds)."
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/collect_card_body'
+      responses:
+        "200":
+          description: Card Token created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_27'
+        "400":
+          description: No card payment methods available in the country for the merchant.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400_33'
+        "401":
+          description: Authentication issue. Check status of account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401'
   /v1/payments/group_payments:
     post:
       tags:
@@ -5322,13 +5531,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_27'
+                $ref: '#/components/schemas/inline_response_200_28'
         "400":
           description: Bad Request. Group payment not found for given ID.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_33'
+                $ref: '#/components/schemas/inline_response_400_34'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -5409,13 +5618,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_27'
+                $ref: '#/components/schemas/inline_response_200_28'
         "400":
           description: Bad Request. Group payment not found for given ID.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_34'
+                $ref: '#/components/schemas/inline_response_400_35'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -5495,13 +5704,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_27'
+                $ref: '#/components/schemas/inline_response_200_28'
         "400":
           description: Bad Request. Group payment ID not found.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_35'
+                $ref: '#/components/schemas/inline_response_400_36'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -5591,13 +5800,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_28'
+                $ref: '#/components/schemas/inline_response_200_29'
         "400":
           description: Error in card validation of payment with escrow.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_36'
+                $ref: '#/components/schemas/inline_response_400_37'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -5691,13 +5900,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_29'
+                $ref: '#/components/schemas/inline_response_200_30'
         "400":
           description: Error in card validation of payment with escrow.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_37'
+                $ref: '#/components/schemas/inline_response_400_38'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -5787,13 +5996,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_28'
+                $ref: '#/components/schemas/inline_response_200_29'
         "400":
           description: Error in card validation of payment with escrow.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_36'
+                $ref: '#/components/schemas/inline_response_400_37'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -5897,7 +6106,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_30'
+                $ref: '#/components/schemas/inline_response_200_31'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -5980,7 +6189,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_31'
+                $ref: '#/components/schemas/inline_response_200_32'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -6063,7 +6272,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_31'
+                $ref: '#/components/schemas/inline_response_200_32'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -6096,7 +6305,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_32'
+                $ref: '#/components/schemas/inline_response_200_33'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -6180,7 +6389,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_31'
+                $ref: '#/components/schemas/inline_response_200_32'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -6269,7 +6478,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_31'
+                $ref: '#/components/schemas/inline_response_200_32'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -6351,7 +6560,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_33'
+                $ref: '#/components/schemas/inline_response_200_34'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -6481,7 +6690,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_34'
+                $ref: '#/components/schemas/inline_response_200_35'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -6565,7 +6774,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_35'
+                $ref: '#/components/schemas/inline_response_200_36'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -6667,7 +6876,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_36'
+                $ref: '#/components/schemas/inline_response_200_37'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -6746,13 +6955,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_37'
+                $ref: '#/components/schemas/inline_response_200_38'
         "400":
           description: Bad Request. Wallet ID is already used by another customer.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_38'
+                $ref: '#/components/schemas/inline_response_400_39'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -6835,13 +7044,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_37'
+                $ref: '#/components/schemas/inline_response_200_38'
         "400":
           description: Bad Request. Customer not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_39'
+                $ref: '#/components/schemas/inline_response_400_40'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -6927,13 +7136,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_37'
+                $ref: '#/components/schemas/inline_response_200_38'
         "400":
           description: Bad Request. Customer was not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_40'
+                $ref: '#/components/schemas/inline_response_400_41'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -7023,7 +7232,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_41'
+                $ref: '#/components/schemas/inline_response_400_42'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -7106,7 +7315,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_38'
+                $ref: '#/components/schemas/inline_response_200_39'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -7187,7 +7396,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_39'
+                $ref: '#/components/schemas/inline_response_200_40'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -7266,13 +7475,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_40'
+                $ref: '#/components/schemas/inline_response_200_41'
         "400":
           description: Invalid phone number format.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_42'
+                $ref: '#/components/schemas/inline_response_400_43'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -7355,13 +7564,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_40'
+                $ref: '#/components/schemas/inline_response_200_41'
         "400":
           description: Invalid phone number format.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_43'
+                $ref: '#/components/schemas/inline_response_400_44'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -7450,13 +7659,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_40'
+                $ref: '#/components/schemas/inline_response_200_41'
         "400":
           description: Invalid phone number format.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_42'
+                $ref: '#/components/schemas/inline_response_400_43'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -7539,13 +7748,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_40'
+                $ref: '#/components/schemas/inline_response_200_41'
         "400":
           description: Address that is linked to an object cannot be removed.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_44'
+                $ref: '#/components/schemas/inline_response_400_45'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -7669,7 +7878,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_41'
+                $ref: '#/components/schemas/inline_response_200_42'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -7757,13 +7966,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_42'
+                $ref: '#/components/schemas/inline_response_200_43'
         "400":
           description: Bad Request. Customer was not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_45'
+                $ref: '#/components/schemas/inline_response_400_46'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -7853,7 +8062,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_42'
+                $ref: '#/components/schemas/inline_response_200_43'
         "400":
           description: bad input parameter
           content:
@@ -7964,13 +8173,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_42'
+                $ref: '#/components/schemas/inline_response_200_43'
         "400":
           description: bad input parameter
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_46'
+                $ref: '#/components/schemas/inline_response_400_47'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -8060,13 +8269,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_43'
+                $ref: '#/components/schemas/inline_response_200_44'
         "400":
           description: Bad Request. Customer was not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_47'
+                $ref: '#/components/schemas/inline_response_400_48'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -8149,7 +8358,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_44'
+                $ref: '#/components/schemas/inline_response_200_45'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -8236,7 +8445,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_44'
+                $ref: '#/components/schemas/inline_response_200_45'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -8428,7 +8637,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_45'
+                $ref: '#/components/schemas/inline_response_200_46'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -8506,7 +8715,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_44'
+                $ref: '#/components/schemas/inline_response_200_45'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -8610,7 +8819,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_46'
+                $ref: '#/components/schemas/inline_response_200_47'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -8688,7 +8897,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_47'
+                $ref: '#/components/schemas/inline_response_200_48'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -8770,7 +8979,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_47'
+                $ref: '#/components/schemas/inline_response_200_48'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -8857,7 +9066,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_47'
+                $ref: '#/components/schemas/inline_response_200_48'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -8946,7 +9155,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_48'
+                $ref: '#/components/schemas/inline_response_200_49'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -9034,7 +9243,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_47'
+                $ref: '#/components/schemas/inline_response_200_48'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -9148,7 +9357,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_49'
+                $ref: '#/components/schemas/inline_response_200_50'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -9230,7 +9439,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_48'
+                $ref: '#/components/schemas/inline_response_200_49'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -9331,7 +9540,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_50'
+                $ref: '#/components/schemas/inline_response_200_51'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -9411,7 +9620,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_51'
+                $ref: '#/components/schemas/inline_response_200_52'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -9493,7 +9702,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_51'
+                $ref: '#/components/schemas/inline_response_200_52'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -9578,7 +9787,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_51'
+                $ref: '#/components/schemas/inline_response_200_52'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -9658,7 +9867,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_52'
+                $ref: '#/components/schemas/inline_response_200_53'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -9860,7 +10069,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_53'
+                $ref: '#/components/schemas/inline_response_200_54'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10015,13 +10224,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_54'
+                $ref: '#/components/schemas/inline_response_200_55'
         "400":
           description: Invalid payout method type.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_48'
+                $ref: '#/components/schemas/inline_response_400_49'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10215,7 +10424,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_55'
+                $ref: '#/components/schemas/inline_response_200_56'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10297,13 +10506,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_56'
+                $ref: '#/components/schemas/inline_response_200_57'
         "400":
           description: Bad Request. Missing required field.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_49'
+                $ref: '#/components/schemas/inline_response_400_50'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10379,7 +10588,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_57'
+                $ref: '#/components/schemas/inline_response_200_58'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10468,13 +10677,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_58'
+                $ref: '#/components/schemas/inline_response_200_59'
         "400":
           description: Bad Request. Invalid value to a required field.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_50'
+                $ref: '#/components/schemas/inline_response_400_51'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10556,13 +10765,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_59'
+                $ref: '#/components/schemas/inline_response_200_60'
         "400":
           description: Bad Request. Invalid value to a required field.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_51'
+                $ref: '#/components/schemas/inline_response_400_52'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10648,7 +10857,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_60'
+                $ref: '#/components/schemas/inline_response_200_61'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10734,7 +10943,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_59'
+                $ref: '#/components/schemas/inline_response_200_60'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10824,13 +11033,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_59'
+                $ref: '#/components/schemas/inline_response_200_60'
         "400":
           description: Bad Request. Beneficary ID not found.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_52'
+                $ref: '#/components/schemas/inline_response_400_53'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -10912,13 +11121,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_61'
+                $ref: '#/components/schemas/inline_response_200_62'
         "400":
           description: Bad Request. Beneficary ID not found.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_52'
+                $ref: '#/components/schemas/inline_response_400_53'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -11013,7 +11222,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_56'
+                $ref: '#/components/schemas/inline_response_200_57'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -11096,13 +11305,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_62'
+                $ref: '#/components/schemas/inline_response_200_63'
         "400":
           description: Bad Request. Payout category was not valid.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_53'
+                $ref: '#/components/schemas/inline_response_400_54'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -11187,13 +11396,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_56'
+                $ref: '#/components/schemas/inline_response_200_57'
         "400":
           description: Bad Request. Payout not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_54'
+                $ref: '#/components/schemas/inline_response_400_55'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -11278,7 +11487,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_63'
+                $ref: '#/components/schemas/inline_response_200_64'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -11367,13 +11576,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_63'
+                $ref: '#/components/schemas/inline_response_200_64'
         "400":
           description: Bad Request. Sender not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_55'
+                $ref: '#/components/schemas/inline_response_400_56'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -11455,7 +11664,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_64'
+                $ref: '#/components/schemas/inline_response_200_65'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -11538,13 +11747,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_56'
+                $ref: '#/components/schemas/inline_response_200_57'
         "400":
           description: Bad Request. Payout not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_56'
+                $ref: '#/components/schemas/inline_response_400_57'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -11633,7 +11842,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_56'
+                $ref: '#/components/schemas/inline_response_200_57'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -11717,7 +11926,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_56'
+                $ref: '#/components/schemas/inline_response_200_57'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -11804,7 +12013,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_65'
+                $ref: '#/components/schemas/inline_response_200_66'
         "400":
           description: bad input parameter
         "401":
@@ -11908,7 +12117,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_66'
+                $ref: '#/components/schemas/inline_response_200_67'
         "400":
           description: bad input parameter
         "401":
@@ -11994,7 +12203,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_66'
+                $ref: '#/components/schemas/inline_response_200_67'
         "400":
           description: bad input parameter
         "401":
@@ -12078,7 +12287,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_67'
+                $ref: '#/components/schemas/inline_response_200_68'
         "400":
           description: bad input parameter
         "401":
@@ -12172,7 +12381,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_66'
+                $ref: '#/components/schemas/inline_response_200_67'
         "400":
           description: bad input parameter
         "401":
@@ -12264,7 +12473,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_67'
+                $ref: '#/components/schemas/inline_response_200_68'
         "400":
           description: bad input parameter
         "401":
@@ -12350,7 +12559,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_68'
+                $ref: '#/components/schemas/inline_response_200_69'
         "400":
           description: bad input parameter
         "401":
@@ -12432,7 +12641,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_69'
+                $ref: '#/components/schemas/inline_response_200_70'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -12513,7 +12722,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_69'
+                $ref: '#/components/schemas/inline_response_200_70'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -12596,7 +12805,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_70'
+                $ref: '#/components/schemas/inline_response_200_71'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -12680,7 +12889,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_70'
+                $ref: '#/components/schemas/inline_response_200_71'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -12763,7 +12972,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_70'
+                $ref: '#/components/schemas/inline_response_200_71'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -12848,7 +13057,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_70'
+                $ref: '#/components/schemas/inline_response_200_71'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -12935,13 +13144,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_71'
+                $ref: '#/components/schemas/inline_response_200_72'
         "400":
           description: bad input parameter
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_57'
+                $ref: '#/components/schemas/inline_response_400_58'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13026,13 +13235,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_71'
+                $ref: '#/components/schemas/inline_response_200_72'
         "400":
           description: bad input parameter
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_58'
+                $ref: '#/components/schemas/inline_response_400_59'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13116,13 +13325,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_72'
+                $ref: '#/components/schemas/inline_response_200_73'
         "400":
           description: Bad Request. Customer was not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_59'
+                $ref: '#/components/schemas/inline_response_400_60'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13211,13 +13420,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_73'
+                $ref: '#/components/schemas/inline_response_200_74'
         "400":
           description: Bad Request. Customer was not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_60'
+                $ref: '#/components/schemas/inline_response_400_61'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13310,13 +13519,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_73'
+                $ref: '#/components/schemas/inline_response_200_74'
         "400":
           description: Bad Request. Customer was not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_61'
+                $ref: '#/components/schemas/inline_response_400_62'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13413,13 +13622,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_73'
+                $ref: '#/components/schemas/inline_response_200_74'
         "400":
           description: Bad Request. Customer was not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_62'
+                $ref: '#/components/schemas/inline_response_400_63'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13510,13 +13719,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_74'
+                $ref: '#/components/schemas/inline_response_200_75'
         "400":
           description: Bad Request. Contact was not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_63'
+                $ref: '#/components/schemas/inline_response_400_64'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13608,13 +13817,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_75'
+                $ref: '#/components/schemas/inline_response_200_76'
         "400":
           description: Bad Request. Customer was not found for given ID
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_400_64'
+                $ref: '#/components/schemas/inline_response_400_65'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13704,7 +13913,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_76'
+                $ref: '#/components/schemas/inline_response_200_77'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13859,7 +14068,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_77'
+                $ref: '#/components/schemas/inline_response_200_78'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -13938,7 +14147,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_78'
+                $ref: '#/components/schemas/inline_response_200_79'
         "400":
           description: bad input parameter
         "401":
@@ -14023,7 +14232,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_79'
+                $ref: '#/components/schemas/inline_response_200_80'
         "400":
           description: Bad Request.
           content:
@@ -14109,7 +14318,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_80'
+                $ref: '#/components/schemas/inline_response_200_81'
         "400":
           description: bad input parameter
         "401":
@@ -14196,7 +14405,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_81'
+                $ref: '#/components/schemas/inline_response_200_82'
         "400":
           description: bad input parameter
         "401":
@@ -14284,7 +14493,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_82'
+                $ref: '#/components/schemas/inline_response_200_83'
         "400":
           description: bad input parameter
         "401":
@@ -14368,7 +14577,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_80'
+                $ref: '#/components/schemas/inline_response_200_81'
         "400":
           description: bad input parameter
         "401":
@@ -14450,7 +14659,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_80'
+                $ref: '#/components/schemas/inline_response_200_81'
         "400":
           description: bad input parameter
         "401":
@@ -14601,7 +14810,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_83'
+                $ref: '#/components/schemas/inline_response_200_84'
         "400":
           description: bad input parameter
         "401":
@@ -14696,7 +14905,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_84'
+                $ref: '#/components/schemas/inline_response_200_85'
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -14780,7 +14989,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_85'
+                $ref: '#/components/schemas/inline_response_200_86'
         "400":
           description: bad input parameter
         "401":
@@ -14875,95 +15084,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_86'
-        "400":
-          description: bad input parameter
-        "401":
-          description: Authentication issue. Check status of account.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_401'
-  /v1/hosted/collect/card/:
-    post:
-      tags:
-      - Payment.Card Token
-      summary: Create Card Token
-      description: "Create a hosted page for a customer to save card details and manage\
-        \ cards. Prerequisite: [Create Customer](https://docs.rapyd.net/en/create-customer.html)."
-      externalDocs:
-        description: Learn more about details provided by this API
-        url: https://docs.rapyd.net/en/create-card-token.html
-      operationId: createCardToken
-      parameters:
-      - name: access_key
-        in: header
-        description: Unique access key provided by Rapyd for each authorized user.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: Content-Type
-        in: header
-        description: Indicates that the data appears in JSON format. Set to **application/json**.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: idempotency
-        in: header
-        description: A unique key that prevents the platform from creating the same
-          object twice.
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: salt
-        in: header
-        description: "Random string. Recommended length: 8-16 characters."
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: signature
-        in: header
-        description: "Signature calculated for each request individually. See [Request\
-          \ Signatures](https://docs.rapyd.net/en/request-signatures.html)."
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      - name: timestamp
-        in: header
-        description: "Timestamp for the request, in Unix time (seconds)."
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/collect_card_body'
-      responses:
-        "200":
-          description: Card Token created successfully
-          content:
-            application/json:
-              schema:
                 $ref: '#/components/schemas/inline_response_200_87'
         "400":
-          description: No card payment methods available in the country for the merchant.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400_65'
+          description: bad input parameter
         "401":
           description: Authentication issue. Check status of account.
           content:
@@ -16443,7 +16566,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_67'
+                $ref: '#/components/schemas/inline_response_200_68'
         "400":
           description: bad input parameter
         "401":
@@ -16541,7 +16664,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_67'
+                $ref: '#/components/schemas/inline_response_200_68'
         "400":
           description: bad input parameter
         "401":
@@ -24465,7 +24588,9 @@ components:
             \ only."
           example: 1592311574
         currency:
-          $ref: '#/components/schemas/Currency_1'
+          type: string
+          description: Three-letter ISO 4217 code for the currency used in fields
+            that represent monetary amounts.
         id:
           type: string
           description: "Unique ID for this plan. English alphanumeric characters with\
@@ -27340,6 +27465,110 @@ components:
           operation_id: 889e9472-922c-40a2-861d-19977c396db5
           response_code: ERROR_HOSTED_PAGE_PAGE_EXPIRED
           status: ERROR
+    v1hostedcollectcard_card_fields:
+      type: object
+      properties:
+        recurrence_type:
+          type: string
+          description: "Specifies the primary intended purpose of the saved payment\
+            \ method. See Saving a European Card While Creating a Payment. One of\
+            \ the following values: <BR> * **installment** - Regular payments for\
+            \ a defined number of payment cycles. <BR> * **recurring** - Regular payments\
+            \ for an indefinite period. <BR> * **unscheduled** - Individual unrelated\
+            \ payments."
+          default: unscheduled
+      description: Contains details about the card.
+    collect_card_body:
+      required:
+      - country
+      - customer
+      type: object
+      properties:
+        billing_address_collect:
+          type: boolean
+          description: "Indicates whether the hosted page displays address fields\
+            \ to fill in.<BR> * **true** - The address fields are displayed. <BR>\
+            \ * **false** - The address fields are displayed only for country codes\
+            \ **US**, **GB** and **CA**."
+        cancel_url:
+          type: string
+          description: URL where the customer is redirected after pressing **Back
+            to Website** to exit the hosted page. This URL overrides the `merchant_website`
+            URL. Does not support localhost URLs.
+        card_fields:
+          $ref: '#/components/schemas/v1hostedcollectcard_card_fields'
+        complete_url:
+          type: string
+          description: URL where the customer is redirected after pressing **Close**
+            to exit the hosted page. This URL overrides the `merchant_website` URL.
+            Does not support localhost URLs.The two-letter ISO 3166-1 ALPHA-2 code
+            for the country.
+        complete_payment_url:
+          type: string
+          description: "URL where the customer is redirected when payment is successful,\
+            \ after returning from an external page such as a 3DS page. Does not support\
+            \ localhost URLs."
+        country:
+          type: string
+          description: The two-letter ISO 3166-1 ALPHA-2 code for the country.
+        currency:
+          type: string
+          description: "In transactions without FX, defines the currency of the transaction.\
+            \ Three-letter ISO 4217 code. <BR> In FX transactions: <BR> * When `fixed_side`\
+            \ is **buy**, it is the currency received in the Rapyd wallet. <BR> *\
+            \ When `fixed_side` is **sell**, it is the currency charged to the buyer.\
+            \ <BR> See also `fixed_side` and `requested_currency` fields."
+        customer:
+          type: string
+          description: ID of a specific customer. String starting with **cus_**. Restricts
+            the payment link to the customer.
+        error_payment_url:
+          type: string
+          description: "URL where the customer is redirected when payment is not successful,\
+            \ after returning from an external page, such as a 3DS page. Does not\
+            \ support localhost URLs."
+        language:
+          type: string
+          description: "Determines the default language of the hosted page. For a\
+            \ list of values, see [List Supported Languages](https://docs.rapyd.net/en/list-supported-languages.html).\
+            \ <BR> * When this parameter is null, the language of the user's browser\
+            \ is used. <BR> * If the language of the user's browser cannot be determined,\
+            \ the default language is English."
+          default: en
+        page_expiration:
+          type: string
+          description: "End of the time when the customer can use the hosted page,\
+            \ in Unix time. If `page_expiration` is not set, the hosted page expires\
+            \ 14 days after creation. Range: 1 minute to 30 days."
+        payment_method_type:
+          type: string
+          description: "Limits the page to a specific type of payment method. For\
+            \ example, **dk_visa_card**. For a list of payment methods, use [List\
+            \ Payment Methods by Country](https://docs.rapyd.net/en/list-payment-methods-by-country.html)."
+    inline_response_200_27:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CardTokenResponse'
+    inline_response_400_33:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status'
+      example:
+        status:
+          error_code: ERROR_TOKENIZE_CARD_NO_PAYMENT_METHODS
+          message: "The request tried to create a token for future use of a card,\
+            \ but there are no relevant card payment methods available in the country\
+            \ for the merchant. The request was rejected. Corrective action: Contact\
+            \ Client Support."
+          operation_id: 889e9472-922c-40a2-861d-19977c396db5
+          response_code: ERROR_TOKENIZE_CARD_NO_PAYMENT_METHODS
+          status: ERROR
     payments_group_payments_body:
       required:
       - payments
@@ -27358,14 +27587,14 @@ components:
           type: object
           description: "Array of 'payment' objects. For details about the fields in\
             \ the 'payment' object, see [Create Payment](https://docs.rapyd.net/en/create-payment.html)."
-    inline_response_200_27:
+    inline_response_200_28:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/GroupPayment'
-    inline_response_400_33:
+    inline_response_400_34:
       type: object
       properties:
         status:
@@ -27378,7 +27607,7 @@ components:
             \ Use 2 to 10 payments."
           response_code: ERROR_CREATE_GROUP_PAYMENT_EXCEEDED_MAX_PARTICIPANTS
           status: ERROR
-    inline_response_400_34:
+    inline_response_400_35:
       type: object
       properties:
         status:
@@ -27392,7 +27621,7 @@ components:
             \ 'gp_'."
           response_code: ERROR_GET_GROUP_PAYMENT
           status: ERROR
-    inline_response_400_35:
+    inline_response_400_36:
       type: object
       properties:
         status:
@@ -27406,14 +27635,14 @@ components:
             \ 'gp_'."
           response_code: ERROR_MISSING_GROUP_PAYMENT
           status: ERROR
-    inline_response_200_28:
+    inline_response_200_29:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/EscrowResponse'
-    inline_response_400_36:
+    inline_response_400_37:
       type: object
       properties:
         status:
@@ -27432,12 +27661,12 @@ components:
       - $ref: '#/components/schemas/Escrow'
       - required:
         - ewallets
-    inline_response_200_29:
+    inline_response_200_30:
       type: object
       properties:
         data:
           $ref: '#/components/schemas/EscrowResponse'
-    inline_response_400_37:
+    inline_response_400_38:
       type: object
       properties:
         status:
@@ -27452,7 +27681,7 @@ components:
             \ to null. Next, create the payment with the escrow."
           response_code: ERROR_CARD_VALIDATION_IN_PAYMENT_WITH_ESCROW
           status: ERROR
-    inline_response_200_30:
+    inline_response_200_31:
       type: object
       properties:
         status:
@@ -27492,7 +27721,7 @@ components:
         reason:
           type: string
           description: Description of the reason for the refund.
-    inline_response_200_31:
+    inline_response_200_32:
       type: object
       properties:
         status:
@@ -27520,27 +27749,18 @@ components:
           type: string
           description: ID of the group payment that the refund is charged against.
             String starting with **gp_**.
-    inline_response_200_32:
-      type: object
-      properties:
-        status:
-          $ref: '#/components/schemas/Status'
-        data:
-          $ref: '#/components/schemas/inline_response_200_32_data'
-    refunds_refundId_body:
-      type: object
-      properties:
-        metadata:
-          description: A JSON object defined by the client.
     inline_response_200_33:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApplePayObjectResponse'
+          $ref: '#/components/schemas/inline_response_200_33_data'
+    refunds_refundId_body:
+      type: object
+      properties:
+        metadata:
+          description: A JSON object defined by the client.
     inline_response_200_34:
       type: object
       properties:
@@ -27549,15 +27769,24 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/Dispute'
+            $ref: '#/components/schemas/ApplePayObjectResponse'
     inline_response_200_35:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
-          $ref: '#/components/schemas/Dispute'
+          type: array
+          items:
+            $ref: '#/components/schemas/Dispute'
     inline_response_200_36:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status'
+        data:
+          $ref: '#/components/schemas/Dispute'
+    inline_response_200_37:
       type: object
       properties:
         status:
@@ -27571,14 +27800,14 @@ components:
       - $ref: '#/components/schemas/CustomerRequest'
       - required:
         - name
-    inline_response_200_37:
+    inline_response_200_38:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Customer'
-    inline_response_400_38:
+    inline_response_400_39:
       type: object
       properties:
         status:
@@ -27591,7 +27820,7 @@ components:
             \ Corrective action: Create a new wallet."
           response_code: ERROR_CREATE_CUSTOMER
           status: ERROR
-    inline_response_400_39:
+    inline_response_400_40:
       type: object
       properties:
         status:
@@ -27605,7 +27834,7 @@ components:
             cus_\""
           response_code: ERROR_GET_CUSTOMER
           status: ERROR
-    inline_response_400_40:
+    inline_response_400_41:
       type: object
       properties:
         status:
@@ -27618,7 +27847,7 @@ components:
             \ action: Use the correct customer, or create a new customer."
           response_code: INVALID_CUSTOMER_ID
           status: ERROR
-    inline_response_400_41:
+    inline_response_400_42:
       type: object
       properties:
         status:
@@ -27631,14 +27860,14 @@ components:
             \ and why there were multiple requests to delete it."
           response_code: ERROR_DELETE_CUSTOMER
           status: ERROR
-    inline_response_200_38:
+    inline_response_200_39:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/DiscountCustomerResponse'
-    inline_response_200_39:
+    inline_response_200_40:
       type: object
       properties:
         data:
@@ -27648,14 +27877,14 @@ components:
     v1_addresses_body:
       allOf:
       - $ref: '#/components/schemas/Address'
-    inline_response_200_40:
+    inline_response_200_41:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/AddressResponse'
-    inline_response_400_42:
+    inline_response_400_43:
       type: object
       properties:
         status:
@@ -27670,7 +27899,7 @@ components:
           operation_id: fbc7054e-4493-4f01-b62e-788f189f9c0f
           response_code: INVALID_ADDRESS_PHONE_NUMBER
           status: ERROR
-    inline_response_400_43:
+    inline_response_400_44:
       type: object
       properties:
         status:
@@ -27684,7 +27913,7 @@ components:
           operation_id: fbc7054e-4493-4f01-b62e-788f189f9c0f
           response_code: ERROR_ADDRESS_GET
           status: ERROR
-    inline_response_400_44:
+    inline_response_400_45:
       type: object
       properties:
         status:
@@ -27698,7 +27927,7 @@ components:
           operation_id: fbc7054e-4493-4f01-b62e-788f189f9c0f
           response_code: ERROR_DELETE_ADDRESS
           status: ERROR
-    inline_response_200_41:
+    inline_response_200_42:
       type: object
       properties:
         status:
@@ -27712,14 +27941,14 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/PaymentMethodType'
-    inline_response_200_42:
+    inline_response_200_43:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/CustomerPaymentMethod'
-    inline_response_400_45:
+    inline_response_400_46:
       type: object
       properties:
         status:
@@ -27733,7 +27962,7 @@ components:
             \ Fields\" and check all input fields."
           response_code: ERROR_CREATE_PAYMENT_METHOD
           status: ERROR
-    inline_response_400_46:
+    inline_response_400_47:
       type: object
       properties:
         status:
@@ -27746,14 +27975,14 @@ components:
             \ method. The request was rejected."
           response_code: ERROR_CUSTOMER_PAYMENT_METHOD_NOT_FOUND
           status: ERROR
-    inline_response_200_43:
+    inline_response_200_44:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
-          $ref: '#/components/schemas/inline_response_200_43_data'
-    inline_response_400_47:
+          $ref: '#/components/schemas/inline_response_200_44_data'
+    inline_response_400_48:
       type: object
       properties:
         status:
@@ -27768,7 +27997,7 @@ components:
             \ the customer's ID or the payment method that you want to delete."
           response_code: ERROR_DELETE_PAYMENT_METHOD_IN_USE
           status: ERROR
-    inline_response_200_44:
+    inline_response_200_45:
       type: object
       properties:
         status:
@@ -27838,7 +28067,7 @@ components:
           description: A JSON object defined by the client.
         package_dimensions:
           $ref: '#/components/schemas/v1skusskuId_package_dimensions'
-    inline_response_200_45:
+    inline_response_200_46:
       type: object
       properties:
         status:
@@ -27884,7 +28113,7 @@ components:
           description: A JSON object defined by the client.
         package_dimensions:
           $ref: '#/components/schemas/v1skusskuId_package_dimensions'
-    inline_response_200_46:
+    inline_response_200_47:
       type: object
       properties:
         status:
@@ -27962,7 +28191,7 @@ components:
           type: string
           description: "Merchant-defined ID for the order. If the merchant does not\
             \ define an ID, Rapyd generates it."
-    inline_response_200_47:
+    inline_response_200_48:
       type: object
       properties:
         status:
@@ -28026,7 +28255,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/v1ordersorderIdreturns_items'
-    inline_response_200_48:
+    inline_response_200_49:
       type: object
       properties:
         status:
@@ -28047,15 +28276,6 @@ components:
           type: string
           description: ID of a customer. String starting with cus_. The order is paid
             with the customer's default payment method.
-    inline_response_200_49:
-      type: object
-      properties:
-        status:
-          $ref: '#/components/schemas/Status'
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/OrderReturnedResponse'
     inline_response_200_50:
       type: object
       properties:
@@ -28064,22 +28284,31 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/Coupon'
+            $ref: '#/components/schemas/OrderReturnedResponse'
     inline_response_200_51:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
-          $ref: '#/components/schemas/Coupon'
+          type: array
+          items:
+            $ref: '#/components/schemas/Coupon'
     inline_response_200_52:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
-          $ref: '#/components/schemas/inline_response_200_52_data'
+          $ref: '#/components/schemas/Coupon'
     inline_response_200_53:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status'
+        data:
+          $ref: '#/components/schemas/inline_response_200_53_data'
+    inline_response_200_54:
       type: object
       properties:
         status:
@@ -28088,14 +28317,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/PayoutMethodType'
-    inline_response_200_54:
+    inline_response_200_55:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/PayoutMethodTypeDetails'
-    inline_response_400_48:
+    inline_response_400_49:
       type: object
       properties:
         status:
@@ -28110,7 +28339,7 @@ components:
           operation_id: 3f595230-0258-473c-94e5-075741ab84e2
           response_code: INVALID_PAYOUT_METHOD_TYPE
           status: ERROR
-    inline_response_200_55:
+    inline_response_200_56:
       type: object
       properties:
         data:
@@ -28279,14 +28508,14 @@ components:
           type: string
           description: A `statement` that includes the reason for the payout. Limited
             to 35 characters.
-    inline_response_200_56:
+    inline_response_200_57:
       type: object
       properties:
         data:
           $ref: '#/components/schemas/Payout'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_49:
+    inline_response_400_50:
       type: object
       properties:
         status:
@@ -28300,7 +28529,7 @@ components:
           operation_id: 889e9472-922c-40a2-861d-19977c396di8
           response_code: ERROR_CREATE_PAYOUT
           status: ERROR
-    inline_response_200_57:
+    inline_response_200_58:
       type: object
       properties:
         status:
@@ -28368,14 +28597,14 @@ components:
           description: "Identifier defined by the client for reference purposes. Limit:\
             \ 45 characters."
           example: GHY-0YU-HUJ-POI
-    inline_response_200_58:
+    inline_response_200_59:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/Beneficiary'
-    inline_response_400_50:
+    inline_response_400_51:
       type: object
       properties:
         status:
@@ -28483,14 +28712,14 @@ components:
             \ ALPHA-2 code for the country. To determine the code for a country, see\
             \ 'List Countries'. Required when `entity_type` is **individual**."
           example: SG
-    inline_response_200_59:
+    inline_response_200_60:
       type: object
       properties:
         data:
           $ref: '#/components/schemas/Beneficiary'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_51:
+    inline_response_400_52:
       type: object
       properties:
         status:
@@ -28544,11 +28773,11 @@ components:
           $ref: '#/components/schemas/Currency'
         sender_entity_type:
           $ref: '#/components/schemas/EntityType'
-    inline_response_200_60:
+    inline_response_200_61:
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/inline_response_200_60_data'
+          $ref: '#/components/schemas/inline_response_200_61_data'
         status:
           $ref: '#/components/schemas/Status'
     beneficiary_beneficiaryId_body:
@@ -28635,7 +28864,7 @@ components:
             \ ALPHA-2 code for the country. To determine the code for a country, see\
             \ 'List Countries'. Relevant when `entity_type` is **individual**."
           example: SG
-    inline_response_400_52:
+    inline_response_400_53:
       type: object
       properties:
         status:
@@ -28648,11 +28877,11 @@ components:
             \ action: Use the ID of a valid beneficiary."
           response_code: ERROR_GET_BENEFICIARY
           status: ERROR
-    inline_response_200_61:
+    inline_response_200_62:
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/inline_response_200_61_data'
+          $ref: '#/components/schemas/inline_response_200_62_data'
         status:
           $ref: '#/components/schemas/Status'
     v1hosteddisbursebeneficiary_beneficiary_optional_fields:
@@ -28787,14 +29016,14 @@ components:
           enum:
           - company
           - individual
-    inline_response_200_62:
+    inline_response_200_63:
       type: object
       properties:
         data:
           $ref: '#/components/schemas/HostedBeneficiaryTokenResponse'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_53:
+    inline_response_400_54:
       type: object
       properties:
         status:
@@ -28807,7 +29036,7 @@ components:
             \ action: Set 'category' to 'bank' or 'card'."
           response_code: ERROR_HOSTED_PAGE_BENEFICIARY_INVALID_CATEGORY
           status: ERROR
-    inline_response_400_54:
+    inline_response_400_55:
       type: object
       properties:
         status:
@@ -28855,14 +29084,14 @@ components:
           type: string
           description: Last name of the sender. Relevant when `entity_type` is **individual**.
           example: Williams
-    inline_response_200_63:
+    inline_response_200_64:
       type: object
       properties:
         data:
           $ref: '#/components/schemas/Sender'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_55:
+    inline_response_400_56:
       type: object
       properties:
         status:
@@ -28876,14 +29105,14 @@ components:
           operation_id: fbc7054e-4493-4f01-b62e-788f189f9c0f
           response_code: ERROR_GET_SENDER
           status: ERROR
-    inline_response_200_64:
+    inline_response_200_65:
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/inline_response_200_64_data'
+          $ref: '#/components/schemas/inline_response_200_65_data'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_56:
+    inline_response_400_57:
       type: object
       properties:
         status:
@@ -28906,21 +29135,21 @@ components:
         metadata:
           type: object
           description: A JSON object defined by the client.
-    inline_response_200_65:
+    inline_response_200_66:
       type: object
       properties:
         data:
           $ref: '#/components/schemas/PayoutReturned'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_200_66:
+    inline_response_200_67:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
-          $ref: '#/components/schemas/inline_response_200_66_data'
-    inline_response_200_67:
+          $ref: '#/components/schemas/inline_response_200_67_data'
+    inline_response_200_68:
       type: object
       properties:
         status:
@@ -28945,7 +29174,7 @@ components:
           - all
           - oct
           - aft
-    inline_response_200_68:
+    inline_response_200_69:
       properties:
         status:
           $ref: '#/components/schemas/Status'
@@ -28982,7 +29211,7 @@ components:
         source_ewallet:
           type: string
           description: ID of the wallet sending the money. String starting with **ewallet_**.
-    inline_response_200_69:
+    inline_response_200_70:
       type: object
       properties:
         data:
@@ -29026,13 +29255,13 @@ components:
         metadata:
           type: object
           description: A JSON object defined by the client.
-    inline_response_200_70:
+    inline_response_200_71:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
-          $ref: '#/components/schemas/inline_response_200_70_data'
+          $ref: '#/components/schemas/inline_response_200_71_data'
     account_withdraw_body:
       required:
       - amount
@@ -29070,14 +29299,14 @@ components:
           type: string
           description: ID of the wallet associated with the contact. String starting
             with **ewallet_**.
-    inline_response_200_71:
+    inline_response_200_72:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
           $ref: '#/components/schemas/PutFundsOnHoldResponse'
-    inline_response_400_57:
+    inline_response_400_58:
       type: object
       properties:
         status:
@@ -29110,7 +29339,7 @@ components:
           type: string
           description: ID of the wallet associated with the contact. String starting
             with **ewallet_**.
-    inline_response_400_58:
+    inline_response_400_59:
       type: object
       properties:
         status:
@@ -29139,7 +29368,7 @@ components:
           operation_id: 3f595230-0258-473c-94e5-075741ab84e2
           response_code: UNAUTHENTICATED_API_CALL
           status: ERROR
-    inline_response_200_72:
+    inline_response_200_73:
       type: object
       properties:
         data:
@@ -29148,7 +29377,7 @@ components:
             $ref: '#/components/schemas/Contact'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_59:
+    inline_response_400_60:
       type: object
       properties:
         status:
@@ -29233,14 +29462,14 @@ components:
           type: string
           description: Reference ID for the contact. Limited to 45 characters. Should
             be unique per merchant per e-wallet.
-    inline_response_200_73:
+    inline_response_200_74:
       type: object
       properties:
         data:
           $ref: '#/components/schemas/Contact'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_60:
+    inline_response_400_61:
       type: object
       properties:
         status:
@@ -29254,7 +29483,7 @@ components:
             \ personal wallet two contacts. Consider creating a company wallet."
           response_code: ERROR_ADD_CONTACT_TOO_MANY_CONTACTS
           status: ERROR
-    inline_response_400_61:
+    inline_response_400_62:
       type: object
       properties:
         status:
@@ -29269,7 +29498,7 @@ components:
             \ a string starting with \"cont\"."
           response_code: ERROR_GET_EWALLET_CONTACT
           status: ERROR
-    inline_response_400_62:
+    inline_response_400_63:
       type: object
       properties:
         status:
@@ -29283,14 +29512,14 @@ components:
             \ reference."
           response_code: ERROR_UPDATE_EWALLET_CONTACT
           status: ERROR
-    inline_response_200_74:
+    inline_response_200_75:
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/inline_response_200_74_data'
+          $ref: '#/components/schemas/inline_response_200_75_data'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_63:
+    inline_response_400_64:
       type: object
       properties:
         status:
@@ -29304,14 +29533,14 @@ components:
             \ why an attempt was made to delete the contact."
           response_code: ERROR_DELETE_CONTACT_FROM_PERSONAL_EWALLET
           status: ERROR
-    inline_response_200_75:
+    inline_response_200_76:
       type: object
       properties:
         data:
-          $ref: '#/components/schemas/inline_response_200_75_data'
+          $ref: '#/components/schemas/inline_response_200_76_data'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_400_64:
+    inline_response_400_65:
       type: object
       properties:
         status:
@@ -29342,7 +29571,7 @@ components:
           type: string
           description: "The orientation of the logo on the card:\n  `landscape`  `square`\
             \ `portrait` \n    Default value: `landscape`\n"
-    inline_response_200_76:
+    inline_response_200_77:
       type: object
       properties:
         data:
@@ -29351,7 +29580,7 @@ components:
           - $ref: '#/components/schemas/CardDetailsResponse'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_200_77:
+    inline_response_200_78:
       type: object
       properties:
         status:
@@ -29388,7 +29617,7 @@ components:
         metadata:
           type: object
           description: A JSON object defined by the client.
-    inline_response_200_78:
+    inline_response_200_79:
       type: object
       properties:
         data:
@@ -29397,7 +29626,7 @@ components:
           - $ref: '#/components/schemas/CardIssuingMasked'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_200_79:
+    inline_response_200_80:
       type: object
       properties:
         status:
@@ -29415,7 +29644,7 @@ components:
           type: string
           description: "The card token, which is a string starting with 'card_'. If\
             \ the client is PCI-certified, you can use the actual card number."
-    inline_response_200_80:
+    inline_response_200_81:
       type: object
       properties:
         data:
@@ -29462,7 +29691,7 @@ components:
           type: boolean
           description: "When **true**, the customer cannot reset the PIN."
           default: false
-    inline_response_200_81:
+    inline_response_200_82:
       type: object
       properties:
         status:
@@ -29500,7 +29729,7 @@ components:
           type: boolean
           description: "When **true**, the customer cannot reset the PIN."
           default: false
-    inline_response_200_82:
+    inline_response_200_83:
       type: object
       properties:
         status:
@@ -29538,7 +29767,7 @@ components:
         status:
           type: string
           description: "Status of the card. One of the following, block/unblock"
-    inline_response_200_83:
+    inline_response_200_84:
       type: object
       properties:
         data:
@@ -29547,7 +29776,7 @@ components:
             $ref: '#/components/schemas/CardTransaction'
         status:
           $ref: '#/components/schemas/Status'
-    inline_response_200_84:
+    inline_response_200_85:
       type: object
       properties:
         data:
@@ -29566,7 +29795,7 @@ components:
         new_pin:
           type: string
           description: PIN code. Numeric string.
-    inline_response_200_85:
+    inline_response_200_86:
       type: object
       properties:
         status:
@@ -29591,117 +29820,13 @@ components:
           type: string
           description: Client provided consumer ID that identifies the wallet account
             holder entity.
-    inline_response_200_86:
-      type: object
-      properties:
-        status:
-          $ref: '#/components/schemas/Status'
-        data:
-          $ref: '#/components/schemas/AddCardtoGooglePayResponse'
-    v1hostedcollectcard_card_fields:
-      type: object
-      properties:
-        recurrence_type:
-          type: string
-          description: "Specifies the primary intended purpose of the saved payment\
-            \ method. See Saving a European Card While Creating a Payment. One of\
-            \ the following values: <BR> * **installment** - Regular payments for\
-            \ a defined number of payment cycles. <BR> * **recurring** - Regular payments\
-            \ for an indefinite period. <BR> * **unscheduled** - Individual unrelated\
-            \ payments."
-          default: unscheduled
-      description: Contains details about the card.
-    collect_card_body:
-      required:
-      - country
-      - customer
-      type: object
-      properties:
-        billing_address_collect:
-          type: boolean
-          description: "Indicates whether the hosted page displays address fields\
-            \ to fill in.<BR> * **true** - The address fields are displayed. <BR>\
-            \ * **false** - The address fields are displayed only for country codes\
-            \ **US**, **GB** and **CA**."
-        cancel_url:
-          type: string
-          description: URL where the customer is redirected after pressing **Back
-            to Website** to exit the hosted page. This URL overrides the `merchant_website`
-            URL. Does not support localhost URLs.
-        card_fields:
-          $ref: '#/components/schemas/v1hostedcollectcard_card_fields'
-        complete_url:
-          type: string
-          description: URL where the customer is redirected after pressing **Close**
-            to exit the hosted page. This URL overrides the `merchant_website` URL.
-            Does not support localhost URLs.The two-letter ISO 3166-1 ALPHA-2 code
-            for the country.
-        complete_payment_url:
-          type: string
-          description: "URL where the customer is redirected when payment is successful,\
-            \ after returning from an external page such as a 3DS page. Does not support\
-            \ localhost URLs."
-        country:
-          type: string
-          description: The two-letter ISO 3166-1 ALPHA-2 code for the country.
-        currency:
-          type: string
-          description: "In transactions without FX, defines the currency of the transaction.\
-            \ Three-letter ISO 4217 code. <BR> In FX transactions: <BR> * When `fixed_side`\
-            \ is **buy**, it is the currency received in the Rapyd wallet. <BR> *\
-            \ When `fixed_side` is **sell**, it is the currency charged to the buyer.\
-            \ <BR> See also `fixed_side` and `requested_currency` fields."
-        customer:
-          type: string
-          description: ID of a specific customer. String starting with **cus_**. Restricts
-            the payment link to the customer.
-        error_payment_url:
-          type: string
-          description: "URL where the customer is redirected when payment is not successful,\
-            \ after returning from an external page, such as a 3DS page. Does not\
-            \ support localhost URLs."
-        language:
-          type: string
-          description: "Determines the default language of the hosted page. For a\
-            \ list of values, see [List Supported Languages](https://docs.rapyd.net/en/list-supported-languages.html).\
-            \ <BR> * When this parameter is null, the language of the user's browser\
-            \ is used. <BR> * If the language of the user's browser cannot be determined,\
-            \ the default language is English."
-          default: en
-        page_expiration:
-          type: string
-          description: "End of the time when the customer can use the hosted page,\
-            \ in Unix time. If `page_expiration` is not set, the hosted page expires\
-            \ 14 days after creation. Range: 1 minute to 30 days."
-        payment_method_type:
-          type: string
-          description: "Limits the page to a specific type of payment method. For\
-            \ example, **dk_visa_card**. For a list of payment methods, use [List\
-            \ Payment Methods by Country](https://docs.rapyd.net/en/list-payment-methods-by-country.html)."
     inline_response_200_87:
       type: object
       properties:
         status:
           $ref: '#/components/schemas/Status'
         data:
-          type: array
-          items:
-            $ref: '#/components/schemas/CardTokenResponse'
-    inline_response_400_65:
-      type: object
-      properties:
-        status:
-          $ref: '#/components/schemas/Status'
-      example:
-        status:
-          error_code: ERROR_TOKENIZE_CARD_NO_PAYMENT_METHODS
-          message: "The request tried to create a token for future use of a card,\
-            \ but there are no relevant card payment methods available in the country\
-            \ for the merchant. The request was rejected. Corrective action: Contact\
-            \ Client Support."
-          operation_id: 889e9472-922c-40a2-861d-19977c396db5
-          response_code: ERROR_TOKENIZE_CARD_NO_PAYMENT_METHODS
-          status: ERROR
+          $ref: '#/components/schemas/AddCardtoGooglePayResponse'
     cards_simulate_block_body:
       required:
       - card_id
@@ -32027,7 +32152,7 @@ components:
         deleted:
           type: boolean
           description: Indicates whether this invoice item was deleted.
-    inline_response_200_32_data:
+    inline_response_200_33_data:
       type: object
       properties:
         amount:
@@ -32073,20 +32198,20 @@ components:
         status:
           type: string
           description: Indicates the status of the group payment operation
-    inline_response_200_43_data:
+    inline_response_200_44_data:
       properties:
         id:
           type: string
         deleted:
           type: boolean
-    inline_response_200_52_data:
+    inline_response_200_53_data:
       type: object
       properties:
         deleted:
           type: boolean
         id:
           type: string
-    inline_response_200_60_data:
+    inline_response_200_61_data:
       type: object
       properties:
         beneficiary:
@@ -32095,7 +32220,7 @@ components:
           type: boolean
           description: validation status
           example: true
-    inline_response_200_61_data:
+    inline_response_200_62_data:
       type: object
       properties:
         deleted:
@@ -32106,7 +32231,7 @@ components:
           type: string
           description: Beneficiary token
           example: beneficiary_008d839a9d5726ba014c3ccb21c59920
-    inline_response_200_64_data:
+    inline_response_200_65_data:
       type: object
       properties:
         deleted:
@@ -32117,7 +32242,7 @@ components:
           type: string
           description: Sender token
           example: sender_b9342620e3eb13164286485bbff9eb7b
-    inline_response_200_66_data:
+    inline_response_200_67_data:
       properties:
         payout_token:
           type: string
@@ -32135,7 +32260,7 @@ components:
           type: string
           description: The date and time when the file was successfully uploaded.
             Format is **YYYY-MM-DD HH:MM:SS**.
-    inline_response_200_70_data:
+    inline_response_200_71_data:
       properties:
         account_id:
           type: string
@@ -32159,7 +32284,7 @@ components:
         phone_number:
           type: string
           description: Phone number of the Rapyd wallet.
-    inline_response_200_74_data:
+    inline_response_200_75_data:
       type: object
       properties:
         delete:
@@ -32170,7 +32295,7 @@ components:
           type: string
           description: Contact id
           example: beneficiary_008d839a9d5726ba014c3ccb21c59920
-    inline_response_200_75_data_elements:
+    inline_response_200_76_data_elements:
       minItems: 0
       type: object
       properties:
@@ -32178,7 +32303,7 @@ components:
           type: string
         verified:
           type: boolean
-    inline_response_200_75_data_compliance_levels:
+    inline_response_200_76_data_compliance_levels:
       type: object
       properties:
         level:
@@ -32186,14 +32311,14 @@ components:
         elements:
           type: array
           items:
-            $ref: '#/components/schemas/inline_response_200_75_data_elements'
-    inline_response_200_75_data:
+            $ref: '#/components/schemas/inline_response_200_76_data_elements'
+    inline_response_200_76_data:
       type: object
       properties:
         compliance_levels:
           type: array
           items:
-            $ref: '#/components/schemas/inline_response_200_75_data_compliance_levels'
+            $ref: '#/components/schemas/inline_response_200_76_data_compliance_levels'
     inline_response_200_92_data:
       type: object
       properties:
