@@ -10,3 +10,4 @@ We value your [feedback](https://docs.google.com/forms/d/e/1FAIpQLSdf-JsffCntuNj
 ## Articles 
 - [Empowering Rapyd Payments with OpenAPI](https://community.rapyd.net/t/empowering-rapyd-payments-with-openapi/58880)
 - [The Role of APIs in Driving Fintech Innovation](https://community.rapyd.net/t/the-role-of-apis-in-driving-fintech-innovation/59644)
+- [Using OpenAPI to Automate API Integration With Rapyd's Payment Gateway](https://community.rapyd.net/t/using-openapi-to-automate-api-integration-with-rapyds-payment-gateway/59719)
