@@ -11,7 +11,7 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.18
+  version: 1.0.19
 servers:
 - url: https://sandboxapi.rapyd.net/
   description: Sandbox server
@@ -221,7 +221,7 @@ paths:
           type: string
       responses:
         "200":
-          description: SUCCESS
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -311,7 +311,7 @@ paths:
           type: string
       responses:
         "200":
-          description: SUCCESS
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -517,7 +517,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Payments Fetched successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -602,7 +602,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Payment was created
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -691,7 +691,7 @@ paths:
         example: payment_bebddc4b4139d5a0f13cdcd4046cf2c1
       responses:
         "200":
-          description: Payment object
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -792,7 +792,7 @@ paths:
         required: true
       responses:
         "200":
-          description: payment updated successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -887,7 +887,7 @@ paths:
         example: payment_548969fc5a0bf89da3cec70a1529338c
       responses:
         "200":
-          description: payment canceled successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -988,7 +988,7 @@ paths:
               $ref: "#/components/schemas/paymentId_capture_body"
       responses:
         "200":
-          description: Payment captured successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -1090,7 +1090,7 @@ paths:
               $ref: "#/components/schemas/payments_completePayment_body"
       responses:
         "200":
-          description: payment completed successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -1189,7 +1189,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Checkout page details.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -1274,7 +1274,7 @@ paths:
               $ref: "#/components/schemas/v1_checkout_body"
       responses:
         "200":
-          description: Create a checkout page that makes a payment.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -1426,7 +1426,7 @@ paths:
         example: 23
       responses:
         "200":
-          description: List of subscriptions
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -1511,7 +1511,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Create a subscription
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -1600,7 +1600,7 @@ paths:
         example: sub_494eae8b99f697107d738
       responses:
         "200":
-          description: Get subscription details
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -1694,7 +1694,7 @@ paths:
         required: true
       responses:
         "200":
-          description: The subscription after an update
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -1782,7 +1782,7 @@ paths:
         example: sub_494eae8b99f697107d738
       responses:
         "200":
-          description: The canceled subscription
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -1872,7 +1872,7 @@ paths:
         example: sub_494eae8b99f697107d738
       responses:
         "200":
-          description: discount was deleted
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -1957,7 +1957,7 @@ paths:
               $ref: "#/components/schemas/checkout_subscriptions_body"
       responses:
         "200":
-          description: Subscription hosted Page was created.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2066,7 +2066,7 @@ paths:
         example: 10
       responses:
         "200":
-          description: List of products
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2145,7 +2145,7 @@ paths:
         required: true
       responses:
         "200":
-          description: The created Product
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2228,7 +2228,7 @@ paths:
         example: product_0d9dc6be69c769560fe913f3b086d8ca
       responses:
         "200":
-          description: The Product
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2321,7 +2321,7 @@ paths:
               $ref: "#/components/schemas/products_productsId_body"
       responses:
         "200":
-          description: The created Product
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2410,7 +2410,7 @@ paths:
         example: product_0d9dc6be69c769560fe913f3b086d8ca
       responses:
         "200":
-          description: "Rapyd response with result, and product ID."
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2521,7 +2521,7 @@ paths:
         example: plan_5a99897cdcd7175cb8119254d02befdb
       responses:
         "200":
-          description: List of plans
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2600,7 +2600,7 @@ paths:
         required: true
       responses:
         "200":
-          description: The created plan
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2689,7 +2689,7 @@ paths:
         example: plan_494eae8b99f697107d738
       responses:
         "200":
-          description: The Plan
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2784,7 +2784,7 @@ paths:
         required: true
       responses:
         "200":
-          description: The Plan's updated details.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2872,7 +2872,7 @@ paths:
         example: plan_494eae8b99f697107d738
       responses:
         "200":
-          description: Rapyd response with status and ID of plan that was deleted.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2990,7 +2990,7 @@ paths:
         example: sub_0de9c79c1e2beee09499dc8220493d59
       responses:
         "200":
-          description: List of subscriptions
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -3070,7 +3070,7 @@ paths:
         required: true
       responses:
         "200":
-          description: The created subscription
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -3152,7 +3152,7 @@ paths:
           type: string
       responses:
         "200":
-          description: The created subscription
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -3239,7 +3239,7 @@ paths:
         required: true
       responses:
         "200":
-          description: The created subscription
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -3320,7 +3320,7 @@ paths:
           type: string
       responses:
         "200":
-          description: The created subscription
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -3431,7 +3431,7 @@ paths:
           type: number
       responses:
         "200":
-          description: The subscription after updated
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -3521,7 +3521,7 @@ paths:
         required: true
       responses:
         "200":
-          description: The subscription after updated.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -3603,7 +3603,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Get discount details of a subscription by Discount ID.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -3746,7 +3746,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Invoices Fetched successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -3837,7 +3837,7 @@ paths:
               $ref: "#/components/schemas/v1_invoices_body"
       responses:
         "200":
-          description: Invoice created successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -3927,7 +3927,7 @@ paths:
         example: invoice_8a7200327e12b98cf5b038a3fdb2f642
       responses:
         "200":
-          description: Invoice Fetched successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -4021,7 +4021,7 @@ paths:
               $ref: "#/components/schemas/invoices_invoiceId_body"
       responses:
         "200":
-          description: Invoice updated successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -4109,7 +4109,7 @@ paths:
         example: invoice_8a7200327e12b98cf5b038a3fdb2f642
       responses:
         "200":
-          description: Invoice deleted successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -4200,7 +4200,7 @@ paths:
         example: invoice_8a7200327e12b98cf5b038a3fdb2f642
       responses:
         "200":
-          description: Invoice successfully set to void
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -4295,7 +4295,7 @@ paths:
         example: invoice_8a7200327e12b98cf5b038a3fdb2f642
       responses:
         "200":
-          description: "Finalized Invoice,"
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -4389,7 +4389,7 @@ paths:
               $ref: "#/components/schemas/invoiceId_pay_body"
       responses:
         "200":
-          description: The Invoice was paid.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -4474,7 +4474,7 @@ paths:
         example: invoice_8a7200327e12b98cf5b038a3fdb2f642
       responses:
         "200":
-          description: The Invoice was marked as uncollectible.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -4564,7 +4564,7 @@ paths:
         example: invoice_8a7200327e12b98cf5b038a3fdb2f642
       responses:
         "200":
-          description: The invoice lines were retrieved.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -4666,7 +4666,7 @@ paths:
         example: USD
       responses:
         "200":
-          description: The upcoming invoice was retrieved.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -4768,7 +4768,7 @@ paths:
         example: USD
       responses:
         "200":
-          description: The lines from the upcoming invoice were retrieved.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -4906,7 +4906,7 @@ paths:
         example: ii_03bae0ba6b2f2d0d85b6078af82d9c03
       responses:
         "200":
-          description: Invoice items listed successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -4995,7 +4995,7 @@ paths:
               $ref: "#/components/schemas/v1_invoice_items_body"
       responses:
         "200":
-          description: Invoice item created successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -5083,7 +5083,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Invoice item retrieved successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -5178,7 +5178,7 @@ paths:
               $ref: "#/components/schemas/invoice_items_invoiceItem_body"
       responses:
         "200":
-          description: Invoice item updated successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -5269,7 +5269,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Invoice item deleted successfully.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -5357,7 +5357,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Payment Link Fetched successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -5443,7 +5443,7 @@ paths:
               $ref: "#/components/schemas/collect_card_body"
       responses:
         "200":
-          description: Card Token created successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -5528,7 +5528,7 @@ paths:
         required: true
       responses:
         "200":
-          description: get group payment details after creating it.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -5615,7 +5615,7 @@ paths:
           type: string
       responses:
         "200":
-          description: get group payment details By group payment Id
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -5701,7 +5701,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Cancel group payment by group_payment Id
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -5797,7 +5797,7 @@ paths:
         example: escrow_df0a95af70e696947706cb59bd53d46f
       responses:
         "200":
-          description: Escrow details after specifying it.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -5897,7 +5897,7 @@ paths:
               $ref: "#/components/schemas/escrow_escrow_releases_body"
       responses:
         "200":
-          description: Escrow details after creating it.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -5993,7 +5993,7 @@ paths:
         example: escrow_df0a95af70e696947706cb59bd53d46f
       responses:
         "200":
-          description: Escrow details after specifying it.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -6112,7 +6112,7 @@ paths:
         example: payment_7a98328c6da659a181c16a594dae5d3d
       responses:
         "200":
-          description: List Contacts for a Rapyd Wallet
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -6195,7 +6195,7 @@ paths:
         required: true
       responses:
         "200":
-          description: List Contacts for a Rapyd Wallet.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -6278,7 +6278,7 @@ paths:
         required: true
       responses:
         "200":
-          description: List Contacts for a Rapyd Wallet
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -6311,7 +6311,7 @@ paths:
         required: true
       responses:
         "200":
-          description: List Contacts for a Rapyd Wallet
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -6395,7 +6395,7 @@ paths:
         example: refund_a09a2e16352f56a27f5937f87d0b8705
       responses:
         "200":
-          description: List Contacts for a Rapyd Wallet
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -6484,7 +6484,7 @@ paths:
         required: true
       responses:
         "200":
-          description: List Contacts for a Rapyd Wallet
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -6566,7 +6566,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Apple Pay response fetched successfully.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -6696,7 +6696,7 @@ paths:
         example: payment_ce936f36d93bc9307a3d
       responses:
         "200":
-          description: disputes fetched successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -6780,7 +6780,7 @@ paths:
         example: dispute_3e4862ba69665f04da530154f1019998
       responses:
         "200":
-          description: Get dispute details by dispute ID.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -6882,7 +6882,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Lists customers.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -6961,7 +6961,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Customer was created successfully.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -7050,7 +7050,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Customer details by customer ID.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -7142,7 +7142,7 @@ paths:
               $ref: "#/components/schemas/CustomerRequest"
       responses:
         "200":
-          description: customer was updated successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -7230,7 +7230,7 @@ paths:
           type: string
       responses:
         "200":
-          description: customer was deleted
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -7321,7 +7321,7 @@ paths:
         example: dis_d41d8cd98f00b204e9800998ecf8427e
       responses:
         "200":
-          description: Get discount details of a customer by Discount Id.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -7402,7 +7402,7 @@ paths:
           type: string
       responses:
         "200":
-          description: discount was deleted
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -7481,7 +7481,7 @@ paths:
               $ref: "#/components/schemas/v1_addresses_body"
       responses:
         "200":
-          description: Creates an address.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -7570,7 +7570,7 @@ paths:
         example: address_71f1048a5837feb31b594f9d3d9b6623
       responses:
         "200":
-          description: Retrieves an address.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -7665,7 +7665,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Update an address.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -7754,7 +7754,7 @@ paths:
         example: address_71f1048a5837feb31b594f9d3d9b6623
       responses:
         "200":
-          description: Removes an address.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -7884,7 +7884,7 @@ paths:
           type: string
       responses:
         "200":
-          description: get customer details By customer Id
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -7972,7 +7972,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Payment method was created for this customer successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -8068,7 +8068,7 @@ paths:
           type: string
       responses:
         "200":
-          description: get customer details By customer Id
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -8179,7 +8179,7 @@ paths:
         required: true
       responses:
         "200":
-          description: customer was updated successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -8275,7 +8275,7 @@ paths:
           type: string
       responses:
         "200":
-          description: payment method was deleted for this customer
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -8364,7 +8364,7 @@ paths:
         example: sku_a6d86bdc6f3a7ef6cb51de5a5678493f
       responses:
         "200":
-          description: The requested SKU object
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -8451,7 +8451,7 @@ paths:
               $ref: "#/components/schemas/skus_skuId_body"
       responses:
         "200":
-          description: The requested SKU object
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -8533,7 +8533,7 @@ paths:
         example: sku_a6d86bdc6f3a7ef6cb51de5a5678493f
       responses:
         "200":
-          description: The SKU deletion result
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -8643,7 +8643,7 @@ paths:
         example: 50
       responses:
         "200":
-          description: "List of SKUs,"
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -8721,7 +8721,7 @@ paths:
               $ref: "#/components/schemas/v1_skus_body"
       responses:
         "200":
-          description: SKU created.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -8825,7 +8825,7 @@ paths:
         example: order_d1ce10b16cd4350d12c75232628e49bd
       responses:
         "200":
-          description: List of orders.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -8903,7 +8903,7 @@ paths:
               $ref: "#/components/schemas/v1_orders_body"
       responses:
         "200":
-          description: The created order.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -8985,7 +8985,7 @@ paths:
           type: string
       responses:
         "200":
-          description: SUCCESS
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -9072,7 +9072,7 @@ paths:
         required: true
       responses:
         "200":
-          description: SUCCESS
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -9161,7 +9161,7 @@ paths:
         required: true
       responses:
         "200":
-          description: SUCCESS
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -9249,7 +9249,7 @@ paths:
         required: true
       responses:
         "200":
-          description: SUCCESS
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -9363,7 +9363,7 @@ paths:
             type: string
       responses:
         "200":
-          description: List of orders.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -9445,7 +9445,7 @@ paths:
           type: string
       responses:
         "200":
-          description: SUCCESS
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -9546,7 +9546,7 @@ paths:
           type: string
       responses:
         "200":
-          description: List of coupons
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -9626,7 +9626,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Coupon was created
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -9708,7 +9708,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Get Coupon details By coupon Id
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -9793,7 +9793,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Coupon was updated.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -9873,7 +9873,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Coupon was deleted.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -10075,7 +10075,7 @@ paths:
         example: 5
       responses:
         "200":
-          description: payout method types fetched successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -10230,7 +10230,7 @@ paths:
         example: company
       responses:
         "200":
-          description: payout method types details fetched successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -10430,7 +10430,7 @@ paths:
         example: ""
       responses:
         "200":
-          description: Payouts Fetched Successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -10512,7 +10512,7 @@ paths:
         required: true
       responses:
         "200":
-          description: payout created successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -10601,7 +10601,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Mass payout created successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -10690,7 +10690,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Beneficiary Created Successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -10778,7 +10778,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Beneficiary Created Successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -10870,7 +10870,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Beneficiary validated successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -10956,7 +10956,7 @@ paths:
         example: beneficiary_008d839a9d5726ba014c3ccb21c59920
       responses:
         "200":
-          description: Beneficiary retrieved successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -11046,7 +11046,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Beneficiary updated successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -11134,7 +11134,7 @@ paths:
         example: beneficiary_008d839a9d5726ba014c3ccb21c59920
       responses:
         "200":
-          description: Beneficiary deleted successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -11235,7 +11235,7 @@ paths:
         example: 10
       responses:
         "200":
-          description: Payout completed successfully.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -11318,7 +11318,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Beneficiary tokenization page created.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -11408,7 +11408,7 @@ paths:
         example: payout_548969fc5a0bf89da3cec70a1529338c
       responses:
         "200":
-          description: Payout exchange rate confirmed.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -11497,8 +11497,7 @@ paths:
         required: true
       responses:
         "200":
-          description: The `status` object is returned and it includes a **SUCCESS**
-            value.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -11589,7 +11588,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Sender Created Successfully.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -11675,10 +11674,7 @@ paths:
         example: sender_548969fc5a0bf89da3cec70a1529338c
       responses:
         "200":
-          description: The 'Retrieve Sender - individual' response includes additional
-            fields for the 'ca_general_bank' payout method. The 'Retrieve Sender -
-            company' response includes an additional field for the **us_ach_bank**
-            payout method.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -11766,7 +11762,7 @@ paths:
         example: sender_b9342620e3eb13164286485bbff9eb7b
       responses:
         "200":
-          description: Sender deleted successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -11849,7 +11845,7 @@ paths:
         example: payout_548969fc5a0bf89da3cec70a1529338c
       responses:
         "200":
-          description: Payout object
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -11944,7 +11940,7 @@ paths:
         required: true
       responses:
         "200":
-          description: payout updated successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -12028,7 +12024,7 @@ paths:
         example: payout_548969fc5a0bf89da3cec70a1529338c
       responses:
         "200":
-          description: payout canceled successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -12115,7 +12111,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Displays the payout's details.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -12209,8 +12205,7 @@ paths:
         required: true
       responses:
         "200":
-          description: The following parameters are returned for each file that was
-            uploaded.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -12295,8 +12290,7 @@ paths:
           type: string
       responses:
         "200":
-          description: The following parameters are returned for each file that was
-            uploaded.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -12380,7 +12374,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Returns a **SUCCESS** status.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -12473,8 +12467,7 @@ paths:
           type: string
       responses:
         "200":
-          description: The following parameters are returned for the file that was
-            uploaded.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -12566,7 +12559,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Returns a **SUCCESS** status.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -12651,8 +12644,7 @@ paths:
         required: true
       responses:
         "200":
-          description: "The following parameters are returned for the card that was\
-            \ entered:"
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -12734,7 +12726,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Transacton properties
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -12815,7 +12807,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Transaction properties
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -12898,7 +12890,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Returns details on the funds that were added to the account.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -12982,7 +12974,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Returns details of an 'Add Funds' Request.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -13065,7 +13057,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Returns details on the funds that were removed from the account.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -13149,8 +13141,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Returns details on the funds that were removed from the account
-            via a specific request.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -13237,7 +13228,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Funds put on hold.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -13328,7 +13319,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Released Funds on hold
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -13418,7 +13409,7 @@ paths:
         example: ewallet_16feaaa27c852f30214dd7b3b359e88c
       responses:
         "200":
-          description: "List Contacts for a Rapyd Wallet,"
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -13513,7 +13504,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Contact details of Rapyd Wallet.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -13612,7 +13603,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Retrieve a contact for an existing Rapyd Wallet.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -13715,7 +13706,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Retrieve a contact for an existing Rapyd Wallet.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -13812,7 +13803,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Retrieve a contact for an existing Rapyd Wallet.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -13910,7 +13901,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Verify the compliance status of a personal contact.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -14006,7 +13997,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Display Issued Card Details to Customer.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -14161,7 +14152,7 @@ paths:
           type: boolean
       responses:
         "200":
-          description: List of cards.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -14240,7 +14231,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Returns card details.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -14325,7 +14316,7 @@ paths:
         example: card_c34bd6bfd9575f6f7b06647999a93126
       responses:
         "200":
-          description: get Card details By card Id.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -14411,7 +14402,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Returns the card details.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -14498,7 +14489,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Lists the details of the hosted page.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -14586,7 +14577,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Lists the details of the PIN management hosted page.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -14670,7 +14661,7 @@ paths:
         required: true
       responses:
         "200":
-          description: List Contacts of a Rapyd Wallet.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -14752,7 +14743,7 @@ paths:
         required: true
       responses:
         "200":
-          description: "List Contacts for a Rapyd Wallet,"
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -14903,7 +14894,7 @@ paths:
         example: 1608796554
       responses:
         "200":
-          description: Retrieve a list of transactions for a specific issued card.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -14998,7 +14989,7 @@ paths:
         example: cit_8d8a34d280ff02b0bd218ac6ede21931
       responses:
         "200":
-          description: Returns issued card transaction details
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -15082,7 +15073,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Returns card details.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -15177,7 +15168,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Returns `PaymentInstrumentData` and `UserAddress`.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -15263,7 +15254,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Returns card details.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -15361,7 +15352,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Returns card and transaction details.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -15456,7 +15447,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Returns card and transaction details.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -15544,7 +15535,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Returns card clearing and transaction details.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -15635,7 +15626,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Returns card refund and transaction details.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -15725,7 +15716,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Returns card adjustment and transaction details.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -15807,7 +15798,7 @@ paths:
         required: true
       responses:
         "200":
-          description: eWallet.Virtual Account
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -15890,7 +15881,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Bank transfer details.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -15924,7 +15915,7 @@ paths:
         example: issuing_16feaaa27c852f30214dd7b3b359e88c
       responses:
         "200":
-          description: Virtual Accounts
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -16016,7 +16007,7 @@ paths:
               $ref: "#/components/schemas/virtual_accounts_virtualAccountId_body"
       responses:
         "200":
-          description: Returns the requested currency and bank account data.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -16099,7 +16090,7 @@ paths:
         example: issuing_16feaaa27c852f30214dd7b3b359e88c
       responses:
         "200":
-          description: Virtual Account
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -16182,7 +16173,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Returns capabilities of virtual accounts.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -16324,7 +16315,7 @@ paths:
           type: string
       responses:
         "200":
-          description: "List of eWallets,"
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -16403,7 +16394,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Rapyd wallet created.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -16488,7 +16479,7 @@ paths:
         example: ewallet_95feaa629caa5ef64c49e5c24b29171d
       responses:
         "200":
-          description: Retrieve the details of a Rapyd Wallet.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -16577,7 +16568,7 @@ paths:
         required: true
       responses:
         "200":
-          description: "Created Rapyd Wallet,"
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -16662,7 +16653,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Wallet was deleted.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -16760,7 +16751,7 @@ paths:
           - CLO
       responses:
         "200":
-          description: Operations status
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -16852,7 +16843,7 @@ paths:
               $ref: "#/components/schemas/account_limits_body"
       responses:
         "200":
-          description: List Contacts for Rapyd Wallet Accounts.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -16934,7 +16925,7 @@ paths:
         example: ewallet_16feaaa27c852f30214dd7b3b359e88c
       responses:
         "200":
-          description: Coupon was deleted.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -17020,7 +17011,7 @@ paths:
         example: ewallet_16feaaa27c852f30214dd7b3b359e88c
       responses:
         "200":
-          description: "List accounts related to the Rapyd Wallet,"
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -17190,7 +17181,7 @@ paths:
         example: payout_funds_in
       responses:
         "200":
-          description: List of all transactions related to a wallet.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -17285,7 +17276,7 @@ paths:
         example: wt_8029af385b9614ac6e70f44aea3383b8
       responses:
         "200":
-          description: Retrieve the details of a wallet transaction.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -17370,7 +17361,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Returns capabilities of virtual accounts.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -17455,7 +17446,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Retrieves fixed daily rate
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -17544,7 +17535,7 @@ paths:
         example: wh_6fcbb2a25aba03de3545f7d36e06cce8
       responses:
         "200":
-          description: Retrieves webhook
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -17627,7 +17618,7 @@ paths:
         example: wh_6fcbb2a25aba03de3545f7d36e06cce8
       responses:
         "200":
-          description: Resends webhook
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -17710,7 +17701,7 @@ paths:
           type: number
       responses:
         "200":
-          description: Resends webhook
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -17790,7 +17781,7 @@ paths:
         required: true
       responses:
         "200":
-          description: "Virtual Account,"
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -17887,7 +17878,7 @@ paths:
         example: isutran_59599bcba9ab9c79113f88cade1ed655
       responses:
         "200":
-          description: "List Contacts for a Rapyd Wallet,"
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -17983,7 +17974,7 @@ paths:
         example: isutran_59599bcba9ab9c79113f88cade1ed655
       responses:
         "200":
-          description: "List Contacts for a Rapyd Wallet,"
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -18069,7 +18060,7 @@ paths:
               $ref: "#/components/schemas/collect_payments_body"
       responses:
         "200":
-          description: Payment Link Fetched successfully
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -18156,7 +18147,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Retrieve the Rapyd ID and merchant reference ID.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -18248,8 +18239,7 @@ paths:
         example: US
       responses:
         "200":
-          description: Lists the types of official identification documents for a
-            country.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -18332,7 +18322,7 @@ paths:
           $ref: "#/components/schemas/Country_1"
       responses:
         "200":
-          description: List types of identity verification applications by country.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -18415,7 +18405,7 @@ paths:
           type: string
       responses:
         "200":
-          description: List types of identity verification applications by country.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -18495,7 +18485,7 @@ paths:
               $ref: "#/components/schemas/applications_hosted_body"
       responses:
         "200":
-          description: Hosted application details.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -18664,7 +18654,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Returns details on the Identity Verification Page.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -18754,7 +18744,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Validates the data of the request.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -18846,7 +18836,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Displays the query results.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -18936,7 +18926,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Retrieves fixed daily rate
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -19004,7 +18994,7 @@ paths:
           type: string
       responses:
         "200":
-          description: List of supported countries.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -19072,7 +19062,7 @@ paths:
           type: string
       responses:
         "200":
-          description: List of currencies.
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -32779,11 +32769,16 @@ components:
             $ref: "#/components/schemas/CardTransaction"
         requested_currency:
           type: string
-          description: "*Currency received by the virtual account after conversion.\
-            \ Uppercase. One of the following: AUD - Australian Dollar EUR - Euro\
-            \ GBP - Pound Sterling HKD - Hong Kong Dollar SGD - Singapore Dollar USD\
-            \ - US Dollar When not specified, the funds appear in the wallet’s currency\
-            \ account for the currency of the transaction.*"
+          description: "Currency received by the virtual account after conversion.\
+            \ Uppercase. When not specified, the funds appear in the wallet’s currency\
+            \ account for the currency of the transaction."
+          enum:
+          - AUD
+          - EUR
+          - GBP
+          - HKD
+          - SGD
+          - USD
     inline_response_200_110_data:
       type: object
       properties:
