@@ -4,13 +4,13 @@ info:
   description: "This is a release of the OpenAPI specification for Rapyd's API methods.\
     \ It is recommended to initially run the methods in the sandbox environment. For\
     \ the most up-to-date documentation of Rapyd's methods, see the [online API Reference](https://docs.rapyd.net/en/api-reference.html).\
-    \ <BR> For requirred signature, see [Request Signatures](https://docs.rapyd.net/en/request-signatures.html)."
+    \ <BR> For required signature, see [Request Signatures](https://docs.rapyd.net/en/request-signatures.html)."
   contact:
     email: rapyd_support@rapyd.net
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.20
+  version: 1.0.21
 servers:
 - url: https://sandboxapi.rapyd.net/
   description: Sandbox server
